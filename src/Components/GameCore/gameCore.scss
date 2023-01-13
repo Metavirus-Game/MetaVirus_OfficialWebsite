@@ -1,0 +1,49 @@
+.gameCore {
+  width: 30vw;
+}
+
+.gameCoreContainer {
+  h3 {
+    font-size: 1.5em;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+  p {
+    text-align: left;
+    width: 25rem;
+  }
+  position: relative;
+  height: 100vh;
+}
+
+.gameCore {
+  position: absolute;
+  display: flex;
+}
+
+.gameCore:first-child {
+  top: 10vh;
+  left: 20vw;
+  img {
+    position: relative;
+    left: 20vw;
+  }
+}
+
+.gameCore:nth-child(2) {
+  top: 40vh;
+  right: 20vw;
+  img {
+    position: relative;
+    right: 20vw;
+  }
+}
+
+.gameCore:nth-child(3) {
+  top: 70vh;
+  left: 20vw;
+  img {
+    position: relative;
+    left: 20vw;
+  }
+}
