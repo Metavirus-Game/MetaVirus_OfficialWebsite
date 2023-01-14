@@ -1,6 +1,6 @@
 import "./gameCore.scss";
 
-export function GameCore() {
+export default function GameCore() {
   return (
     <div className="gameCoreContainer">
       <div className="gameCore">

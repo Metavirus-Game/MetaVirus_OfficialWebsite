@@ -1,0 +1,26 @@
+.financeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+  .financeContext {
+    padding: 2rem;
+    width: 50rem;
+    h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    ul {
+      font-size: 1.3em;
+      padding: 1rem;
+    }
+  }
+  #targetSvg {
+    min-width: 250px;
+  }
+  ul {
+    text-align: left;
+  }
+}

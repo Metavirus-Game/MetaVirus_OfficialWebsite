@@ -1,9 +1,11 @@
 import "./App.css";
 import ReactFullpage from "@fullpage/react-fullpage";
-import { GameCore } from "./Components/GameCore/GameCore";
+import GameCore from "./Components/GameCore/GameCore";
 import VirusGallery from "./Components/VirusGallery/VirusGallery";
 import Process from "./Components/Process/Process";
-
+import Chart from "./Components/Charts/Chart";
+import Team from "./Components/Team/Team";
+import FinTarget from "./Components/FinTarget/FinTarget";
 const anchors = [
   "firstPage",
   "secondPage",
@@ -18,7 +20,16 @@ const App = () => (
     navigation
     navigationTooltips={anchors}
     navigat
-    sectionsColor={["#7fff00", "#00ffff", "#29ab87", "#7fff00", "#00ffff"]}
+    sectionsColor={[
+      "#7fff00",
+      "#00ffff",
+      "#29ab87",
+      "#7fff00",
+      "#29ab87",
+      "#29ab87",
+      "#29ab87",
+      "#29ab87",
+    ]}
     // onLeave={(origin, destination, direction) => {
     //   console.log("onLeave event", { origin, destination, direction });
     // }}
@@ -40,6 +51,15 @@ const App = () => (
           </div>
           <div className="section">
             <Process />
+          </div>
+          <div className="section">
+            <Chart />
+          </div>
+          <div className="section">
+            <FinTarget />
+          </div>
+          <div className="section">
+            <Team />
           </div>
         </div>
       );

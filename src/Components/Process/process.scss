@@ -1,5 +1,34 @@
 .processContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+@mixin fadeinAnimation($delay) {
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-delay: $delay;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+#context_1 {
+  @include fadeinAnimation(0s);
+}
+
+#context_2 {
+  @include fadeinAnimation(0.5s);
+}
+
+#context_3 {
+  @include fadeinAnimation(1s);
+}
+
+#context_4 {
+  @include fadeinAnimation(1.5s);
 }
