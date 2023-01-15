@@ -6,6 +6,7 @@ import Process from "./Components/Process/Process";
 import Chart from "./Components/Charts/Chart";
 import Team from "./Components/Team/Team";
 import FinTarget from "./Components/FinTarget/FinTarget";
+import HomePage from "./Components/HomePage/HomePage";
 const anchors = [
   "firstPage",
   "secondPage",
@@ -23,7 +24,7 @@ const App = () => (
     sectionsColor={[
       "#7fff00",
       "#00ffff",
-      "#29ab87",
+      "#551E57",
       "#7fff00",
       "#29ab87",
       "#29ab87",
@@ -38,7 +39,7 @@ const App = () => (
       return (
         <div>
           <div className="section">
-            <h1>HomePage</h1>
+            <HomePage />
           </div>
           <div className="section">
             <h2>Game Basics</h2>

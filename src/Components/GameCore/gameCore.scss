@@ -1,49 +1,117 @@
-.gameCore {
-  width: 30vw;
-}
+// .gameCore {
+//   width: 30vw;
+// }
+
+// .gameCoreContainer {
+//   h3 {
+//     font-size: 1.5em;
+//     text-align: left;
+//     padding-bottom: 1rem;
+//   }
+//   p {
+//     text-align: left;
+//     width: 25rem;
+//   }
+//   position: relative;
+//   height: 100vh;
+//   color: white;
+// }
+
+// .gameCore {
+//   position: absolute;
+//   display: flex;
+// }
+
+// .gameCore:first-child {
+//   top: 5vh;
+//   left: 20vw;
+//   .svg {
+//     position: relative;
+//     left: 20vw;
+//     width: 350px;
+//   }
+// }
+
+// .gameCore:nth-child(2) {
+//   top: 35vh;
+//   right: 25vw;
+//   .svg {
+//     position: relative;
+//     right: 25vw;
+//     width: 20vw;
+//     bottom: 10vh;
+//   }
+// }
+
+// .gameCore:nth-child(3) {
+//   top: 65vh;
+//   left: 20vw;
+//   .svg {
+//     position: relative;
+//     left: 20vw;
+//     width: 20vw;
+//     bottom: 5vh;
+//   }
+// }
 
 .gameCoreContainer {
-  h3 {
-    font-size: 1.5em;
-    text-align: left;
-    padding-bottom: 1rem;
-  }
-  p {
-    text-align: left;
-    width: 25rem;
-  }
-  position: relative;
-  height: 100vh;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: white;
+  // height: 90vh;
+  text-align: left;
 }
 
 .gameCore {
-  position: absolute;
+  flex-basis: 100%;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.gameCore:first-child {
-  top: 10vh;
-  left: 20vw;
-  img {
-    position: relative;
-    left: 20vw;
-  }
+.svg {
+  width: 300px;
 }
 
-.gameCore:nth-child(2) {
-  top: 40vh;
-  right: 20vw;
-  img {
-    position: relative;
-    right: 20vw;
-  }
+.gameCoreContext {
+  width: 30rem;
 }
 
-.gameCore:nth-child(3) {
-  top: 70vh;
-  left: 20vw;
-  img {
-    position: relative;
-    left: 20vw;
-  }
-}
+// .gameCore:first-child {
+//   display: flex;
+//   // justify-content: space-between;
+
+//   .gameCoreContext {
+//     width: 20rem;
+//   }
+//   .svg {
+//     width: 350px;
+//   }
+// }
+
+// .gameCore:nth-child(2) {
+//   display: flex;
+//   // justify-content: space-between;
+
+//   .gameCoreContext {
+//     width: 20rem;
+//   }
+//   .svg {
+//     width: 350px;
+//   }
+// }
+
+// .gameCore:nth-child(3) {
+//   display: flex;
+//   // justify-content: space-between;
+
+//   .gameCoreContext {
+//     width: 20rem;
+//   }
+//   .svg {
+//     width: 350px;
+//   }
+// }

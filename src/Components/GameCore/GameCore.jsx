@@ -1,21 +1,33 @@
 import "./gameCore.scss";
-
+import { Player } from "@lottiefiles/react-lottie-player";
 export default function GameCore() {
   return (
     <div className="gameCoreContainer">
       <div className="gameCore">
-        <div>
+        <div className="gameCoreContext">
           <h3>GameFi Thinking</h3>
           <p>
             F2P（Free to Play）free games P2E（Play to Earn）Earn money while
             playing Incentivize Crypto and asset trading behavior among players.
           </p>
         </div>
-        <img src="https://via.placeholder.com/200" alt="gamefi" />
+        {/* <img src="https://via.placeholder.com/200" alt="gamefi" /> */}
+        <Player
+          className="svg"
+          autoplay
+          loop
+          src="https://assets6.lottiefiles.com/packages/lf20_YrdJ2K8cQY.json"
+        />
       </div>
       <div className="gameCore">
-        <img src="https://via.placeholder.com/200" alt="income" />
-        <div>
+        {/* <img src="https://via.placeholder.com/200" alt="income" /> */}
+        <Player
+          className="svg"
+          autoplay
+          loop
+          src="https://assets9.lottiefiles.com/packages/lf20_wbwoxby3.json"
+        />
+        <div className="gameCoreContext">
           <h3>Income Distribution</h3>
           <p>
             Faction fight and union war. Infinite growth Fusion Reincarnation
@@ -27,7 +39,7 @@ export default function GameCore() {
         </div>
       </div>
       <div className="gameCore">
-        <div>
+        <div className="gameCoreContext">
           <h3>Crypto Circulation</h3>
           <p>
             Players will never be able to recharge in-game All demand currency
@@ -36,7 +48,13 @@ export default function GameCore() {
             exchange, NFT auction house.
           </p>
         </div>
-        <img src="https://via.placeholder.com/200" alt="crypto" />
+        <Player
+          className="svg"
+          autoplay
+          loop
+          src="https://assets6.lottiefiles.com/packages/lf20_ml0yft0o.json"
+        />
+        {/* <img src="https://via.placeholder.com/200" alt="crypto" /> */}
       </div>
     </div>
   );

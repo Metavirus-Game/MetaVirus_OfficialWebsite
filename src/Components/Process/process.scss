@@ -1,6 +1,3 @@
-.processContainer {
-}
-
 @mixin fadeinAnimation($delay) {
   animation-name: fadein;
   animation-duration: 2s;
@@ -31,4 +28,12 @@
 
 #context_4 {
   @include fadeinAnimation(1.5s);
+}
+
+.processContainer {
+  background-image: url("web_bg_1.png");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
