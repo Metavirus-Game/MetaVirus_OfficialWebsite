@@ -1,6 +1,5 @@
 import "./gameCore.scss";
 import { Player } from "@lottiefiles/react-lottie-player";
-import "animate.css";
 export default function GameCore({ isLoaded }) {
   return (
     <div className="gameCoreContainer">

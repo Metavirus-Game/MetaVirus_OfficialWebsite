@@ -34,8 +34,8 @@ const App = () => {
       navigationTooltips={anchors}
       navigat
       sectionsColor={[
-        "#201633",
-        "#201633",
+        "#ffffff",
+        "#ffffff",
         "#201633",
         "#201633",
         "#201633",
@@ -54,8 +54,8 @@ const App = () => {
         return (
           <div>
             <div className="section">
-              {/* <HomePage isLoaded={sectionLoaded[0]} /> */}
-              <h1>Meta Virus</h1>
+              <HomePage isLoaded={sectionLoaded[0]} />
+              {/* <h1>Meta Virus</h1> */}
             </div>
             {/* <div className="section">
               <h2>Game Basics</h2>
