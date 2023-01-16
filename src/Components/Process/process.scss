@@ -14,26 +14,33 @@
   }
 }
 
-#context_1 {
+.context_1 {
   @include fadeinAnimation(0s);
 }
 
-#context_2 {
+.context_2 {
   @include fadeinAnimation(0.5s);
 }
 
-#context_3 {
+.context_3 {
   @include fadeinAnimation(1s);
 }
 
-#context_4 {
+.context_4 {
   @include fadeinAnimation(1.5s);
 }
 
+.beforeLoaded {
+  display: none;
+}
+
 .processContainer {
-  background-image: url("web_bg_1.png");
+  // background-image: url("web_bg_1.png");
+  // background-size: cover;
+  // height: 100vh;
+  // background: linear-gradient(#ff6854, #831858);
+  background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
   background-size: cover;
-  height: 100vh;
   display: flex;
   align-items: center;
 }

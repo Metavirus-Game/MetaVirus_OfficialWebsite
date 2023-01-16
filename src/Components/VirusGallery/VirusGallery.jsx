@@ -94,7 +94,7 @@ function Deck() {
   );
 }
 
-export default function VirusGallery() {
+export default function VirusGallery({ isLoaded }) {
   return (
     <div className="galleryContainer">
       <div id="galleryContext">
@@ -104,9 +104,7 @@ export default function VirusGallery() {
           industry.
         </p>
       </div>
-      <div className="stackContainer">
-        <Deck />
-      </div>
+      <div className="stackContainer">{isLoaded && <Deck />}</div>
     </div>
   );
 }

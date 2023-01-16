@@ -1,5 +1,13 @@
 import "./process.scss";
-export default function Process() {
+import { useRef, useState } from "react";
+export default function Process({ isLoaded }) {
+  const paperPlaneAnimate = useRef(null);
+  const [animated, setAnimated] = useState(false);
+  if (isLoaded && !animated) {
+    paperPlaneAnimate.current.beginElement();
+    setAnimated(true);
+  }
+
   return (
     <div>
       <div className="processContainer">
@@ -110,7 +118,7 @@ export default function Process() {
             height={"15rem"}
             style={{ color: "white" }}
           >
-            <div id="context_1">
+            <div className={isLoaded ? "context_1" : "beforeLoaded"}>
               <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
                 03/22-09/22
               </h3>
@@ -137,7 +145,7 @@ export default function Process() {
             height={"15rem"}
             style={{ color: "white" }}
           >
-            <div id="context_2">
+            <div className={isLoaded ? "context_2" : "beforeLoaded"}>
               <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
                 10/22-12/22
               </h3>
@@ -164,7 +172,7 @@ export default function Process() {
             height={"20rem"}
             style={{ color: "white" }}
           >
-            <div id="context_3">
+            <div className={isLoaded ? "context_3" : "beforeLoaded"}>
               <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
                 01/23-01/24
               </h3>
@@ -191,7 +199,7 @@ export default function Process() {
             height={"40rem"}
             style={{ color: "white" }}
           >
-            <div id="context_4">
+            <div className={isLoaded ? "context_4" : "beforeLoaded"}>
               <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
                 01/23-01/24
               </h3>
@@ -223,18 +231,23 @@ export default function Process() {
               </ul>
             </div>
           </foreignObject>
-          <path
-            transform="translate(-35,-140)"
-            id="paperPlane"
-            d="M51 81L7 5C55 13.9623 181.2 48.2981 258 41.9434M51 81L26 133M51 81L258 41.9434M26 133L106 143M26 133L84 110.485M258 41.9434L263 41L84 110.485M258 41.9434C190.8 71.4981 144.333 144.962 134 183L106 143M106 143L84 110.485"
-            stroke="white"
-            strokeWidth="7"
-          />
+          {isLoaded && (
+            <path
+              transform="translate(-35,-140)"
+              id="paperPlane"
+              d="M51 81L7 5C55 13.9623 181.2 48.2981 258 41.9434M51 81L26 133M51 81L258 41.9434M26 133L106 143M26 133L84 110.485M258 41.9434L263 41L84 110.485M258 41.9434C190.8 71.4981 144.333 144.962 134 183L106 143M106 143L84 110.485"
+              stroke="white"
+              strokeWidth="7"
+            />
+          )}
+
           <animateMotion
             href="#paperPlane"
             dur="3s"
             repeatCount="1"
             fill="freeze"
+            begin="indefinite"
+            ref={paperPlaneAnimate}
           >
             <mpath href="#planePath" />
           </animateMotion>

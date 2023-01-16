@@ -1,11 +1,15 @@
 import TokenChart from "./TokenChart";
 import LiquidityChart from "./LiquChart";
 import "./chart.scss";
-function Chart() {
+function Chart({ isLoaded }) {
   return (
     <div className="chart">
-      <TokenChart />
-      <LiquidityChart />
+      {isLoaded && (
+        <>
+          <TokenChart />
+          <LiquidityChart />
+        </>
+      )}
     </div>
   );
 }

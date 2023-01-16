@@ -58,11 +58,10 @@ function TokenChart() {
         itemStyle: {
           color: "#5ab7bb",
         },
-        animationDuration: 3000,
         animationType: "scale",
-        // animationEasing: "elasticOut",
+        animationEasing: "elasticOut",
         animationDelay: function (idx) {
-          return Math.random() * 200;
+          return Math.random() * 600;
         },
       },
     ],

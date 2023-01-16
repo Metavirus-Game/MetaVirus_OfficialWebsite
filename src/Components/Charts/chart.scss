@@ -3,8 +3,10 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background-image: url("./web_bg_2.png");
+  background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg"),
+    url("./planet_bg_1.png");
   background-size: cover;
+  background-position: center bottom;
   height: 100vh;
 }
 
@@ -18,4 +20,8 @@
   flex: 0.4;
   min-width: 400px;
   color: white;
+}
+
+.unloaded {
+  visibility: hidden;
 }

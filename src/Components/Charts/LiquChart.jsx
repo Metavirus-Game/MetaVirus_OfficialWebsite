@@ -1,5 +1,26 @@
+import { to } from "@react-spring/web";
 import ReactECharts from "echarts-for-react"; // or var ReactECharts = require('echarts-for-react');
+import { liquData } from "./LiquData";
 function LiquidityChart() {
+  const timeData = [];
+  const gameOutputData = [];
+  const IDOData = [];
+  const marketingData = [];
+  const preSaleData = [];
+  const teamData = [];
+  const investorData = [];
+  const userCreationData = [];
+  for (let data of liquData) {
+    timeData.push(data.TIME);
+    gameOutputData.push(data["Game Output"]);
+    IDOData.push(data.IDO);
+    marketingData.push(data.Marketing);
+    preSaleData.push(data["Pre-sale"]);
+    teamData.push(data["Team&Consultant"]);
+    investorData.push(data.Investor);
+    userCreationData.push(data["User Creation"]);
+  }
+
   const option = {
     // title: {
     //   text: "Liquidity Chart",
@@ -9,7 +30,7 @@ function LiquidityChart() {
     //     color: "#fff",
     //   },
     // },
-    color: ["#a36650", "#eabe5b", "#5ab7bb", "#24e7f8", "#365254"],
+    // color: ["#a36650", "#eabe5b", "#5ab7bb", "#24e7f8", "#365254"],
     tooltip: {
       trigger: "axis",
       axisPointer: {
@@ -20,7 +41,15 @@ function LiquidityChart() {
       },
     },
     legend: {
-      data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"],
+      data: [
+        "Game Output",
+        "IDO",
+        "Marketing",
+        "Pre-sale",
+        "Team&Consultant",
+        "Investor",
+        "User Creation",
+      ],
       itemStyle: {
         color: "#ddd",
       },
@@ -43,31 +72,7 @@ function LiquidityChart() {
       {
         type: "category",
         boundaryGap: false,
-        // data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        data: [
-          "2022/7/1",
-          "2022/10/1",
-          "2023/1/1",
-          "2023/4/1",
-          "2023/7/1",
-          "2023/10/1",
-          "2024/1/1",
-          "2024/4/1",
-          "2024/7/1",
-          "2024/10/1",
-          "2025/1/1",
-          "2025/4/1",
-          "2025/7/1",
-          "2025/10/1",
-          "2026/1/1",
-          "2026/4/1",
-          "2026/7/1",
-          "2026/10/1",
-          "2027/1/1",
-          "2027/4/1",
-          "2027/7/1",
-          "2027/10/1",
-        ],
+        data: timeData,
       },
     ],
     yAxis: [
@@ -84,10 +89,7 @@ function LiquidityChart() {
         emphasis: {
           focus: "series",
         },
-        data: [
-          0, 0, 0, 0, 1.5, 3, 4.5, 6, 7.5, 9, 10.5, 12, 13.5, 15, 16.5, 18,
-          19.5, 20, 20, 20, 20, 20,
-        ],
+        data: gameOutputData,
       },
       {
         name: "IDO",
@@ -97,10 +99,7 @@ function LiquidityChart() {
         emphasis: {
           focus: "series",
         },
-        data: [
-          10, 10, 10, 10, 11.5, 13, 14.5, 16, 17.5, 19, 20.5, 22, 23.5, 25,
-          26.5, 28, 29.5, 30, 30, 30, 30, 30,
-        ],
+        data: IDOData,
       },
       {
         name: "Marketing",
@@ -110,35 +109,50 @@ function LiquidityChart() {
         emphasis: {
           focus: "series",
         },
-        // data: [150, 232, 201, 154, 190, 330, 410],
+        data: marketingData,
       },
       {
-        name: "Direct",
+        name: "Pre-sale",
         type: "line",
         stack: "Total",
         areaStyle: {},
         emphasis: {
           focus: "series",
         },
-        // data: [320, 332, 301, 334, 390, 330, 320],
+        data: preSaleData,
       },
       {
-        name: "Search Engine",
+        name: "Team&Consultant",
         type: "line",
         stack: "Total",
-        label: {
-          show: true,
-          position: "top",
-        },
         areaStyle: {},
         emphasis: {
           focus: "series",
         },
-        // data: [820, 932, 901, 934, 1290, 1330, 1320],
+        data: teamData,
+      },
+      {
+        name: "Investor",
+        type: "line",
+        stack: "Total",
+        areaStyle: {},
+        emphasis: {
+          focus: "series",
+        },
+        data: investorData,
+      },
+      {
+        name: "User Creation",
+        type: "line",
+        stack: "Total",
+        areaStyle: {},
+        emphasis: {
+          focus: "series",
+        },
+        data: userCreationData,
       },
     ],
-    animationDuration: 3000,
-    animationDelay: 2000,
+    animationDuration: 1000,
   };
   return (
     <>

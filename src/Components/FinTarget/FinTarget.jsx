@@ -1,15 +1,22 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import "./finTarget.scss";
-export default function FinTarget() {
+export default function FinTarget({ isLoaded }) {
   return (
-    <div className="financeContainer">
+    <div className="financeContainer ">
       <Player
         id="targetSvg"
+        className={isLoaded ? "animate__animated animate__fadeIn" : "unloaded"}
         autoplay
         loop
         src="https://assets9.lottiefiles.com/packages/lf20_2omr5gpu.json"
       />
-      <div className="financeContext">
+      <div
+        className={
+          isLoaded
+            ? "financeContext animate__animated animate__fadeInDown"
+            : "unloaded"
+        }
+      >
         <h2>Finance Target</h2>
         <h3>The current funding is in the seed round</h3>
         <ul>

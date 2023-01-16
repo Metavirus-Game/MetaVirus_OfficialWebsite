@@ -63,6 +63,9 @@
   color: white;
   // height: 90vh;
   text-align: left;
+  overflow-x: hidden;
+  height: 100vh;
+  background: linear-gradient(#ff6854, #831858);
 }
 
 .gameCore {
@@ -72,8 +75,12 @@
   align-items: center;
 }
 
+.unloaded {
+  visibility: hidden;
+}
+
 .svg {
-  width: 300px;
+  width: 250px;
 }
 
 .gameCoreContext {

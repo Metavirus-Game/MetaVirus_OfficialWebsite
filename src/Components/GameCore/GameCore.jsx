@@ -1,9 +1,16 @@
 import "./gameCore.scss";
 import { Player } from "@lottiefiles/react-lottie-player";
-export default function GameCore() {
+import "animate.css";
+export default function GameCore({ isLoaded }) {
   return (
     <div className="gameCoreContainer">
-      <div className="gameCore">
+      <div
+        className={
+          isLoaded
+            ? "animate__animated animate__bounceInRight gameCore"
+            : "unloaded"
+        }
+      >
         <div className="gameCoreContext">
           <h3>GameFi Thinking</h3>
           <p>
@@ -11,7 +18,6 @@ export default function GameCore() {
             playing Incentivize Crypto and asset trading behavior among players.
           </p>
         </div>
-        {/* <img src="https://via.placeholder.com/200" alt="gamefi" /> */}
         <Player
           className="svg"
           autoplay
@@ -19,8 +25,13 @@ export default function GameCore() {
           src="https://assets6.lottiefiles.com/packages/lf20_YrdJ2K8cQY.json"
         />
       </div>
-      <div className="gameCore">
-        {/* <img src="https://via.placeholder.com/200" alt="income" /> */}
+      <div
+        className={
+          isLoaded
+            ? "animate__animated animate__bounceInLeft gameCore"
+            : "unloaded"
+        }
+      >
         <Player
           className="svg"
           autoplay
@@ -38,7 +49,13 @@ export default function GameCore() {
           </p>
         </div>
       </div>
-      <div className="gameCore">
+      <div
+        className={
+          isLoaded
+            ? "animate__animated animate__bounceInRight gameCore"
+            : "unloaded"
+        }
+      >
         <div className="gameCoreContext">
           <h3>Crypto Circulation</h3>
           <p>
@@ -54,7 +71,6 @@ export default function GameCore() {
           loop
           src="https://assets6.lottiefiles.com/packages/lf20_ml0yft0o.json"
         />
-        {/* <img src="https://via.placeholder.com/200" alt="crypto" /> */}
       </div>
     </div>
   );
