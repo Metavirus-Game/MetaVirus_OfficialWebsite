@@ -56,16 +56,21 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .container {
-    height: 300px;
-    width: 150px;
-  }
-}
-
 @media screen and (max-width: 1000px) {
   .container {
     height: 300px;
     width: 250px;
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    height: 300px;
+    width: 180px;
+    min-width: 150px;
+    p {
+      font-size: 0.8rem;
+    }
   }
 }
