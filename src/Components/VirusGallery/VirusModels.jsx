@@ -2,11 +2,11 @@ import Process from "../Process/Process";
 
 export function VirusModel({ index }) {
   const models = [
-    "assets/shiba/scene.gltf",
-    "assets/low_poly_mccree/scene.gltf",
-    "assets/matilda/scene.gltf",
-    "assets/shiba/scene.gltf",
-    "assets/low_poly_mccree/scene.gltf",
+    "/assets/shiba/scene.gltf",
+    "/assets/low_poly_mccree/scene.gltf",
+    "/assets/matilda/scene.gltf",
+    "/assets/shiba/scene.gltf",
+    "/assets/low_poly_mccree/scene.gltf",
   ];
   // return <img className="modelImg" src={imgs[index]} alt="model" />;
   return (
