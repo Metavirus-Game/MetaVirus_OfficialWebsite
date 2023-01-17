@@ -12,17 +12,17 @@ export default function Team() {
       <Card
         name="Qilin"
         title="Co-founder & COO"
-        describe="Plentiful practical experience in the fields of blockchain, finance and media, Qilin has operated several successful projects in the blockchain field, managed & operated a blockchain distributed overseas storage branch. Qilin is blockchain angel investor, founder of beijing gongxin sunac cloud technology co.,Ltd."
+        describe="Plentiful practical experience in the fields of blockchain, finance and media, Qilin has operated several successful projects in the blockchain field, managed & operated a blockchain distributed overseas storage branch."
       />
       <Card
         name="TT"
         title="Co-founder & CTO"
-        describe="More than 18 years of experience in gam development. Chief architect and technical director of millions online traditional online gam products. Technical director of large-scale travel experience VR game products. TT's massively multiplayer online game developement experience can ensure that the product is technically stable, functional & scalable."
+        describe="More than 18 years of experience in gam development. Chief architect and technical director of millions online traditional online gam products. Technical director of large-scale travel experience VR game products."
       />
       <Card
         name="Chiris"
         title="Copywriting & Graphics director"
-        describe="Chiris Horwood is a teacher and coach who has spent almost two decades in asia and travelling the world. Chiris has produced one feature-length documentary and multiple short films. His photography and digital art has featured in various publication and some of his work can be found in personal collections and on the walls of select cafes and restaurants."
+        describe="Chiris Horwood is a teacher and coach who has spent almost two decades in asia and travelling the world. Chiris has produced one feature-length documentary and multiple short films."
       />
     </div>
   );

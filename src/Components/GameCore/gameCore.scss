@@ -73,6 +73,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .unloaded {
@@ -84,41 +85,20 @@
 }
 
 .gameCoreContext {
-  width: 30rem;
+  width: 30vw;
 }
 
-// .gameCore:first-child {
-//   display: flex;
-//   // justify-content: space-between;
-
-//   .gameCoreContext {
-//     width: 20rem;
-//   }
-//   .svg {
-//     width: 350px;
-//   }
-// }
-
-// .gameCore:nth-child(2) {
-//   display: flex;
-//   // justify-content: space-between;
-
-//   .gameCoreContext {
-//     width: 20rem;
-//   }
-//   .svg {
-//     width: 350px;
-//   }
-// }
-
-// .gameCore:nth-child(3) {
-//   display: flex;
-//   // justify-content: space-between;
-
-//   .gameCoreContext {
-//     width: 20rem;
-//   }
-//   .svg {
-//     width: 350px;
-//   }
-// }
+@media screen and (max-width: 750px) {
+  .gameCoreContext {
+    width: 80vw;
+  }
+  .gameCoreContainer {
+    font-size: 0.8rem;
+  }
+  .svg {
+    width: 150px;
+  }
+  .gameCore:nth-child(2) {
+    flex-direction: column-reverse;
+  }
+}

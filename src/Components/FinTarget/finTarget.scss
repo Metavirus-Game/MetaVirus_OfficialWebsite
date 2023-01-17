@@ -14,18 +14,18 @@
     padding: 2rem;
     width: 50rem;
     h2 {
-      font-size: 2rem;
-    }
-    h3 {
       font-size: 1.5rem;
     }
+    h3 {
+      font-size: 1.2rem;
+    }
     ul {
-      font-size: 1.3em;
       padding: 1rem;
     }
   }
   #targetSvg {
     min-width: 250px;
+    width: 20vw;
   }
   ul {
     text-align: left;
@@ -34,4 +34,7 @@
 
 .unloaded {
   visibility: hidden;
+}
+
+@media screen and (max-width) {
 }

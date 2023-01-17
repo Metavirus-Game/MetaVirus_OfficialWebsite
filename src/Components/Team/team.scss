@@ -2,8 +2,8 @@
   position: absolute;
   max-width: 500px;
   max-height: 500px;
-  width: 18rem;
-  height: 25rem;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   will-change: transform, opacity;
 }
@@ -34,9 +34,13 @@
 .container {
   display: flex;
   align-items: center;
-  height: 100%;
   justify-content: center;
-  flex-basis: 18rem;
+  // width: 20vw;
+  // min-width: 200px;
+  position: relative;
+  width: 250px;
+  min-width: 200px;
+  height: 400px;
 }
 
 .teamContainer {
@@ -44,11 +48,24 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   color: white;
+  align-items: center;
   background: linear-gradient(#831858, #e75845);
-
   height: 100vh;
   h2 {
-    position: absolute;
-    top: 15vh;
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    height: 300px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    height: 300px;
+    width: 250px;
   }
 }

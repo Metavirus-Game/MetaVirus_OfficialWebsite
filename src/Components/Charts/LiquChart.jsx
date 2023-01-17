@@ -158,7 +158,11 @@ function LiquidityChart() {
     <>
       <div className="liqChart">
         <h2 style={{ marginBottom: "3rem" }}>Liquidity Distribution</h2>
-        <ReactECharts option={option} style={{ height: "400px" }} />
+        <ReactECharts
+          option={option}
+          style={{ height: "400px" }}
+          className="mobileChart"
+        />
       </div>
     </>
   );

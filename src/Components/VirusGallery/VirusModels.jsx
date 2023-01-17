@@ -1,10 +1,29 @@
+import Process from "../Process/Process";
+
 export function VirusModel({ index }) {
-  const imgs = [
-    "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/9/9b/RWS_Tarot_07_Chariot.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg",
-    "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
+  const models = [
+    "assets/shiba/scene.gltf",
+    "assets/low_poly_mccree/scene.gltf",
+    "assets/matilda/scene.gltf",
+    "assets/shiba/scene.gltf",
+    "assets/low_poly_mccree/scene.gltf",
   ];
-  return <img className="modelImg" src={imgs[index]} alt="model" />;
+  // return <img className="modelImg" src={imgs[index]} alt="model" />;
+  return (
+    <div className="model">
+      <model-viewer
+        alt="shiba"
+        src={process.env.PUBLIC_URL + models[index]}
+        ar
+        // ios-src="assets/shiba/scene.gltf"
+        // environment-image="shared-assets/environments/moon_1k.hdr"
+        // poster="shared-assets/models/NeilArmstrong.webp"
+        shadow-intensity="1"
+        touch-action="pan-y"
+        camera-controls
+        auto-rotate
+        style={{ width: "300px", height: "400px" }}
+      ></model-viewer>
+    </div>
+  );
 }

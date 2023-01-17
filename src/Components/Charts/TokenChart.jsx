@@ -68,7 +68,11 @@ function TokenChart() {
   };
   return (
     <div className="tokenChart">
-      <ReactECharts option={option} style={{ height: "600px" }} />
+      <ReactECharts
+        option={option}
+        style={{ height: "600px" }}
+        className="mobileChart"
+      />
     </div>
   );
 }

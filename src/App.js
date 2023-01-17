@@ -9,11 +9,13 @@ import FinTarget from "./Components/FinTarget/FinTarget";
 import HomePage from "./Components/HomePage/HomePage";
 import "animate.css";
 const anchors = [
-  "firstPage",
-  "secondPage",
-  "thirdPage",
-  "fourthPage",
-  "fifthPage",
+  "Home",
+  "Gallery",
+  "Core",
+  "Process",
+  "Token&Liquidity",
+  "Target",
+  "Team",
 ];
 
 const App = () => {
@@ -33,9 +35,11 @@ const App = () => {
       navigation
       navigationTooltips={anchors}
       navigat
+      scrollingSpeed="1200"
+      easing="easeInOutCubic"
       sectionsColor={[
-        "#ffffff",
-        "#ffffff",
+        "#201633",
+        "#201633",
         "#201633",
         "#201633",
         "#201633",
@@ -55,7 +59,9 @@ const App = () => {
           <div>
             <div className="section">
               <HomePage isLoaded={sectionLoaded[0]} />
-              {/* <h1>Meta Virus</h1> */}
+              <h1>Meta Virus</h1>
+              <button>Download</button>
+              <button>Watch Video</button>
             </div>
             {/* <div className="section">
               <h2>Game Basics</h2>

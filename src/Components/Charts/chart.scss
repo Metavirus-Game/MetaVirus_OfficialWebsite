@@ -25,3 +25,18 @@
 .unloaded {
   visibility: hidden;
 }
+
+@media screen and (max-width: 800px) {
+  .mobileChart {
+    height: 40vh !important;
+  }
+  .tokenChart {
+    margin-top: 1rem;
+  }
+  .liqChart {
+    margin-bottom: 2.5rem;
+    h2 {
+      margin-bottom: 0rem !important;
+    }
+  }
+}
