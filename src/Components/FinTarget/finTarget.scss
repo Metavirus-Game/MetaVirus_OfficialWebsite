@@ -32,9 +32,9 @@
   }
 }
 
-.unloaded {
-  visibility: hidden;
-}
-
-@media screen and (max-width) {
+@media screen and (max-width: 500px) {
+  #targetSvg {
+    min-width: 200px;
+    width: 20vw;
+  }
 }

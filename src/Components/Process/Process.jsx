@@ -118,25 +118,27 @@ export default function Process({ isLoaded }) {
             height={"15rem"}
             style={{ color: "white" }}
           >
-            <div className={isLoaded ? "context_1" : "beforeLoaded"}>
-              <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                03/22-09/22
-              </h3>
-              <ul
-                style={{
-                  listStyle: "inside",
-                  fontSize: "1.5em",
-                  textAlign: "left",
-                }}
-              >
-                <li>Token contract</li>
-                <li>Cornerstone round</li>
-                <li>VIRU exchange</li>
-                <li>Seed round</li>
-                <li>Demo</li>
-                <li>First pre-sale</li>
-              </ul>
-            </div>
+            {isLoaded && (
+              <div className="context_1">
+                <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
+                  03/22-09/22
+                </h3>
+                <ul
+                  style={{
+                    listStyle: "inside",
+                    fontSize: "1.5em",
+                    textAlign: "left",
+                  }}
+                >
+                  <li>Token contract</li>
+                  <li>Cornerstone round</li>
+                  <li>VIRU exchange</li>
+                  <li>Seed round</li>
+                  <li>Demo</li>
+                  <li>First pre-sale</li>
+                </ul>
+              </div>
+            )}
           </foreignObject>
           <foreignObject
             x="250"
@@ -145,25 +147,27 @@ export default function Process({ isLoaded }) {
             height={"15rem"}
             style={{ color: "white" }}
           >
-            <div className={isLoaded ? "context_2" : "beforeLoaded"}>
-              <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                10/22-12/22
-              </h3>
-              <ul
-                style={{
-                  listStyle: "inside",
-                  fontSize: "1.5em",
-                  textAlign: "left",
-                }}
-              >
-                <li>Trailer</li>
-                <li>Virul marketing</li>
-                <li>Petri dish</li>
-                <li>Second pre-sale</li>
-                <li>Playable demo</li>
-                <li>IDO</li>
-              </ul>
-            </div>
+            {isLoaded && (
+              <div className="context_2">
+                <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
+                  10/22-12/22
+                </h3>
+                <ul
+                  style={{
+                    listStyle: "inside",
+                    fontSize: "1.5em",
+                    textAlign: "left",
+                  }}
+                >
+                  <li>Trailer</li>
+                  <li>Virul marketing</li>
+                  <li>Petri dish</li>
+                  <li>Second pre-sale</li>
+                  <li>Playable demo</li>
+                  <li>IDO</li>
+                </ul>
+              </div>
+            )}
           </foreignObject>
           <foreignObject
             x="750"
@@ -172,25 +176,27 @@ export default function Process({ isLoaded }) {
             height={"20rem"}
             style={{ color: "white" }}
           >
-            <div className={isLoaded ? "context_3" : "beforeLoaded"}>
-              <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                01/23-01/24
-              </h3>
-              <ul
-                style={{
-                  listStyle: "inside",
-                  fontSize: "1.5em",
-                  textAlign: "left",
-                }}
-              >
-                <li>Exchanges</li>
-                <li>Asset pre-sale</li>
-                <li>Closed test</li>
-                <li>Game platform warm-up</li>
-                <li>Public test & game platform release</li>
-                <li>Official operation</li>
-              </ul>
-            </div>
+            {isLoaded && (
+              <div className="context_3">
+                <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
+                  01/23-01/24
+                </h3>
+                <ul
+                  style={{
+                    listStyle: "inside",
+                    fontSize: "1.5em",
+                    textAlign: "left",
+                  }}
+                >
+                  <li>Exchanges</li>
+                  <li>Asset pre-sale</li>
+                  <li>Closed test</li>
+                  <li>Game platform warm-up</li>
+                  <li>Public test & game platform release</li>
+                  <li>Official operation</li>
+                </ul>
+              </div>
+            )}
           </foreignObject>
           <foreignObject
             x="1150"
@@ -199,37 +205,39 @@ export default function Process({ isLoaded }) {
             height={"40rem"}
             style={{ color: "white" }}
           >
-            <div className={isLoaded ? "context_4" : "beforeLoaded"}>
-              <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                01/23-01/24
-              </h3>
-              <ul
-                style={{
-                  listStyle: "inside",
-                  fontSize: "1.5em",
-                  textAlign: "left",
-                }}
-              >
-                <li>
-                  Open the editor to encourage other game developers to join the
-                  MetaVirus game ecosystem.
-                </li>
-                <li>
-                  Launch online and offline interaction, and virtual reality
-                  interacts with reality.
-                </li>
-                <li>
-                  Introduce real-world brands and establish a link between
-                  gameplay and advertising that serves as a mechanism to
-                  encourage the community to be the main body of brand
-                  interaction and cooperation.
-                </li>
-                <li>
-                  Launch augmented reality (AR) technology that has been
-                  strengthened by expected technical advances in the industry.
-                </li>
-              </ul>
-            </div>
+            {isLoaded && (
+              <div className="context_4">
+                <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
+                  01/23-01/24
+                </h3>
+                <ul
+                  style={{
+                    listStyle: "inside",
+                    fontSize: "1.5em",
+                    textAlign: "left",
+                  }}
+                >
+                  <li>
+                    Open the editor to encourage other game developers to join
+                    the MetaVirus game ecosystem.
+                  </li>
+                  <li>
+                    Launch online and offline interaction, and virtual reality
+                    interacts with reality.
+                  </li>
+                  <li>
+                    Introduce real-world brands and establish a link between
+                    gameplay and advertising that serves as a mechanism to
+                    encourage the community to be the main body of brand
+                    interaction and cooperation.
+                  </li>
+                  <li>
+                    Launch augmented reality (AR) technology that has been
+                    strengthened by expected technical advances in the industry.
+                  </li>
+                </ul>
+              </div>
+            )}
           </foreignObject>
           {isLoaded && (
             <path

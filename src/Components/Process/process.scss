@@ -30,10 +30,6 @@
   @include fadeinAnimation(1.5s);
 }
 
-.beforeLoaded {
-  display: none;
-}
-
 .processContainer {
   // background-image: url("web_bg_1.png");
   // background-size: cover;
@@ -43,4 +39,15 @@
   background-size: cover;
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .processContainer {
+    h3 {
+      font-size: 1.1rem !important;
+    }
+    ul {
+      font-size: 0.6rem !important;
+    }
+  }
 }
