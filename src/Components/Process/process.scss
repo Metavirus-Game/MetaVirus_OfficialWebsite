@@ -41,13 +41,23 @@
   align-items: center;
 }
 
-@media screen and (max-width: 450px) {
-  .processContainer {
-    h3 {
-      font-size: 1.1rem !important;
-    }
-    ul {
-      font-size: 0.6rem !important;
-    }
+// mobile version
+.contextContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+}
+
+.mobile {
+  h3 {
+    font-size: 1em;
+    // text-align: left;
   }
+  ul {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
 }

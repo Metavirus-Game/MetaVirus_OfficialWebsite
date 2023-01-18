@@ -239,7 +239,7 @@ export default function Process({ isLoaded }) {
               </div>
             )}
           </foreignObject>
-          {isLoaded && (
+          {/* {isLoaded && (
             <path
               transform="translate(-35,-140)"
               id="paperPlane"
@@ -258,7 +258,29 @@ export default function Process({ isLoaded }) {
             ref={paperPlaneAnimate}
           >
             <mpath href="#planePath" />
-          </animateMotion>
+          </animateMotion> */}
+
+          <path
+            transform="translate(-35,-130)"
+            id="paperPlane"
+            d="M51 81L7 5C55 13.9623 181.2 48.2981 258 41.9434M51 81L26 133M51 81L258 41.9434M26 133L106 143M26 133L84 110.485M258 41.9434L263 41L84 110.485M258 41.9434C190.8 71.4981 144.333 144.962 134 183L106 143M106 143L84 110.485"
+            stroke="white"
+            strokeWidth="7"
+            style={
+              isLoaded ? { visibility: "visible" } : { visibility: "hidden" }
+            }
+          >
+            <animateMotion
+              href="#paperPlane"
+              dur="3s"
+              repeatCount="1"
+              fill="freeze"
+              begin="indefinite"
+              ref={paperPlaneAnimate}
+            >
+              <mpath href="#planePath" />
+            </animateMotion>
+          </path>
         </svg>
       </div>
     </div>

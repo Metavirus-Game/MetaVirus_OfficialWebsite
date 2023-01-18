@@ -7,6 +7,7 @@ import Chart from "./Components/Charts/Chart";
 import Team from "./Components/Team/Team";
 import FinTarget from "./Components/FinTarget/FinTarget";
 import HomePage from "./Components/HomePage/HomePage";
+import MobileProcess from "./Components/Process/MobileProcess";
 import "animate.css";
 const anchors = [
   "Home",
@@ -74,7 +75,11 @@ const App = () => {
             </div>
 
             <div className="section">
-              <Process isLoaded={sectionLoaded[3]} />
+              {window.innerWidth < 500 ? (
+                <MobileProcess isLoaded={sectionLoaded[3]} />
+              ) : (
+                <Process isLoaded={sectionLoaded[3]} />
+              )}
             </div>
             <div className="section">
               <Chart isLoaded={sectionLoaded[4]} />
