@@ -48,6 +48,7 @@ const App = () => {
         "#201633",
         "#201633",
       ]}
+      normalScrollElements=".scrollable-content"
       // onLeave={(origin, destination, direction) => {
       //   console.log("onLeave event", { origin, destination, direction });
       // }}

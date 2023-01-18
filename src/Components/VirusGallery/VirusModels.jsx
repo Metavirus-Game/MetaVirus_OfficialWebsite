@@ -15,7 +15,7 @@ export function VirusModel({ index }) {
   ];
   // return <img className="modelImg" src={imgs[index]} alt="model" />;
   return (
-    <div className="model">
+    <div className="model scrollable-content">
       <model-viewer
         alt="shiba"
         src={process.env.PUBLIC_URL + models[index]}
