@@ -87,7 +87,7 @@ const App = () => {
             <div className="section">
               <FinTarget isLoaded={sectionLoaded[5]} />
             </div>
-            <div className="section">
+            <div className="section fp-auto-height">
               <Team isLoaded={sectionLoaded[6]} />
             </div>
           </div>

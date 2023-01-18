@@ -24,9 +24,11 @@ export function VirusModel({ index }) {
         // environment-image="shared-assets/environments/moon_1k.hdr"
         // poster="shared-assets/models/NeilArmstrong.webp"
         shadow-intensity="1"
-        touch-action="pan-y"
+        touch-action="none"
         camera-controls
         auto-rotate
+        disable-zoom
+        disable-pan
         style={{ width: "300px", height: "400px" }}
       ></model-viewer>
     </div>
