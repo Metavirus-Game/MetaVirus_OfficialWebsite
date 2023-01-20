@@ -12,8 +12,8 @@ export default function MobileProcess({ isLoaded }) {
     <div>
       <div className="processContainer ">
         <svg
-          viewBox="-670 -130 2400 1000"
-          width="80%"
+          viewBox="-160 -140 2000 1000"
+          width="90%"
           fill="none"
           style={{ position: "absolute", top: "1rem" }}
           // xmlns="http://www.w3.org/2000/svg"

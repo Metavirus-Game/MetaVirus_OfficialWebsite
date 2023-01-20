@@ -37,6 +37,7 @@ const App = () => {
       navigationTooltips={anchors}
       navigat
       scrollingSpeed="1200"
+      responsiveWidth={450}
       easing="easeInOutCubic"
       sectionsColor={[
         "#201633",
@@ -88,7 +89,7 @@ const App = () => {
             <div className="section">
               <FinTarget isLoaded={sectionLoaded[5]} />
             </div>
-            <div className="section fp-auto-height">
+            <div className="section">
               <Team isLoaded={sectionLoaded[6]} />
             </div>
           </div>
