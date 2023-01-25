@@ -1,10 +1,10 @@
 export function VirusModel({ index }) {
   const models = [
-    "/assets/shiba/scene.gltf",
-    "/assets/low_poly_mccree/scene.gltf",
-    "/assets/matilda/scene.gltf",
-    "/assets/shiba/scene.gltf",
-    "/assets/low_poly_mccree/scene.gltf",
+    "/assets/GolemEarth.gltf",
+    "/assets/Scorpion.gltf",
+    "/assets/GolemFire.gltf",
+    "/assets/GolemIce.gltf",
+    "/assets/GolemEarth.gltf",
   ];
   const arModels = [
     "/assets/shiba/Shiba.usdz",
@@ -27,9 +27,10 @@ export function VirusModel({ index }) {
         touch-action="none"
         camera-controls
         auto-rotate
+        autoplay
         disable-zoom
         disable-pan
-        style={{ width: "300px", height: "400px" }}
+        style={{ width: "300px", height: "300px" }}
       ></model-viewer>
     </div>
   );
