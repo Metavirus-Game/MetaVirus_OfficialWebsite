@@ -6,8 +6,54 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 const Signin = () => {
   const navigate = useNavigate();
-
-  useEffect(() => {}, []);
+  console.log(
+    localStorage.getItem("accountId"),
+    localStorage.getItem("loginKey")
+  );
+  useEffect(() => {
+    if (localStorage.getItem("accountId") && localStorage.getItem("loginKey")) {
+      const accountId = localStorage.getItem("accountId");
+      const loginKey = localStorage.getItem("loginKey");
+      axios
+        .get("https://acc.metavirus.games/account/loginCheck", {
+          params: {
+            accountId: accountId,
+            loginKey: loginKey,
+            serviceId: "",
+          },
+        })
+        .then((response) => {
+          axios
+            .get("https://acc.metavirus.games/account/getProfile", {
+              params: {
+                id: accountId,
+                token: loginKey,
+                channel: "OFFICIAL-WEB",
+                serviceId: "",
+              },
+              headers: {
+                accountId: accountId,
+                loginKey: loginKey,
+                serviceId: "",
+              },
+            })
+            .then((response) => {
+              console.log(response);
+              const errorCode = response.data.code;
+              if (errorCode === 0) {
+                const userData = response.data.retObject;
+                navigate("/userInfo", { state: { userData: userData } });
+              } else {
+                alert("Failed to retrieve user information");
+                throw Error("Failed to retrieve user information");
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        });
+    }
+  }, []);
 
   const onFinish = ({ username, password }) => {
     console.log("Received values of form: ", username, password);
@@ -24,7 +70,7 @@ const Signin = () => {
         if (errorCode === 0) {
           console.log(response.data.retObject);
           const userData = response.data.retObject;
-          localStorage.setItem("accoountId", userData.accountId);
+          localStorage.setItem("accountId", userData.accountId);
           localStorage.setItem("loginKey", userData.msg);
           return userData;
         } else {
@@ -60,9 +106,6 @@ const Signin = () => {
             const errorCode = response.data.code;
             if (errorCode === 0) {
               const userData = response.data.retObject;
-              console.log("re");
-              //   <Navigate to="/userInfo" />;
-              //   return redirect("/userInfo");
               navigate("/userInfo", { state: { userData: userData } });
             } else {
               alert("Failed to retrieve user information");
@@ -115,15 +158,15 @@ const Signin = () => {
           placeholder="Password"
         />
       </Form.Item>
-      <Form.Item>
+      {/* <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
           <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
-        {/* <a className="login-form-forgot" href="">
+        <a className="login-form-forgot" href="">
           Forgot password
-        </a> */}
-      </Form.Item>
+        </a>
+      </Form.Item> */}
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">

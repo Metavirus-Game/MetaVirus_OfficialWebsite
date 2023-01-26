@@ -1,6 +1,7 @@
 import { Button, Form, Input, Alert } from "antd";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./sign.scss";
 function Signup() {
   const [resendState, setResendState] = useState(
@@ -14,6 +15,8 @@ function Signup() {
   // const [userPassword, setUserPassword] = useState(null);
   const [token, setToken] = useState(null);
   // const [userCode, setUserCode] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -212,7 +215,9 @@ function Signup() {
         </Form.Item>
       </Form>
       <div style={{ color: "black" }}>Already have an account?</div>
-      <Button type="primary">Sign in</Button>
+      <Button type="primary" onClick={() => navigate("/signin")}>
+        Sign in
+      </Button>
     </>
   );
 }
