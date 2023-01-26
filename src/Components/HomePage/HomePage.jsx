@@ -1,4 +1,5 @@
 import "./homePage.scss";
+import Navigation from "../Navigation/Navigation";
 export default function HomePage() {
   return (
     // <div className="homePageContainer">
@@ -9,6 +10,6 @@ export default function HomePage() {
     //     <div className="card"></div>
     //   </div>
     // </div>
-    <></>
+    <>{/* <Navigation /> */}</>
   );
 }
