@@ -1,4 +1,4 @@
-import { Button, Form, Input, Alert } from "antd";
+import { Button, Form, Input, Card, Alert } from "antd";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ function Signup() {
     // setUserPassword(password);
     setResendState(true);
     sessionStorage.setItem("resendState", true);
-    setResendTime(3);
+    setResendTime(60);
     axios
       .post("https://acc.metavirus.games/account/registerRequest", {
         username: email,
@@ -74,6 +74,15 @@ function Signup() {
     console.log("Failed:", errorInfo);
   };
 
+  const formLayout = {
+    labelCol: {
+      span: 6,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+  };
+
   const onSignup = ({ code }) => {
     // setUserCode(code);
     axios
@@ -98,127 +107,112 @@ function Signup() {
 
   const onSignupFailed = (values) => {};
   return (
-    <>
-      <Form
-        name="form1"
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        style={{
-          maxWidth: 600,
-        }}
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={sendVeriCode}
-        onFinishFailed={sendVeriCodeFailed}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Email"
-          name="email"
-          rules={[
-            {
-              type: "email",
-              message: "The input is not valid E-mail!",
-            },
-
-            {
-              required: true,
-              message: "Please input your E-mail!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please input your password!",
-            },
-            {
-              pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
-              message:
-                "Password must contain at least one uppercase, lowercase, and number",
-            },
-            {
-              max: 18,
-              message: "The length of password must less than 18 characters",
-            },
-            {
-              min: 8,
-              message: "The length of password must longer than 8 characters",
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
-
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
+    <div className="signupForm">
+      <Card title="Sign Up" style={{ width: 700 }}>
+        <Form
+          name="form1"
+          // style={{
+          //   maxWidth: 600,
+          // }}
+          initialValues={{
+            remember: true,
           }}
+          // labelAlign="left"
+          onFinish={sendVeriCode}
+          onFinishFailed={sendVeriCodeFailed}
+          autoComplete="off"
         >
-          <Button type="primary" htmlType="submit" disabled={resendState}>
-            Get Verification Code
-          </Button>
-          {resendState && <div>{resendTime}</div>}
-        </Form.Item>
-      </Form>
-      <Form
-        name="form2"
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        style={{
-          maxWidth: 600,
-        }}
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onSignup}
-        onFinishFailed={onSignupFailed}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Verification Code"
-          name="code"
-          rules={[
-            {
-              required: true,
-              message: "Please input your E-mail!",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
+          <Form.Item
+            {...formLayout}
+            label="Email"
+            name="email"
+            rules={[
+              {
+                type: "email",
+                message: "The input is not valid E-mail!",
+              },
+
+              {
+                required: true,
+                message: "Please input your E-mail!",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Password"
+            name="password"
+            {...formLayout}
+            rules={[
+              {
+                required: true,
+                message: "Please input your password!",
+              },
+              {
+                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+                message:
+                  "Password must contain at least one uppercase, lowercase, and number",
+              },
+              {
+                max: 18,
+                message: "The length of password must less than 18 characters",
+              },
+              {
+                min: 8,
+                message: "The length of password must longer than 8 characters",
+              },
+            ]}
+          >
+            <Input.Password />
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit" disabled={resendState}>
+              Get Verification Code
+            </Button>
+            {resendState && <div>Retry after: {resendTime}</div>}
+          </Form.Item>
+        </Form>
+        <Form
+          name="form2"
+          initialValues={{
+            remember: true,
           }}
+          onFinish={onSignup}
+          onFinishFailed={onSignupFailed}
+          autoComplete="off"
         >
-          <Button type="primary" htmlType="submit">
-            Sign Up
+          <Form.Item
+            label="Verification Code"
+            name="code"
+            {...formLayout}
+            rules={[
+              {
+                required: true,
+                message: "Please input your verification code",
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Sign Up
+            </Button>
+          </Form.Item>
+        </Form>
+        <div>
+          <div style={{ color: "black", marginBottom: "0.5rem" }}>
+            Already have an account?
+          </div>
+          <Button type="primary" onClick={() => navigate("/signin")}>
+            Sign in
           </Button>
-        </Form.Item>
-      </Form>
-      <div style={{ color: "black" }}>Already have an account?</div>
-      <Button type="primary" onClick={() => navigate("/signin")}>
-        Sign in
-      </Button>
-    </>
+        </div>
+      </Card>
+    </div>
   );
 }
 export default Signup;
