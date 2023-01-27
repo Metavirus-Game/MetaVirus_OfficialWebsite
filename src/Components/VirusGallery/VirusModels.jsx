@@ -26,7 +26,7 @@ export function VirusModel({ index }) {
         alt="shiba"
         src={process.env.PUBLIC_URL + models[index]}
         ar
-        ar-scale="10%"
+        ar-scale="70%"
         ios-src={process.env.PUBLIC_URL + arModels[index]}
         // environment-image="shared-assets/environments/moon_1k.hdr"
         // poster="shared-assets/models/NeilArmstrong.webp"

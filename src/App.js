@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Signup from "./Components/Signup&Signin/Signup";
 import Signin from "./Components/Signup&Signin/Signin";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
@@ -39,7 +39,9 @@ export default function App() {
   }, []);
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
-      <BrowserRouter>
+      {/* BrowserRouter not working when hoisting via github pages */}
+      {/* <BrowserRouter> */}
+      <HashRouter>
         <Routes>
           <Route path={process.env.REACT_APP_HOMEPAGE_URL} element={<Main />} />
           ;
@@ -57,7 +59,8 @@ export default function App() {
           />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
+      {/* </BrowserRouter> */}
     </AuthContext.Provider>
   );
 }
