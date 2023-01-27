@@ -39,18 +39,18 @@ export default function App() {
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
       {/* BrowserRouter not working when hoisting via github pages */}
-      {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/MetaVirusWeb_Formal">
+        {/* <HashRouter basename={process.env.PUBLIC_URL}> */}
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route exact path="/" element={<Main />} />
           ;
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/userInfo" element={<UserInfo />} />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
-      </HashRouter>
-      {/* </BrowserRouter> */}
+        {/* </HashRouter> */}
+      </BrowserRouter>
     </AuthContext.Provider>
   );
 }
