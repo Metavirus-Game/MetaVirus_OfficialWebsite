@@ -20,9 +20,50 @@
   transform: perspective(1000px) translateZ(100px);
 }
 
-.homePageContainer {
-  display: flex;
-  justify-content: center;
+.homeContainer {
+  background-image: url("./homeBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
+  width: 100vw;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 4em;
+  }
+  button {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 2rem;
+    font-family: "Nunito", sans-serif;
+    background-color: rgb(85, 73, 163);
+    color: white;
+    border: none;
+  }
+}
+
+.videoPlayer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video {
+  width: 400px;
+}
+
+.closeButton {
+  font-size: 1.5rem;
+  position: absolute;
+}
+
+@media screen and (max-width: 450px) {
+  .video {
+    width: 350px;
+  }
 }

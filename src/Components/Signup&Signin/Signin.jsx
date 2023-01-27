@@ -3,13 +3,12 @@ import { Button, Checkbox, Form, Input, Card } from "antd";
 import axios from "axios";
 import "./sign.scss";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useContext, useState } from "react";
+import { AuthContext } from "../../App";
 const Signin = () => {
   const navigate = useNavigate();
-  console.log(
-    localStorage.getItem("accountId"),
-    localStorage.getItem("loginKey")
-  );
+  const { auth, setAuth } = useContext(AuthContext);
+  // const [userData, setUserData] = useState(null);
   useEffect(() => {
     if (localStorage.getItem("accountId") && localStorage.getItem("loginKey")) {
       const accountId = localStorage.getItem("accountId");
@@ -42,9 +41,20 @@ const Signin = () => {
               const errorCode = response.data.code;
               if (errorCode === 0) {
                 const userData = response.data.retObject;
+                setAuth(true);
                 navigate("/MetaVirusWeb_Formal/userInfo", {
                   state: { userData: userData },
                 });
+                // setUserData(response.data.retObject);
+
+                // async function redirect() {
+                //   await setAuth(true);
+                //   navigate("/MetaVirusWeb_Formal/userInfo", {
+                //     state: { userData: userData },
+                //   });
+                // }
+                // console.log("ss: ", auth);
+                // redirect();
               } else {
                 alert("Failed to retrieve user information");
                 throw Error("Failed to retrieve user information");
@@ -56,6 +66,14 @@ const Signin = () => {
         });
     }
   }, []);
+
+  // useEffect(() => {
+  //   if (auth === true) {
+  //     navigate("/MetaVirusWeb_Formal/userInfo", {
+  //       state: { userData: userData },
+  //     });
+  //   }
+  // }, [auth, userData]);
 
   const onFinish = ({ username, password }) => {
     console.log("Received values of form: ", username, password);
@@ -108,6 +126,7 @@ const Signin = () => {
             const errorCode = response.data.code;
             if (errorCode === 0) {
               const userData = response.data.retObject;
+              setAuth(true);
               navigate(process.env.REACT_APP_HOMEPAGE_URL + "/userInfo", {
                 state: { userData: userData },
               });

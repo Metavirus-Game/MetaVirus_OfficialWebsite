@@ -7,11 +7,11 @@ export function VirusModel({ index }) {
     "/assets/Scorpion.gltf",
   ];
   const arModels = [
-    "/assets/shiba/Shiba.usdz",
+    "/assets/EarthWorm.usdc",
     "/assets/low_poly_mccree/Low_poly_McCree.usdz",
     "/assets/matilda/Matilda.usdz",
     "/assets/shiba/Shiba.usdz",
-    "/assets/low_poly_mccree/Low_poly_McCree.usdz",
+    "/assets/EarthWorm.usdc",
   ];
   // return <img className="modelImg" src={imgs[index]} alt="model" />;
   return (

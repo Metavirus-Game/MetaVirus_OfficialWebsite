@@ -3,41 +3,31 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  createRoutesFromElements,
-  Route,
-  Routes,
-} from "react-router-dom";
-import Signup from "./Components/Signup&Signin/Signup";
-import Signin from "./Components/Signup&Signin/Signin";
-import ErrorPage from "./Components/ErrorPage/ErrorPage";
-import UserInfo from "./Components/UserInfo/UserInfo";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const router = createBrowserRouter([
-  {
-    path: process.env.REACT_APP_HOMEPAGE_URL,
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: process.env.REACT_APP_HOMEPAGE_URL + "/signin",
-    element: <Signin />,
-  },
-  {
-    path: process.env.REACT_APP_HOMEPAGE_URL + "/signup",
-    element: <Signup />,
-  },
-  {
-    path: process.env.REACT_APP_HOMEPAGE_URL + "/userInfo",
-    element: <UserInfo />,
-  },
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: process.env.REACT_APP_HOMEPAGE_URL,
+//     element: <App />,
+//     errorElement: <ErrorPage />,
+//   },
+//   {
+//     path: process.env.REACT_APP_HOMEPAGE_URL + "/signin",
+//     element: <Signin />,
+//   },
+//   {
+//     path: process.env.REACT_APP_HOMEPAGE_URL + "/signup",
+//     element: <Signup />,
+//   },
+//   {
+//     path: process.env.REACT_APP_HOMEPAGE_URL + "/userInfo",
+//     element: <UserInfo />,
+//   },
+//   {
+//     path: "*",
+//     element: <ErrorPage />,
+//   },
+// ]);
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
 //       <React.Fragment>
@@ -60,7 +50,8 @@ const router = createBrowserRouter([
 // );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <App />
   </React.StrictMode>
 );
 
