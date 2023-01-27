@@ -1,17 +1,23 @@
 export function VirusModel({ index }) {
   const models = [
+    "/assets/EarthWorm.gltf",
+    "/assets/GrimReaper.gltf",
+    "/assets/PlantChewer.gltf",
+    "/assets/Gloom.gltf",
     "/assets/GolemEarth.gltf",
     "/assets/GolemFire.gltf",
     "/assets/GolemIce.gltf",
-    "/assets/EarthWorm.gltf",
     "/assets/Scorpion.gltf",
   ];
   const arModels = [
+    "/assets/EarthWorm.usdz",
+    "/assets/GrimReaper.usdz",
+    "/assets/PlantChewer.usdz",
+    "/assets/Gloom.usdz",
+    "/assets/GolemEarth.usdz",
+    "/assets/GolemFire.usdz",
     "/assets/GolemIce.usdz",
-    "/assets/low_poly_mccree/Low_poly_McCree.usdz",
-    "/assets/matilda/Matilda.usdz",
-    "/assets/shiba/Shiba.usdz",
-    "/assets/GolemIce.usdz",
+    "/assets/Scorpion.usdz",
   ];
   // return <img className="modelImg" src={imgs[index]} alt="model" />;
   return (
@@ -20,6 +26,7 @@ export function VirusModel({ index }) {
         alt="shiba"
         src={process.env.PUBLIC_URL + models[index]}
         ar
+        ar-scale="10%"
         ios-src={process.env.PUBLIC_URL + arModels[index]}
         // environment-image="shared-assets/environments/moon_1k.hdr"
         // poster="shared-assets/models/NeilArmstrong.webp"
