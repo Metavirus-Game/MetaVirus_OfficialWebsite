@@ -40,7 +40,7 @@ export default function App() {
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
       {/* BrowserRouter not working when hoisting via github pages */}
-      <BrowserRouter basename={process.env.REACT_APP_HOMEPAGE_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         {/* <HashRouter> */}
         <Routes>
           <Route path="/" element={<Main />} />

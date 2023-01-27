@@ -7,9 +7,9 @@ export default function Navigation() {
   return (
     <nav id="nav">
       {auth ? (
-        <a href={process.env.REACT_APP_HOMEPAGE_URL + "/signin"}>My Account</a>
+        <a href={process.env.PUBLIC_URL + "/signin"}>My Account</a>
       ) : (
-        <a href={process.env.REACT_APP_HOMEPAGE_URL + "/signup"}>Sign Up</a>
+        <a href={process.env.PUBLIC_URL + "/signup"}>Sign Up</a>
       )}
     </nav>
   );
