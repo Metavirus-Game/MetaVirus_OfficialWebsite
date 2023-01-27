@@ -47,7 +47,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/userInfo" element={<UserInfo />} />
-          <Route path={"*"} element={<ErrorPage />} />
+          {/* <Route path={"*"} element={<ErrorPage />} /> */}
         </Routes>
         {/* </HashRouter> */}
       </BrowserRouter>
