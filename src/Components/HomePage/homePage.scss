@@ -43,6 +43,9 @@
     background-color: rgb(85, 73, 163);
     color: white;
     border: none;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

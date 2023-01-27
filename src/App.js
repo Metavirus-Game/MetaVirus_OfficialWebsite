@@ -43,11 +43,11 @@ export default function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         {/* <HashRouter> */}
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="" element={<Main />} />
           ;
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/userInfo" element={<UserInfo />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="signin" element={<Signin />} />
+          <Route path="userInfo" element={<UserInfo />} />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
         {/* </HashRouter> */}

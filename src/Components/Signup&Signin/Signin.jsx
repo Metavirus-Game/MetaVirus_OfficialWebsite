@@ -203,10 +203,7 @@ const Signin = () => {
             >
               Log in
             </Button>
-            Or{" "}
-            <a href={process.env.REACT_APP_HOMEPAGE_URL + "/signup"}>
-              register now!
-            </a>
+            Or <a href={process.env.PUBLIC_URL + "/signup"}>register now!</a>
           </Form.Item>
         </Form>
       </Card>
