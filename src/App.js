@@ -9,7 +9,6 @@ import axios from "axios";
 export const AuthContext = createContext();
 export default function App() {
   const [auth, setAuth] = useState(false);
-
   useEffect(() => {
     if (localStorage.getItem("accountId") && localStorage.getItem("loginKey")) {
       const accountId = localStorage.getItem("accountId");
@@ -43,11 +42,11 @@ export default function App() {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         {/* <HashRouter> */}
         <Routes>
-          <Route path="" element={<Main />} />
+          <Route path="/" element={<Main />} />
           ;
-          <Route path="signup" element={<Signup />} />
-          <Route path="signin" element={<Signin />} />
-          <Route path="userInfo" element={<UserInfo />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/userInfo" element={<UserInfo />} />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
         {/* </HashRouter> */}
