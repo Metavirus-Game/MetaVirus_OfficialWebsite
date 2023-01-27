@@ -102,10 +102,7 @@ export default function VirusGallery({ isLoaded }) {
     <div className="galleryContainer">
       <div id="galleryContext">
         <h2>Virus Gallery</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
+        <p>There is a plenty of differenet "Viruses" in our game.</p>
       </div>
       <div className="stackContainer">{isLoaded && <Deck />}</div>
     </div>
