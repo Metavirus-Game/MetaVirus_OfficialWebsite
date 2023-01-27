@@ -13,18 +13,14 @@ export default function UserInfo() {
   function logout() {
     localStorage.removeItem("accountId");
     localStorage.removeItem("loginKey");
-    navigate(process.env.REACT_APP_HOMEPAGE_URL + "/signin");
+    navigate("/signin");
     setAuth(false);
   }
-
-  useEffect(() => {
-    console.log(auth);
-  }, [auth]);
   return (
     <div className="userInfo">
       <HomeFilled
         style={{ fontSize: "2.5rem", marginTop: "2rem" }}
-        onClick={() => navigate(process.env.REACT_APP_HOMEPAGE_URL)}
+        onClick={() => navigate("/")}
       />
       {auth ? (
         <div style={{ marginTop: "2rem" }}>

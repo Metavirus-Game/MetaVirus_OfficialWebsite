@@ -42,7 +42,7 @@ const Signin = () => {
               if (errorCode === 0) {
                 const userData = response.data.retObject;
                 setAuth(true);
-                navigate("/MetaVirusWeb_Formal/userInfo", {
+                navigate("/userInfo", {
                   state: { userData: userData },
                 });
                 // setUserData(response.data.retObject);
@@ -127,7 +127,7 @@ const Signin = () => {
             if (errorCode === 0) {
               const userData = response.data.retObject;
               setAuth(true);
-              navigate(process.env.REACT_APP_HOMEPAGE_URL + "/userInfo", {
+              navigate("/userInfo", {
                 state: { userData: userData },
               });
             } else {
@@ -145,10 +145,7 @@ const Signin = () => {
   };
   return (
     <div className="signForm">
-      <HomeOutlined
-        className="homeIcon"
-        onClick={() => navigate(process.env.REACT_APP_HOMEPAGE_URL)}
-      />
+      <HomeOutlined className="homeIcon" onClick={() => navigate("/")} />
       <Card title="Sign In" style={{ width: 400 }}>
         <Form
           name="normal_login"

@@ -109,10 +109,7 @@ function Signup() {
   const onSignupFailed = (values) => {};
   return (
     <div className="signForm">
-      <HomeOutlined
-        className="homeIcon"
-        onClick={() => navigate(process.env.REACT_APP_HOMEPAGE_URL)}
-      />
+      <HomeOutlined className="homeIcon" onClick={() => navigate("/")} />
       <Card title="Sign Up" style={{ width: 700 }} className="signupCard">
         <Form
           name="form1"
@@ -212,12 +209,7 @@ function Signup() {
           <div style={{ color: "black", marginBottom: "0.5rem" }}>
             Already have an account?
           </div>
-          <Button
-            type="primary"
-            onClick={() =>
-              navigate(process.env.REACT_APP_HOMEPAGE_URL + "/signin")
-            }
-          >
+          <Button type="primary" onClick={() => navigate("/signin")}>
             Sign in
           </Button>
         </div>

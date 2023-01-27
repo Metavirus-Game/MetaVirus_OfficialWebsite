@@ -40,27 +40,18 @@ export default function App() {
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>
       {/* BrowserRouter not working when hoisting via github pages */}
-      {/* <BrowserRouter> */}
-      <HashRouter>
+      <BrowserRouter basename={process.env.REACT_APP_HOMEPAGE_URL}>
+        {/* <HashRouter> */}
         <Routes>
-          <Route path={process.env.REACT_APP_HOMEPAGE_URL} element={<Main />} />
+          <Route path="/" element={<Main />} />
           ;
-          <Route
-            path={process.env.REACT_APP_HOMEPAGE_URL + "/signup"}
-            element={<Signup />}
-          />
-          <Route
-            path={process.env.REACT_APP_HOMEPAGE_URL + "/signin"}
-            element={<Signin />}
-          />
-          <Route
-            path={process.env.REACT_APP_HOMEPAGE_URL + "/userInfo"}
-            element={<UserInfo />}
-          />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/userInfo" element={<UserInfo />} />
           <Route path={"*"} element={<ErrorPage />} />
         </Routes>
-      </HashRouter>
-      {/* </BrowserRouter> */}
+        {/* </HashRouter> */}
+      </BrowserRouter>
     </AuthContext.Provider>
   );
 }
