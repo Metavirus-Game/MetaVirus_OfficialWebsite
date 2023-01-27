@@ -8,9 +8,9 @@ import Team from "./Components/Team/Team";
 import FinTarget from "./Components/FinTarget/FinTarget";
 import HomePage from "./Components/HomePage/HomePage";
 import MobileProcess from "./Components/Process/MobileProcess";
-
 import "animate.css";
 import Navigation from "./Components/Navigation/Navigation";
+import { useEffect, useContext } from "react";
 const anchors = [
   "Home",
   "Gallery",
@@ -32,6 +32,12 @@ const App = () => {
     false,
     false,
   ];
+
+  // useEffect(()=>{
+
+  // },[])
+  // const test = useContext(authContext);
+
   return (
     <>
       <Navigation />

@@ -1,10 +1,10 @@
 export function VirusModel({ index }) {
   const models = [
     "/assets/GolemEarth.gltf",
-    "/assets/Scorpion.gltf",
     "/assets/GolemFire.gltf",
     "/assets/GolemIce.gltf",
-    "/assets/GolemEarth.gltf",
+    "/assets/EarthWorm.gltf",
+    "/assets/Scorpion.gltf",
   ];
   const arModels = [
     "/assets/shiba/Shiba.usdz",

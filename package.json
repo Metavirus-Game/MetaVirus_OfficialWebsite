@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://GaryJC.github.io/MetaVirusWeb_Formal",
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@fullpage/react-fullpage": "^0.1.31",
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "@react-spring/web": "^9.6.1",

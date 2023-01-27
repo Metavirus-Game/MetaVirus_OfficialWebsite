@@ -3,7 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+  Routes,
+} from "react-router-dom";
 import Signup from "./Components/Signup&Signin/Signup";
 import Signin from "./Components/Signup&Signin/Signin";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
@@ -11,20 +17,20 @@ import UserInfo from "./Components/UserInfo/UserInfo";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: process.env.REACT_APP_HOMEPAGE_URL,
     element: <App />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/signin",
+    path: process.env.REACT_APP_HOMEPAGE_URL + "/signin",
     element: <Signin />,
   },
   {
-    path: "/signup",
+    path: process.env.REACT_APP_HOMEPAGE_URL + "/signup",
     element: <Signup />,
   },
   {
-    path: "/userInfo",
+    path: process.env.REACT_APP_HOMEPAGE_URL + "/userInfo",
     element: <UserInfo />,
   },
   {
@@ -32,6 +38,26 @@ const router = createBrowserRouter([
     element: <ErrorPage />,
   },
 ]);
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//       <React.Fragment>
+//         <Route path={process.env.REACT_APP_HOMEPAGE_URL} element={<App />} />
+//         <Route
+//           path={process.env.REACT_APP_HOMEPAGE_URL + "/signup"}
+//           element={<Signup />}
+//         />
+//         <Route
+//           path={process.env.REACT_APP_HOMEPAGE_URL + "/signin"}
+//           element={<Signin />}
+//         />
+//         <Route
+//           path={process.env.REACT_APP_HOMEPAGE_URL + "/userInfo"}
+//           element={<UserInfo />}
+//         />
+//         <Route path={"*"} element={<ErrorPage />} />
+//       </React.Fragment>
+//   )
+// );
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

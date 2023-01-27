@@ -1,4 +1,5 @@
 import { Button, Form, Input, Card, Alert } from "antd";
+import { HomeOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -107,8 +108,12 @@ function Signup() {
 
   const onSignupFailed = (values) => {};
   return (
-    <div className="signupForm">
-      <Card title="Sign Up" style={{ width: 700 }}>
+    <div className="signForm">
+      <HomeOutlined
+        className="homeIcon"
+        onClick={() => navigate(process.env.REACT_APP_HOMEPAGE_URL)}
+      />
+      <Card title="Sign Up" style={{ width: 700 }} className="signupCard">
         <Form
           name="form1"
           // style={{
@@ -207,7 +212,12 @@ function Signup() {
           <div style={{ color: "black", marginBottom: "0.5rem" }}>
             Already have an account?
           </div>
-          <Button type="primary" onClick={() => navigate("/signin")}>
+          <Button
+            type="primary"
+            onClick={() =>
+              navigate(process.env.REACT_APP_HOMEPAGE_URL + "/signin")
+            }
+          >
             Sign in
           </Button>
         </div>

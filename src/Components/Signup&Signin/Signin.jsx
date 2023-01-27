@@ -1,4 +1,4 @@
-import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { LockOutlined, UserOutlined, HomeOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, Card } from "antd";
 import axios from "axios";
 import "./sign.scss";
@@ -42,7 +42,9 @@ const Signin = () => {
               const errorCode = response.data.code;
               if (errorCode === 0) {
                 const userData = response.data.retObject;
-                navigate("/userInfo", { state: { userData: userData } });
+                navigate("/MetaVirusWeb_Formal/userInfo", {
+                  state: { userData: userData },
+                });
               } else {
                 alert("Failed to retrieve user information");
                 throw Error("Failed to retrieve user information");
@@ -106,7 +108,9 @@ const Signin = () => {
             const errorCode = response.data.code;
             if (errorCode === 0) {
               const userData = response.data.retObject;
-              navigate("/userInfo", { state: { userData: userData } });
+              navigate(process.env.REACT_APP_HOMEPAGE_URL + "/userInfo", {
+                state: { userData: userData },
+              });
             } else {
               alert("Failed to retrieve user information");
               throw Error("Failed to retrieve user information");
@@ -121,7 +125,11 @@ const Signin = () => {
       });
   };
   return (
-    <div className="signupForm">
+    <div className="signForm">
+      <HomeOutlined
+        className="homeIcon"
+        onClick={() => navigate(process.env.REACT_APP_HOMEPAGE_URL)}
+      />
       <Card title="Sign In" style={{ width: 400 }}>
         <Form
           name="normal_login"
@@ -179,7 +187,10 @@ const Signin = () => {
             >
               Log in
             </Button>
-            Or <a href="/signup">register now!</a>
+            Or{" "}
+            <a href={process.env.REACT_APP_HOMEPAGE_URL + "/signup"}>
+              register now!
+            </a>
           </Form.Item>
         </Form>
       </Card>
