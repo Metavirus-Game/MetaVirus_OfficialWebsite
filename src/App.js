@@ -9,6 +9,7 @@ import axios from "axios";
 export const AuthContext = createContext();
 export default function App() {
   const [auth, setAuth] = useState(false);
+  console.log(process.env.PUBLIC_URL);
   useEffect(() => {
     if (localStorage.getItem("accountId") && localStorage.getItem("loginKey")) {
       const accountId = localStorage.getItem("accountId");
