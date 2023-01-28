@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.a8e0526e.css",
+    "main.css": "/static/css/main.aa626035.css",
     "main.js": "/static/js/main.8744ef9b.js",
     "static/js/787.40c0fefa.chunk.js": "/static/js/787.40c0fefa.chunk.js",
     "static/media/gameVideo.mp4": "/static/media/gameVideo.937e32cdf19d9ec5d6b1.mp4",
@@ -9,12 +9,12 @@
     "static/media/planet_bg_1.png": "/static/media/planet_bg_1.10dbbd4cde805bd785e6.png",
     "static/media/planet_bg_2.png": "/static/media/planet_bg_2.326c2b9d1cb070e77bc2.png",
     "index.html": "/index.html",
-    "main.a8e0526e.css.map": "/static/css/main.a8e0526e.css.map",
+    "main.aa626035.css.map": "/static/css/main.aa626035.css.map",
     "main.8744ef9b.js.map": "/static/js/main.8744ef9b.js.map",
     "787.40c0fefa.chunk.js.map": "/static/js/787.40c0fefa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8e0526e.css",
+    "static/css/main.aa626035.css",
     "static/js/main.8744ef9b.js"
   ]
 }
