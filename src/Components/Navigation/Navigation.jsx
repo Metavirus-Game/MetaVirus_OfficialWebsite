@@ -3,7 +3,7 @@ import "./navigation.scss";
 import { AuthContext } from "../../App";
 export default function Navigation() {
   const { auth, setAuth } = useContext(AuthContext);
-  console.log(auth);
+  // console.log(auth);
   return (
     <nav id="nav">
       {auth ? (

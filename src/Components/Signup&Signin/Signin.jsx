@@ -1,9 +1,9 @@
 import { LockOutlined, UserOutlined, HomeOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input, Card } from "antd";
+import { Button, Form, Input, Card } from "antd";
 import axios from "axios";
 import "./sign.scss";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { AuthContext } from "../../App";
 const Signin = () => {
   const navigate = useNavigate();

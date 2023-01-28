@@ -3,13 +3,12 @@ import { HomeFilled } from "@ant-design/icons";
 import { Button } from "antd";
 import "./userInfo.scss";
 import { AuthContext } from "../../App";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 export default function UserInfo() {
   const location = useLocation();
   const navigate = useNavigate();
   const { auth, setAuth } = useContext(AuthContext);
   const { username, phone, referralCode } = location.state.userData;
-  console.log(auth);
   function logout() {
     localStorage.removeItem("accountId");
     localStorage.removeItem("loginKey");
