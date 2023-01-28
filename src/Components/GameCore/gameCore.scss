@@ -5,11 +5,11 @@
   align-items: center;
   flex-wrap: wrap;
   color: white;
-  // height: 90vh;
+  height: 100vh;
   text-align: left;
   overflow-x: hidden;
-  height: 100vh;
   background: linear-gradient(#ff6854, #831858);
+  background-size: cover;
 }
 
 .gameCore {
@@ -30,6 +30,7 @@
 
 .gameCoreContext {
   width: 30vw;
+  margin-top: 5vh;
 }
 
 @media screen and (max-width: 750px) {
@@ -45,4 +46,10 @@
   .gameCore:nth-child(2) {
     flex-direction: column-reverse;
   }
+}
+
+@media screen and (max-width: 450px) {
+  // .gameCoreContainer {
+  //   height: auto !important;
+  // }
 }

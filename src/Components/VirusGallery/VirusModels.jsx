@@ -37,7 +37,7 @@ export function VirusModel({ index }) {
         autoplay
         disable-zoom
         disable-pan
-        style={{ width: "300px", height: "300px" }}
+        style={{ width: "250px", height: "250px" }}
       ></model-viewer>
     </div>
   );

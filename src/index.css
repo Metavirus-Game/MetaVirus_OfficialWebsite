@@ -27,7 +27,7 @@ code {
   color: #fff;
 }
 .section {
-  height: 100vh !important ;
+  /* height: 100vh !important ; */
   /* height: -webkit-fill-available !important; */
 }
 
@@ -40,8 +40,11 @@ code {
   background: white !important;
 }
 
-@media screen and (max-width: 450px) {
-  .section {
+@media screen and (min-width: 450px) {
+  /* .section {
     height: -webkit-fill-available !important;
-  }
+  } */
+  /* .section {
+    height: 100vh !important ;
+  } */
 }

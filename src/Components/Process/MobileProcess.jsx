@@ -9,8 +9,8 @@ export default function MobileProcess({ isLoaded }) {
   }
 
   return (
-    <div>
-      <div className="processContainer ">
+    <div className="processContainer">
+      <div>
         <svg
           viewBox="-160 -140 2000 1000"
           width="90%"

@@ -24,17 +24,30 @@
     }
   }
   #targetSvg {
-    min-width: 250px;
+    min-width: 200px;
     width: 20vw;
+    height: auto;
   }
   ul {
     text-align: left;
   }
 }
 
-@media screen and (max-width: 500px) {
-  #targetSvg {
-    min-width: 200px;
-    width: 20vw;
+@media screen and (max-width: 800px) {
+  .financeContainer {
+    background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
+    .financeContext {
+      width: 35rem;
+      h2 {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      h3 {
+        font-size: 1rem;
+      }
+      ul {
+        padding: 1rem;
+      }
+    }
   }
 }
