@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ccd9db32.css",
-    "main.js": "/static/js/main.85d1886f.js",
+    "main.js": "/static/js/main.df14705f.js",
     "static/js/787.40c0fefa.chunk.js": "/static/js/787.40c0fefa.chunk.js",
     "static/media/gameVideo.mp4": "/static/media/gameVideo.512a017af4e8869074eb.mp4",
     "static/media/card_back.png": "/static/media/card_back.0293c5d1aa7faf63a59a.png",
@@ -9,11 +9,11 @@
     "static/media/planet_bg_2.png": "/static/media/planet_bg_2.326c2b9d1cb070e77bc2.png",
     "index.html": "/index.html",
     "main.ccd9db32.css.map": "/static/css/main.ccd9db32.css.map",
-    "main.85d1886f.js.map": "/static/js/main.85d1886f.js.map",
+    "main.df14705f.js.map": "/static/js/main.df14705f.js.map",
     "787.40c0fefa.chunk.js.map": "/static/js/787.40c0fefa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ccd9db32.css",
-    "static/js/main.85d1886f.js"
+    "static/js/main.df14705f.js"
   ]
 }

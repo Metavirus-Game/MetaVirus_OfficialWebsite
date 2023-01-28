@@ -24,7 +24,7 @@ export default function UserInfo() {
       {auth ? (
         <div style={{ marginTop: "2rem" }}>
           <div>Username: {username}</div>
-          <div>phone: {phone}</div>
+          {/* <div>phone: {phone}</div> */}
           <div>
             <strong>Referral Code: {referralCode}</strong>
           </div>
