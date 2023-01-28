@@ -1,20 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.aa626035.css",
-    "main.js": "/static/js/main.8744ef9b.js",
+    "main.css": "/static/css/main.ccd9db32.css",
+    "main.js": "/static/js/main.85d1886f.js",
     "static/js/787.40c0fefa.chunk.js": "/static/js/787.40c0fefa.chunk.js",
-    "static/media/gameVideo.mp4": "/static/media/gameVideo.937e32cdf19d9ec5d6b1.mp4",
-    "static/media/homeBg.png": "/static/media/homeBg.9df898a0465ed75b698b.png",
+    "static/media/gameVideo.mp4": "/static/media/gameVideo.512a017af4e8869074eb.mp4",
     "static/media/card_back.png": "/static/media/card_back.0293c5d1aa7faf63a59a.png",
     "static/media/planet_bg_1.png": "/static/media/planet_bg_1.10dbbd4cde805bd785e6.png",
     "static/media/planet_bg_2.png": "/static/media/planet_bg_2.326c2b9d1cb070e77bc2.png",
     "index.html": "/index.html",
-    "main.aa626035.css.map": "/static/css/main.aa626035.css.map",
-    "main.8744ef9b.js.map": "/static/js/main.8744ef9b.js.map",
+    "main.ccd9db32.css.map": "/static/css/main.ccd9db32.css.map",
+    "main.85d1886f.js.map": "/static/js/main.85d1886f.js.map",
     "787.40c0fefa.chunk.js.map": "/static/js/787.40c0fefa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa626035.css",
-    "static/js/main.8744ef9b.js"
+    "static/css/main.ccd9db32.css",
+    "static/js/main.85d1886f.js"
   ]
 }
