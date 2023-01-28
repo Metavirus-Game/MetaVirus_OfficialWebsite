@@ -12,3 +12,11 @@
     font-weight: bold;
   }
 }
+
+@media screen and (max-width: 450px) {
+  #nav {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}

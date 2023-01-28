@@ -10,7 +10,7 @@
 
 .front,
 .back {
-  background-size: cover;
+  background-size: 100% 100%;
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -24,7 +24,8 @@
 }
 
 .back {
-  background-image: url(https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop);
+  // background-image: url(https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop);
+  background-image: url("./card_back.png");
 }
 
 .front {
@@ -38,7 +39,7 @@
   // width: 20vw;
   // min-width: 200px;
   position: relative;
-  width: 250px;
+  width: 270px;
   min-width: 200px;
   height: 400px;
 }
@@ -59,14 +60,14 @@
 @media screen and (max-width: 1000px) {
   .container {
     height: 300px;
-    width: 250px;
+    width: 220px;
     min-width: 200px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .container {
-    height: 300px;
+    height: 260px;
     width: 180px;
     min-width: 150px;
     p {

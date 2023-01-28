@@ -22,13 +22,14 @@
 
 .deck > div {
   background-color: white;
-  background-size: auto 85%;
+  background-size: 100% 100%;
+  // background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  width: 45vh;
-  max-width: 150px;
-  height: 85vh;
-  max-height: 285px;
+  width: 145px;
+  max-width: 145px;
+  height: 260px;
+  max-height: 260px;
   will-change: transform;
   border-radius: 10px;
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
@@ -47,8 +48,10 @@
 
 .galleryContainer {
   display: flex;
-  // justify-content: center;
-  // width: 80vw;
+  // background-image: url("./hex_bg.png");
+  // background-size: cover;
+  // height: 100vh;
+  // align-items: center;
 }
 
 .model {
