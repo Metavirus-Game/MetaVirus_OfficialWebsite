@@ -23,7 +23,7 @@ Technical director of large scale VR game products."
         name="Qilin"
         title="Co-founder & COO"
         describe="Plentiful practical experience in the fields of blockchain, finance and media.
-Operated several successful projects in the blockchain field, managed and operated millions of members communities, and was solely responsible for operating a blockchain distributed overseas storage branch."
+Operated several successful projects in the blockchain field, managed and operated millions of members communities."
         portrait="/img/portrait_3.png"
       />
 
