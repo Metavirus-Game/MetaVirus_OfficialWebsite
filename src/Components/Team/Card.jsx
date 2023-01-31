@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSpring, a } from "@react-spring/web";
 
-export default function Card({ name, title, describe }) {
+export default function Card({ name, title, describe, portrait }) {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -18,9 +18,9 @@ export default function Card({ name, title, describe }) {
           rotateY: "180deg",
         }}
       >
-        <div>
-          <h3>{name}</h3>
-          <h4>{title}</h4>
+        <div className="backInfo">
+          <div>{name}</div>
+          <div className="title">{title}</div>
         </div>
       </a.div>
       <a.div
@@ -29,8 +29,16 @@ export default function Card({ name, title, describe }) {
           opacity,
           transform,
           // rotateY: "180deg",
+          // backgroundImage: `url(${process.env.PUBLIC_URL + portrait})`,
         }}
       >
+        {/* <div className="portrait"></div> */}
+        <div
+          className="portrait"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + portrait})`,
+          }}
+        ></div>
         <p>{describe}</p>
       </a.div>
     </div>

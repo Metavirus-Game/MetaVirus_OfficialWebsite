@@ -121,7 +121,7 @@ export default function Process({ isLoaded }) {
             {isLoaded && (
               <div className="context_1">
                 <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                  03/22-09/22
+                  03/22-12/22
                 </h3>
                 <ul
                   style={{
@@ -130,12 +130,10 @@ export default function Process({ isLoaded }) {
                     textAlign: "left",
                   }}
                 >
-                  <li>Token contract</li>
                   <li>Cornerstone round</li>
-                  <li>VIRU exchange</li>
                   <li>Seed round</li>
-                  <li>Demo</li>
-                  <li>First pre-sale</li>
+                  <li>Community building</li>
+                  <li>Playable DEMO</li>
                 </ul>
               </div>
             )}
@@ -143,7 +141,7 @@ export default function Process({ isLoaded }) {
           <foreignObject
             x="250"
             y="100"
-            width={"20rem"}
+            width={"25rem"}
             height={"15rem"}
             style={{ color: "white" }}
           >
@@ -159,12 +157,10 @@ export default function Process({ isLoaded }) {
                     textAlign: "left",
                   }}
                 >
-                  <li>Trailer</li>
-                  <li>Virul marketing</li>
-                  <li>Petri dish</li>
-                  <li>Second pre-sale</li>
-                  <li>Playable demo</li>
-                  <li>IDO</li>
+                  <li>Multi-Exchange United IEO</li>
+                  <li>Insider testnet</li>
+                  <li>Asset pre-sale</li>
+                  <li>Closed Beta</li>
                 </ul>
               </div>
             )}
@@ -188,12 +184,9 @@ export default function Process({ isLoaded }) {
                     textAlign: "left",
                   }}
                 >
+                  <li>Public Beta</li>
                   <li>Exchanges</li>
-                  <li>Asset pre-sale</li>
-                  <li>Closed test</li>
-                  <li>Game platform warm-up</li>
-                  <li>Public test & game platform release</li>
-                  <li>Official operation</li>
+                  <li>Official Release</li>
                 </ul>
               </div>
             )}

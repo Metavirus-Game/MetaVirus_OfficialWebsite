@@ -32,7 +32,7 @@ function TokenChart() {
           { value: 7, name: "Seed round financing (In progress)" },
           { value: 4, name: "First pre sale" },
           { value: 6, name: "Second batch of pre sale" },
-          { value: 10, name: "ICO/IDO" },
+          { value: 10, name: "IDO/IEO" },
           { value: 18, name: "Founder & Team" },
           { value: 6, name: "Founder & Team" },
           { value: 20, name: "Consultant" },

@@ -9,6 +9,7 @@
   background-size: cover;
   background-position: center top;
   align-items: center;
+  overflow-y: hidden;
   height: 100vh;
   .financeContext {
     padding: 2rem;
@@ -26,6 +27,7 @@
   #targetSvg {
     min-width: 200px;
     width: 20vw;
+    max-width: 250px;
     height: auto;
   }
   ul {

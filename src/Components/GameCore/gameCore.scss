@@ -25,15 +25,29 @@
 }
 
 .svg {
-  width: 250px;
+  width: 15vw;
+  max-width: 230px;
+  min-width: 130px;
+  max-height: 150px;
+  height: 150px;
+  min-height: 100px;
 }
 
 .gameCoreContext {
   width: 30vw;
-  margin-top: 5vh;
+  padding-top: 2.5vh;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 800px) {
+  .gameCoreContainer {
+    font-size: 0.9rem;
+  }
+  .gameCoreContext {
+    width: 35vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
   .gameCoreContext {
     width: 80vw;
   }
@@ -42,14 +56,9 @@
   }
   .svg {
     width: 130px;
+    height: 100px;
   }
   .gameCore:nth-child(2) {
     flex-direction: column-reverse;
   }
-}
-
-@media screen and (max-width: 450px) {
-  // .gameCoreContainer {
-  //   height: auto !important;
-  // }
 }

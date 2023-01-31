@@ -145,12 +145,10 @@ export default function MobileProcess({ isLoaded }) {
                 textAlign: "left",
               }}
             >
-              <li>Token contract</li>
               <li>Cornerstone round</li>
-              <li>VIRU exchange</li>
               <li>Seed round</li>
-              <li>Demo</li>
-              <li>First pre-sale</li>
+              <li>Community building</li>
+              <li>Playable DEMO</li>
             </ul>
           </div>
           <div className="context_2 mobile">
@@ -162,12 +160,10 @@ export default function MobileProcess({ isLoaded }) {
                 textAlign: "left",
               }}
             >
-              <li>Trailer</li>
-              <li>Virul marketing</li>
-              <li>Petri dish</li>
-              <li>Second pre-sale</li>
-              <li>Playable demo</li>
-              <li>IDO</li>
+              <li>Multi-Exchange United IEO</li>
+              <li>Insider testnet</li>
+              <li>Asset pre-sale</li>
+              <li>Closed Beta</li>
             </ul>
           </div>
           <div className="context_3 mobile">
@@ -179,12 +175,9 @@ export default function MobileProcess({ isLoaded }) {
                 textAlign: "left",
               }}
             >
+              <li>Public Beta</li>
               <li>Exchanges</li>
-              <li>Asset pre-sale</li>
-              <li>Closed test</li>
-              <li>Game platform warm-up</li>
-              <li>Public test & game platform release</li>
-              <li>Official operation</li>
+              <li>Official Release</li>
             </ul>
           </div>
           <div className="context_4 mobile">

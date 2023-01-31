@@ -26,10 +26,7 @@ export default function FinTarget({ isLoaded }) {
                 The seed round target of 1.4 million US dollars accounts for 7%
                 of the total issued tokens.
               </li>
-              <li>
-                At p+resent, USD 100,000 has been in place (cornerstone
-                investors participated in advance).
-              </li>
+              <li>At present, USD 1,000,000 has been in place.</li>
               <li>Minimum investment of $200,000.</li>
             </ul>
           </div>

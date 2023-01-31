@@ -1,10 +1,9 @@
-import { to } from "@react-spring/web";
 import ReactECharts from "echarts-for-react"; // or var ReactECharts = require('echarts-for-react');
 import { liquData } from "./LiquData";
 function LiquidityChart() {
   const timeData = [];
   const gameOutputData = [];
-  const IDOData = [];
+  const IEOData = [];
   const marketingData = [];
   const preSaleData = [];
   const teamData = [];
@@ -13,7 +12,7 @@ function LiquidityChart() {
   for (let data of liquData) {
     timeData.push(data.TIME);
     gameOutputData.push(data["Game Output"]);
-    IDOData.push(data.IDO);
+    IEOData.push(data["IEO"]);
     marketingData.push(data.Marketing);
     preSaleData.push(data["Pre-sale"]);
     teamData.push(data["Team&Consultant"]);
@@ -43,7 +42,7 @@ function LiquidityChart() {
     legend: {
       data: [
         "Game Output",
-        "IDO",
+        "IEO",
         "Marketing",
         "Pre-sale",
         "Team&Consultant",
@@ -92,14 +91,14 @@ function LiquidityChart() {
         data: gameOutputData,
       },
       {
-        name: "IDO",
+        name: "IEO",
         type: "line",
         stack: "Total",
         areaStyle: {},
         emphasis: {
           focus: "series",
         },
-        data: IDOData,
+        data: IEOData,
       },
       {
         name: "Marketing",

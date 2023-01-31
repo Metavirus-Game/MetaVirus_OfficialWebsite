@@ -29,6 +29,9 @@ code {
 .section {
   /* height: 100vh !important ; */
   /* height: -webkit-fill-available !important; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .fp-section {

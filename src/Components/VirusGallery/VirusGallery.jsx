@@ -109,8 +109,12 @@ export default function VirusGallery({ isLoaded }) {
   return (
     <div className="galleryContainer">
       <div id="galleryContext">
-        <h2>Virus Gallery</h2>
-        <p>There is a plenty of differenet "Viruses" in our game.</p>
+        <h2>Cute version of the virus</h2>
+        <p>
+          In the virtual world of Metavirus, technology instruments can
+          visualize the virus. While visualization, turn the entire reality into
+          a world of swords and magic!
+        </p>
       </div>
       <div className="stackContainer">{isLoaded && <Deck />}</div>
     </div>
