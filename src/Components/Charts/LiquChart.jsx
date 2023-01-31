@@ -89,6 +89,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: gameOutputData,
+        showSymbol: false,
       },
       {
         name: "IEO",
@@ -99,6 +100,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: IEOData,
+        showSymbol: false,
       },
       {
         name: "Marketing",
@@ -109,6 +111,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: marketingData,
+        showSymbol: false,
       },
       {
         name: "Pre-sale",
@@ -119,6 +122,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: preSaleData,
+        showSymbol: false,
       },
       {
         name: "Team&Consultant",
@@ -129,6 +133,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: teamData,
+        showSymbol: false,
       },
       {
         name: "Investor",
@@ -139,6 +144,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: investorData,
+        showSymbol: false,
       },
       {
         name: "User Creation",
@@ -149,6 +155,7 @@ function LiquidityChart() {
           focus: "series",
         },
         data: userCreationData,
+        showSymbol: false,
       },
     ],
     animationDuration: 1000,
@@ -156,10 +163,10 @@ function LiquidityChart() {
   return (
     <>
       <div className="liqChart">
-        <h2 style={{ marginBottom: "3rem" }}>Liquidity Distribution</h2>
+        <h2 style={{ marginBottom: "6rem" }}>Liquidity Distribution</h2>
         <ReactECharts
           option={option}
-          style={{ height: "400px" }}
+          style={{ height: "300px" }}
           className="mobileChart"
         />
       </div>

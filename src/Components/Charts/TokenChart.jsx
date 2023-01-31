@@ -7,7 +7,7 @@ function TokenChart() {
       top: 20,
       textStyle: {
         color: "#fff",
-        fontSize: "1.5em",
+        lineHeight: 60,
       },
     },
     tooltip: {

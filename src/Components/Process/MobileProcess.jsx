@@ -154,7 +154,7 @@ export default function MobileProcess({ isLoaded }) {
             </ul>
           </div>
           <div className="context_2 mobile">
-            <h3>10/22-12/22</h3>
+            <h3>01/23-06/23</h3>
             <ul
               style={{
                 listStyle: "inside",
@@ -169,7 +169,7 @@ export default function MobileProcess({ isLoaded }) {
             </ul>
           </div>
           <div className="context_3 mobile">
-            <h3>01/23-01/24</h3>
+            <h3>07/23-12/23</h3>
             <ul
               style={{
                 listStyle: "inside",
@@ -183,7 +183,7 @@ export default function MobileProcess({ isLoaded }) {
             </ul>
           </div>
           <div className="context_4 mobile">
-            <h3>01/23-01/24</h3>
+            <h3>01/24-01/25</h3>
             <ul
               style={{
                 listStyle: "inside",

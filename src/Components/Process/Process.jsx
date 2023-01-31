@@ -150,7 +150,7 @@ export default function Process({ isLoaded }) {
             {isLoaded && (
               <div className="context_2">
                 <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                  10/22-12/22
+                  01/23-06/23
                 </h3>
                 <ul
                   style={{
@@ -177,7 +177,7 @@ export default function Process({ isLoaded }) {
             {isLoaded && (
               <div className="context_3">
                 <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                  01/23-01/24
+                  07/23-12/23
                 </h3>
                 <ul
                   style={{
@@ -203,7 +203,7 @@ export default function Process({ isLoaded }) {
             {isLoaded && (
               <div className="context_4">
                 <h3 style={{ fontSize: "2rem", textAlign: "left" }}>
-                  01/23-01/24
+                  01/24-01/25
                 </h3>
                 <ul
                   style={{
