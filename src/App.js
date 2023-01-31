@@ -22,7 +22,7 @@ export default function App() {
           },
         })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           const errorCode = response.data.code;
           if (errorCode === 0) {
             setAuth(true);

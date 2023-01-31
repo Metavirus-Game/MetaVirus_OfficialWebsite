@@ -1,28 +1,6 @@
-.card {
-  width: 300px;
-  height: 400px;
-  background-color: white;
-  border-radius: 5%;
-  background-size: cover;
-  background-image: url(https://images.unsplash.com/photo-1544511916-0148ccdeb877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1901&q=80i&auto=format&fit=crop);
-  transition: all 1s;
-  transition-duration: all ease-out;
-  //   position: absolute;
-}
-
-.cardContainer {
-  transform: rotateX(-15deg) rotateZ(-15deg);
-  transform-style: preserve-3d;
-  display: flex;
-}
-
-.card:hover {
-  transform: perspective(1000px) translateZ(100px);
-}
-
 .homeContainer {
-  // background-image: url("./homeBg.png");
-  background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
+  background-image: url("./homeBg.jpg");
+  // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -48,6 +26,9 @@
       cursor: pointer;
     }
   }
+  &:nth-child(1) {
+    padding-top: 15vh;
+  }
 }
 
 .videoPlayer {
@@ -58,7 +39,8 @@
 }
 
 .video {
-  width: 400px;
+  height: 80vh;
+  max-height: 800px;
 }
 
 .closeButton {
@@ -69,5 +51,8 @@
 @media screen and (max-width: 450px) {
   .video {
     width: 350px;
+  }
+  .homeContainer {
+    height: auto;
   }
 }
