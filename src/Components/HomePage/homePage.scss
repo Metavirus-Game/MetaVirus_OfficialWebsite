@@ -53,6 +53,7 @@
     width: 350px;
   }
   .homeContainer {
-    height: auto;
+    height: 100vh;
+    // height: -webkit-fill-available;
   }
 }

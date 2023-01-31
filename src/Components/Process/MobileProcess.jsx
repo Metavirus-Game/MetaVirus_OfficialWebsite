@@ -4,8 +4,10 @@ export default function MobileProcess({ isLoaded }) {
   const paperPlaneAnimate = useRef(null);
   const [animated, setAnimated] = useState(false);
   if (isLoaded && !animated) {
-    paperPlaneAnimate.current.beginElement();
-    setAnimated(true);
+    if (paperPlaneAnimate.current) {
+      paperPlaneAnimate.current.beginElement();
+      setAnimated(true);
+    }
   }
 
   return (
@@ -138,7 +140,7 @@ export default function MobileProcess({ isLoaded }) {
       {isLoaded && (
         <div className="contextContainer">
           <div className="context_1 mobile">
-            <h3>03/22-09/22</h3>
+            <h3>03/22-12/22</h3>
             <ul
               style={{
                 listStyle: "inside",

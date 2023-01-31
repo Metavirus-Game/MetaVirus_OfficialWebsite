@@ -4,8 +4,10 @@ export default function Process({ isLoaded }) {
   const paperPlaneAnimate = useRef(null);
   const [animated, setAnimated] = useState(false);
   if (isLoaded && !animated) {
-    paperPlaneAnimate.current.beginElement();
-    setAnimated(true);
+    if (paperPlaneAnimate.current) {
+      paperPlaneAnimate.current.beginElement();
+      setAnimated(true);
+    }
   }
 
   return (

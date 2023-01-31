@@ -20,21 +20,22 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="homeContainer">
-      <div>
-        <h1>Meta Virus</h1>
-        <button style={{ marginRight: "1rem" }}>Try It</button>
-        {window.innerWidth < 500 ? (
-          <MobileVideoPlayer />
-        ) : (
-          <>
-            <button id="playButton" onClick={playVideo}>
-              Watch Video
-            </button>
-            {isPlayed && <VideoPlayer />}
-          </>
-        )}
+    <>
+      <div className="homeContainer">
+        <div>
+          <h1>Meta Virus</h1>
+          <button style={{ marginRight: "1rem" }}>Try It</button>
+          {window.innerWidth > 500 && (
+            <>
+              <button id="playButton" onClick={playVideo}>
+                Watch Video
+              </button>
+              {isPlayed && <VideoPlayer />}
+            </>
+          )}
+        </div>
       </div>
-    </div>
+      {window.innerWidth < 500 && <MobileVideoPlayer />}
+    </>
   );
 }
