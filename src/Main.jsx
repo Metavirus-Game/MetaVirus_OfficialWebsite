@@ -54,9 +54,12 @@ const Main = () => {
           "#201633",
         ]}
         normalScrollElements=".scrollable-content"
-        // onLeave={(origin, destination, direction) => {
-        //   console.log("onLeave event", { origin, destination, direction });
-        // }}
+        onLeave={(origin, destination, direction) => {
+          // console.log("onLeave event", { origin, destination, direction });
+          if (window.innerWidth > 500) {
+            sectionLoaded[origin.index] = false;
+          }
+        }}
         afterLoad={(section, origin, destination, direction, trigger) => {
           sectionLoaded[origin.index] = true;
         }}

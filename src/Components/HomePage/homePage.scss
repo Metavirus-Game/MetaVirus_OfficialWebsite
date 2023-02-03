@@ -1,5 +1,5 @@
 .homeContainer {
-  background-image: url("./homeBg.jpg");
+  background-image: url("./pureBg.png");
   // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,6 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
   h1 {
     font-size: 4em;
   }
@@ -46,6 +49,67 @@
 .closeButton {
   font-size: 1.5rem;
   position: absolute;
+}
+
+#bg_tl,
+#bg_tr,
+#bg_bl,
+#bg_br {
+  width: 15vw;
+  max-width: 400px;
+  min-width: 150px;
+}
+
+#bg_tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bg_tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#bg_br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#bg_bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#bg_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 35vw;
+  max-width: 800px;
+  min-width: 300px;
+  animation-name: floating;
+  animation-delay: 2s;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 45%;
+  }
+  100% {
+    top: 50%;
+  }
 }
 
 @media screen and (max-width: 450px) {
