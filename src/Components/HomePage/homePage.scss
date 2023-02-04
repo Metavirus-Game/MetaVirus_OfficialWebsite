@@ -117,7 +117,10 @@
     width: 350px;
   }
   .homeContainer {
-    height: 100vh;
-    // height: -webkit-fill-available;
+    // height: 100vh;
+    height: -webkit-fill-available !important;
+    h1 {
+      font-size: 2em;
+    }
   }
 }

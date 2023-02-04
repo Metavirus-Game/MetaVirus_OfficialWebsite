@@ -108,13 +108,15 @@ function Deck() {
 export default function VirusGallery({ isLoaded }) {
   return (
     <div className="galleryContainer">
-      <div id="galleryContext">
-        <h2>Cute version of the virus</h2>
-        <p>
-          In the virtual world of Metavirus, technology instruments can
-          visualize the virus. While visualization, turn the entire reality into
-          a world of swords and magic!
-        </p>
+      <div id="galleryContextContainer">
+        <div id="galleryContext">
+          <h2>Cute version of the virus</h2>
+          <p>
+            In the virtual world of Metavirus, technology instruments can
+            visualize the virus. While visualization, turn the entire reality
+            into a world of swords and magic!
+          </p>
+        </div>
       </div>
       <div className="stackContainer">{isLoaded && <Deck />}</div>
     </div>

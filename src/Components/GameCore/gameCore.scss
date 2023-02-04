@@ -1,64 +1,60 @@
 .gameCoreContainer {
-  display: flex;
-  // flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: white;
   height: 100vh;
-  text-align: left;
-  overflow-x: hidden;
   background: linear-gradient(#ff6854, #831858);
-  background-size: cover;
-}
-
-.gameCore {
-  flex-basis: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  > div {
+    flex-basis: 25vw;
+    min-width: 350px;
+    max-width: 450px;
+    height: 70vh;
+    min-height: 450px;
+    max-height: 600px;
+    background-color: black;
+    border-radius: 1rem;
+  }
 }
 
-.unloaded {
-  visibility: hidden;
-}
-
-.svg {
-  width: 15vw;
-  max-width: 230px;
-  min-width: 130px;
-  max-height: 150px;
-  height: 150px;
-  min-height: 100px;
+.gameCoreImg {
+  height: 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .gameCoreContext {
-  width: 30vw;
-  padding-top: 2.5vh;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  h3 {
+    padding-bottom: 1rem;
+  }
+  ul {
+    list-style: none;
+    font-size: 0.9em;
+  }
+  text-align: center;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 500px) {
   .gameCoreContainer {
-    font-size: 0.9rem;
+    height: auto;
+    > div {
+      //   flex-basis: 80vw;
+      width: 80vw;
+      height: 50vh;
+      margin: 1.5rem;
+    }
   }
-  .gameCoreContext {
-    width: 35vw;
-  }
-}
 
-@media screen and (max-width: 650px) {
   .gameCoreContext {
-    width: 80vw;
-  }
-  .gameCoreContainer {
-    font-size: 0.8rem;
-  }
-  .svg {
-    width: 130px;
-    height: 100px;
-  }
-  .gameCore:nth-child(2) {
-    flex-direction: column-reverse;
+    width: 100%;
+    ul {
+      font-size: 0.9em;
+    }
   }
 }

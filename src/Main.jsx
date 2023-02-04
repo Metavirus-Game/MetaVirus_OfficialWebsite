@@ -5,11 +5,11 @@ import VirusGallery from "./Components/VirusGallery/VirusGallery";
 import Process from "./Components/Process/Process";
 import Chart from "./Components/Charts/Chart";
 import Team from "./Components/Team/Team";
-import FinTarget from "./Components/FinTarget/FinTarget";
 import HomePage from "./Components/HomePage/HomePage";
 import MobileProcess from "./Components/Process/MobileProcess";
-import "animate.css";
+import FinTarget from "./Components/FinTarget/FinTarget";
 import Navigation from "./Components/Navigation/Navigation";
+import "animate.css";
 const anchors = [
   "Home",
   "Gallery",
@@ -46,7 +46,7 @@ const Main = () => {
         sectionsColor={[
           "#201633",
           "#201633",
-          "#201633",
+          "#ffffff",
           "#201633",
           "#201633",
           "#201633",
@@ -71,10 +71,10 @@ const Main = () => {
                 <HomePage isLoaded={sectionLoaded[0]} />
               </div>
               <div className="section">
-                <VirusGallery isLoaded={sectionLoaded[1]} />
+                <GameCore isLoaded={sectionLoaded[1]} />
               </div>
               <div className="section">
-                <GameCore isLoaded={sectionLoaded[2]} />
+                <VirusGallery isLoaded={sectionLoaded[2]} />
               </div>
               <div className="section">
                 {window.innerWidth < 500 ? (
@@ -87,6 +87,7 @@ const Main = () => {
                 <Chart isLoaded={sectionLoaded[4]} />
               </div>
               <div className="section">
+                {/* <FinTarget isLoaded={sectionLoaded[5]} /> */}
                 <FinTarget isLoaded={sectionLoaded[5]} />
               </div>
               <div className="section">
