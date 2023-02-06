@@ -2,6 +2,7 @@ import "./homePage.scss";
 import { useState, useEffect } from "react";
 import VideoPlayer from "./VideoPlayer";
 import { gsap } from "gsap";
+import MobileVideoPlayer from "./MobileVideoPlayer";
 export default function HomePage({ isLoaded }) {
   const [isPlayed, setIsPlayed] = useState(false);
   function playVideo() {
@@ -161,7 +162,7 @@ export default function HomePage({ isLoaded }) {
           )}
         </div>
       </div>
-      {/* {window.innerWidth < 500 && <MobileVideoPlayer />} */}
+      {window.innerWidth < 500 && <MobileVideoPlayer />}
     </>
   );
 }

@@ -44,14 +44,14 @@ const Main = () => {
         responsiveWidth={450}
         easing="easeInOutCubic"
         sectionsColor={[
-          "#201633",
-          "#201633",
-          "#ffffff",
-          "#201633",
-          "#201633",
-          "#201633",
-          "#201633",
-          "#201633",
+          "#12272a",
+          "#12272a",
+          "#12272a",
+          "#12272a",
+          "#12272a",
+          "#12272a",
+          "#12272a",
+          "#12272a",
         ]}
         normalScrollElements=".scrollable-content"
         onLeave={(origin, destination, direction) => {
@@ -71,24 +71,23 @@ const Main = () => {
                 <HomePage isLoaded={sectionLoaded[0]} />
               </div>
               <div className="section">
-                <GameCore isLoaded={sectionLoaded[1]} />
+                <VirusGallery isLoaded={sectionLoaded[1]} />
               </div>
               <div className="section">
-                <VirusGallery isLoaded={sectionLoaded[2]} />
+                <FinTarget isLoaded={sectionLoaded[2]} />
+              </div>
+              <div className="section">
+                <Chart isLoaded={sectionLoaded[3]} />
+              </div>
+              <div className="section">
+                <GameCore isLoaded={sectionLoaded[4]} />
               </div>
               <div className="section">
                 {window.innerWidth < 500 ? (
-                  <MobileProcess isLoaded={sectionLoaded[3]} />
+                  <MobileProcess isLoaded={sectionLoaded[5]} />
                 ) : (
-                  <Process isLoaded={sectionLoaded[3]} />
+                  <Process isLoaded={sectionLoaded[5]} />
                 )}
-              </div>
-              <div className="section">
-                <Chart isLoaded={sectionLoaded[4]} />
-              </div>
-              <div className="section">
-                {/* <FinTarget isLoaded={sectionLoaded[5]} /> */}
-                <FinTarget isLoaded={sectionLoaded[5]} />
               </div>
               <div className="section">
                 <Team isLoaded={sectionLoaded[6]} />

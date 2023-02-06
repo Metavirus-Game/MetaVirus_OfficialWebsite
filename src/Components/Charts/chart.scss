@@ -4,9 +4,12 @@
   justify-content: space-around;
   align-items: center;
   // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg"),
-  //   url("./planet_bg_1.png");
+  // url("./planet_bg_1.png");
+  // background-image: url("./chartBg.png");
   // background-size: cover;
   // background-position: center bottom;
+  background: linear-gradient(#166775, #da8858);
+  // background-color: #0f4751;
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;

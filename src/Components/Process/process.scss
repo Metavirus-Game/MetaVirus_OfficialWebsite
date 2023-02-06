@@ -31,12 +31,12 @@
 }
 
 .processContainer {
-  // background-image: url("web_bg_1.png");
-  // background-size: cover;
   height: 100vh;
   // background: linear-gradient(#ff6854, #831858);
-  background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
-  background-size: cover;
+  background: #7c1453;
+  // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
+  // background-image: url("./chartBg.png");
+  // background-size: cover;
   display: flex;
   align-items: center;
 }
