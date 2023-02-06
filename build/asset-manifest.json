@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.edcb1696.css",
-    "main.js": "/static/js/main.964081ef.js",
+    "main.css": "/static/css/main.a663d9dc.css",
+    "main.js": "/static/js/main.698000be.js",
     "static/js/787.40c0fefa.chunk.js": "/static/js/787.40c0fefa.chunk.js",
     "static/media/gameVideo.mp4": "/static/media/gameVideo.512a017af4e8869074eb.mp4",
-    "static/media/homeBg.jpg": "/static/media/homeBg.238444ffe1302821a547.jpg",
+    "static/media/virus_bg.jpg": "/static/media/virus_bg.aca9639aed60a024e59d.jpg",
+    "static/media/targetBg.jpg": "/static/media/targetBg.73f285a4a8a448b6fb09.jpg",
+    "static/media/pureBg.png": "/static/media/pureBg.fa2901695aea6cc6df79.png",
     "static/media/card_back.png": "/static/media/card_back.0293c5d1aa7faf63a59a.png",
-    "static/media/planet_bg_1.png": "/static/media/planet_bg_1.10dbbd4cde805bd785e6.png",
-    "static/media/planet_bg_2.png": "/static/media/planet_bg_2.326c2b9d1cb070e77bc2.png",
     "index.html": "/index.html",
-    "main.edcb1696.css.map": "/static/css/main.edcb1696.css.map",
-    "main.964081ef.js.map": "/static/js/main.964081ef.js.map",
+    "main.a663d9dc.css.map": "/static/css/main.a663d9dc.css.map",
+    "main.698000be.js.map": "/static/js/main.698000be.js.map",
     "787.40c0fefa.chunk.js.map": "/static/js/787.40c0fefa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.edcb1696.css",
-    "static/js/main.964081ef.js"
+    "static/css/main.a663d9dc.css",
+    "static/js/main.698000be.js"
   ]
 }

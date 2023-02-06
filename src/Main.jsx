@@ -46,12 +46,12 @@ const Main = () => {
         sectionsColor={[
           "#12272a",
           "#12272a",
-          "#12272a",
-          "#12272a",
-          "#12272a",
-          "#12272a",
-          "#7c1453",
-          "#12272a",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#831858",
+          "#831858",
+          "#831858",
         ]}
         normalScrollElements=".scrollable-content"
         onLeave={(origin, destination, direction) => {
