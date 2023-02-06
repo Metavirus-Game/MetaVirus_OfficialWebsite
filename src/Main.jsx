@@ -50,7 +50,7 @@ const Main = () => {
           "#12272a",
           "#12272a",
           "#12272a",
-          "#12272a",
+          "#7c1453",
           "#12272a",
         ]}
         normalScrollElements=".scrollable-content"

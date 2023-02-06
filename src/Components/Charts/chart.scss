@@ -8,7 +8,7 @@
   // background-image: url("./chartBg.png");
   // background-size: cover;
   // background-position: center bottom;
-  background: linear-gradient(#166775, #da8858);
+  background: linear-gradient(#166775, #e57768);
   // background-color: #0f4751;
   height: 100vh;
   overflow-y: hidden;
@@ -34,7 +34,7 @@
 @media screen and (max-width: 800px) {
   .chart {
     height: 100vh;
-    background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
+    // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
   }
   .mobileChart {
     height: 35vh !important;
