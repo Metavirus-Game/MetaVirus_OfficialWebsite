@@ -118,8 +118,9 @@
     width: 350px;
   }
   .homeContainer {
-    // height: 100vh;
-    height: -webkit-fill-available !important;
+    // height: 100dvh;
+    height: 100svh;
+    // height: 100lvh;
     h1 {
       font-size: 2em;
     }

@@ -19,106 +19,58 @@ export default function HomePage({ isLoaded }) {
       }
       setIsPlayed(false);
     });
-  }, []);
-
-  useEffect(() => {
     gsap.set("#bg_main", { y: "-50%" });
-    if (isLoaded) {
-      gsap.fromTo(
-        "#bg_tl",
-        { y: "-100%", x: "-100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_tr",
-        { y: "-100%", x: "100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_bl",
-        { y: "100%", x: "-100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_br",
-        { y: "100%", x: "100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_main",
-        { scale: 0 },
-        {
-          duration: 2,
-          scale: 1,
-          ease: "power2",
-        }
-      );
-      // const timeline = gsap.timeline();
-      // timeline
-      //   .to("#bg_main", { y: "-=30", duration: 2 })
-      //   .to("#bg_main", { y: "+=30", duration: 2 });
-      // timeline.repeat(-1);
-      // gsap.to("#bg_main", {
-      //   delay: 2,
-      //   duration: 2,
-      //   y: 10,
-      //   yoyo: true,
-      //   repeat: -1,
-      // });
-    }
-    if (!isLoaded) {
-      gsap.to("#bg_tl", {
+    // if (isLoaded) {
+    gsap.fromTo(
+      "#bg_tl",
+      { y: "-100%", x: "-100%" },
+      {
         duration: 2,
-        x: "-100%",
-        y: "-100%",
+        x: "0%",
+        y: "0%",
         ease: "power2",
-      });
-      gsap.to("#bg_tr", {
+      }
+    );
+    gsap.fromTo(
+      "#bg_tr",
+      { y: "-100%", x: "100%" },
+      {
         duration: 2,
-        x: "100%",
-        y: "-100%",
+        x: "0%",
+        y: "0%",
         ease: "power2",
-      });
-      gsap.to("#bg_bl", {
+      }
+    );
+    gsap.fromTo(
+      "#bg_bl",
+      { y: "100%", x: "-100%" },
+      {
         duration: 2,
-        x: "-100%",
-        y: "100%",
+        x: "0%",
+        y: "0%",
         ease: "power2",
-      });
-      gsap.to("#bg_br", {
+      }
+    );
+    gsap.fromTo(
+      "#bg_br",
+      { y: "100%", x: "100%" },
+      {
         duration: 2,
-        x: "100%",
-        y: "100%",
+        x: "0%",
+        y: "0%",
         ease: "power2",
-      });
-      gsap.to("#bg_main", {
+      }
+    );
+    gsap.fromTo(
+      "#bg_main",
+      { scale: 0 },
+      {
         duration: 2,
-        scaleX: "0",
-        scaleY: "0",
+        scale: 1,
         ease: "power2",
-      });
-    }
-  }, [isLoaded]);
+      }
+    );
+  }, []);
 
   return (
     <>
