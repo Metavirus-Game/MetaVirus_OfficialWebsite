@@ -19,7 +19,7 @@ export default function HomePage({ isLoaded }) {
       }
       setIsPlayed(false);
     });
-    gsap.set("#bg_main", { y: "-50%" });
+    // gsap.set("#bg_main", { y: "-50%" });
     // if (isLoaded) {
     gsap.fromTo(
       "#bg_tl",
@@ -63,11 +63,11 @@ export default function HomePage({ isLoaded }) {
     );
     gsap.fromTo(
       "#bg_main",
-      { scale: 0 },
+      { opacity: 0 },
       {
         duration: 2,
-        scale: 1,
-        ease: "power2",
+        opacity: 1,
+        ease: "power2.out",
       }
     );
   }, []);
