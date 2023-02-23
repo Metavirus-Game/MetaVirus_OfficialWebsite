@@ -1,0 +1,36 @@
+.whyLightSection {
+  height: 100vh;
+  //   background-color: #090625;
+  background: linear-gradient(#090625, #100b42);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.whyLightContext {
+  width: 45%;
+  text-align: left;
+  h2 {
+    font-size: 2.5em;
+    + span {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.whyLightList {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  justify-content: space-between;
+  > div {
+    flex-basis: 45%;
+    display: flex;
+    font-size: 0.9em;
+    img {
+      margin-right: 1rem;
+      height: 30px;
+    }
+  }
+}
