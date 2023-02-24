@@ -13,9 +13,14 @@
   text-align: left;
   h2 {
     font-size: 2.5em;
-    + span {
-      font-size: 1.5em;
-    }
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .whyLightContent {
+    font-size: 1.1em;
   }
 }
 
@@ -32,5 +37,41 @@
       margin-right: 1rem;
       height: 30px;
     }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .whyLightSection {
+    height: auto;
+  }
+
+  .whyLightContext {
+    width: 80%;
+    text-align: left;
+    h2 {
+      font-size: 2em;
+    }
+    .whyLightContent {
+      font-size: 1em;
+    }
+    margin-bottom: 4rem;
+  }
+
+  .whyLightList {
+    justify-content: center;
+    > div {
+      flex-basis: 90%;
+      font-size: 0.9em;
+      padding-bottom: 1.5rem !important;
+      img {
+        margin-right: 1rem;
+        height: 30px;
+      }
+    }
+  }
+
+  #whySvg {
+    width: 300px !important;
+    height: 300px !important;
   }
 }

@@ -2,7 +2,7 @@ export const liquData = [
   {
     TIME: "Mar-23",
     "Game Output": "0.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "0.0",
     "Pre-sale": "0.0",
     "Team&Consultant": "0.0",
@@ -12,7 +12,7 @@ export const liquData = [
   {
     TIME: "Apr-23",
     "Game Output": "0.3",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "0.0",
     "Pre-sale": "1.0",
     "Team&Consultant": "0.0",
@@ -22,7 +22,7 @@ export const liquData = [
   {
     TIME: "May-23",
     "Game Output": "0.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "0.0",
     "Pre-sale": "2.0",
     "Team&Consultant": "0.0",
@@ -32,7 +32,7 @@ export const liquData = [
   {
     TIME: "Jun-23",
     "Game Output": "0.9",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "1.0",
     "Pre-sale": "3.0",
     "Team&Consultant": "0.0",
@@ -42,7 +42,7 @@ export const liquData = [
   {
     TIME: "Jul-23",
     "Game Output": "1.3",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "2.0",
     "Pre-sale": "4.0",
     "Team&Consultant": "0.0",
@@ -52,7 +52,7 @@ export const liquData = [
   {
     TIME: "Aug-23",
     "Game Output": "1.7",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.0",
     "Pre-sale": "5.0",
     "Team&Consultant": "0.0",
@@ -62,7 +62,7 @@ export const liquData = [
   {
     TIME: "Sep-23",
     "Game Output": "2.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.0",
     "Pre-sale": "6.0",
     "Team&Consultant": "0.0",
@@ -72,7 +72,7 @@ export const liquData = [
   {
     TIME: "Oct-23",
     "Game Output": "2.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.0",
     "Pre-sale": "7.0",
     "Team&Consultant": "0.0",
@@ -82,7 +82,7 @@ export const liquData = [
   {
     TIME: "Nov-23",
     "Game Output": "3.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.0",
     "Pre-sale": "8.0",
     "Team&Consultant": "0.0",
@@ -92,7 +92,7 @@ export const liquData = [
   {
     TIME: "Dec-23",
     "Game Output": "3.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.3",
     "Pre-sale": "9.0",
     "Team&Consultant": "0.0",
@@ -102,7 +102,7 @@ export const liquData = [
   {
     TIME: "Jan-24",
     "Game Output": "4.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.6",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -112,7 +112,7 @@ export const liquData = [
   {
     TIME: "Feb-24",
     "Game Output": "4.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "3.9",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -122,7 +122,7 @@ export const liquData = [
   {
     TIME: "Mar-24",
     "Game Output": "5.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "4.2",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -132,7 +132,7 @@ export const liquData = [
   {
     TIME: "Apr-24",
     "Game Output": "5.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "4.5",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -142,7 +142,7 @@ export const liquData = [
   {
     TIME: "May-24",
     "Game Output": "6.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "4.8",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -152,7 +152,7 @@ export const liquData = [
   {
     TIME: "Jun-24",
     "Game Output": "6.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "5.1",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -162,7 +162,7 @@ export const liquData = [
   {
     TIME: "Jul-24",
     "Game Output": "7.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "5.4",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -172,7 +172,7 @@ export const liquData = [
   {
     TIME: "Aug-24",
     "Game Output": "7.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "5.7",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -182,7 +182,7 @@ export const liquData = [
   {
     TIME: "Sep-24",
     "Game Output": "8.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "6.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -192,7 +192,7 @@ export const liquData = [
   {
     TIME: "Oct-24",
     "Game Output": "8.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "6.3",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -202,7 +202,7 @@ export const liquData = [
   {
     TIME: "Nov-24",
     "Game Output": "9.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "6.6",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -212,7 +212,7 @@ export const liquData = [
   {
     TIME: "Dec-24",
     "Game Output": "9.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "6.9",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -222,7 +222,7 @@ export const liquData = [
   {
     TIME: "Jan-25",
     "Game Output": "10.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "7.2",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -232,7 +232,7 @@ export const liquData = [
   {
     TIME: "Feb-25",
     "Game Output": "10.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "7.5",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -242,7 +242,7 @@ export const liquData = [
   {
     TIME: "Mar-25",
     "Game Output": "11.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "7.8",
     "Pre-sale": "10.0",
     "Team&Consultant": "0.0",
@@ -252,7 +252,7 @@ export const liquData = [
   {
     TIME: "Apr-25",
     "Game Output": "11.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "8.1",
     "Pre-sale": "10.0",
     "Team&Consultant": "1.0",
@@ -262,7 +262,7 @@ export const liquData = [
   {
     TIME: "May-25",
     "Game Output": "12.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "8.4",
     "Pre-sale": "10.0",
     "Team&Consultant": "2.0",
@@ -272,7 +272,7 @@ export const liquData = [
   {
     TIME: "Jun-25",
     "Game Output": "12.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "8.7",
     "Pre-sale": "10.0",
     "Team&Consultant": "3.0",
@@ -282,7 +282,7 @@ export const liquData = [
   {
     TIME: "Jul-25",
     "Game Output": "13.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "4.0",
@@ -292,7 +292,7 @@ export const liquData = [
   {
     TIME: "Aug-25",
     "Game Output": "13.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "5.0",
@@ -302,7 +302,7 @@ export const liquData = [
   {
     TIME: "Sep-25",
     "Game Output": "14.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "6.0",
@@ -312,7 +312,7 @@ export const liquData = [
   {
     TIME: "Oct-25",
     "Game Output": "14.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "7.0",
@@ -322,7 +322,7 @@ export const liquData = [
   {
     TIME: "Nov-25",
     "Game Output": "15.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "8.0",
@@ -332,7 +332,7 @@ export const liquData = [
   {
     TIME: "Dec-25",
     "Game Output": "15.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "9.0",
@@ -342,7 +342,7 @@ export const liquData = [
   {
     TIME: "Jan-26",
     "Game Output": "16.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "10.0",
@@ -352,7 +352,7 @@ export const liquData = [
   {
     TIME: "Feb-26",
     "Game Output": "16.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "11.0",
@@ -362,7 +362,7 @@ export const liquData = [
   {
     TIME: "Mar-26",
     "Game Output": "17.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "12.0",
@@ -372,7 +372,7 @@ export const liquData = [
   {
     TIME: "Apr-26",
     "Game Output": "17.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "13.0",
@@ -382,7 +382,7 @@ export const liquData = [
   {
     TIME: "May-26",
     "Game Output": "18.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "14.0",
@@ -392,7 +392,7 @@ export const liquData = [
   {
     TIME: "Jun-26",
     "Game Output": "18.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "15.0",
@@ -402,7 +402,7 @@ export const liquData = [
   {
     TIME: "Jul-26",
     "Game Output": "19.1",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "16.0",
@@ -412,7 +412,7 @@ export const liquData = [
   {
     TIME: "Aug-26",
     "Game Output": "19.6",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "17.0",
@@ -422,7 +422,7 @@ export const liquData = [
   {
     TIME: "Sep-26",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "18.0",
@@ -432,7 +432,7 @@ export const liquData = [
   {
     TIME: "Oct-26",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "19.0",
@@ -442,7 +442,7 @@ export const liquData = [
   {
     TIME: "Nov-26",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "20.0",
@@ -452,7 +452,7 @@ export const liquData = [
   {
     TIME: "Dec-26",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "21.0",
@@ -462,7 +462,7 @@ export const liquData = [
   {
     TIME: "Jan-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "22.0",
@@ -472,7 +472,7 @@ export const liquData = [
   {
     TIME: "Feb-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "23.0",
@@ -482,7 +482,7 @@ export const liquData = [
   {
     TIME: "Mar-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",
@@ -492,7 +492,7 @@ export const liquData = [
   {
     TIME: "Apr-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",
@@ -502,7 +502,7 @@ export const liquData = [
   {
     TIME: "May-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",
@@ -512,7 +512,7 @@ export const liquData = [
   {
     TIME: "Jun-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",
@@ -522,7 +522,7 @@ export const liquData = [
   {
     TIME: "Jul-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",
@@ -532,7 +532,7 @@ export const liquData = [
   {
     TIME: "Aug-27",
     "Game Output": "20.0",
-    IEO: "10.0",
+    IEO: "5.0",
     Marketing: "9.0",
     "Pre-sale": "10.0",
     "Team&Consultant": "24.0",

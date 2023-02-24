@@ -8,17 +8,18 @@ export default function WhyLight() {
         loop
         src="https://assets6.lottiefiles.com/packages/lf20_2omr5gpu.json"
         style={{ height: "400px", width: "400px" }}
+        id="whySvg"
       />
       <div className="whyLightContext">
         <h2>Why Light</h2>
-        <span>Fulfill Both Sides’ Needs</span>
-        <div style={{ fontSize: "1.1em" }}>
+        <h3>Fulfill Both Sides’ Needs</h3>
+        <div className="whyLightContent">
           The hottest esports games are LoL , CS:GO, Fortnite, but they all
           require high levels of player pro ficiency. Web3 users are not able to
           adapt to this deep gameplay, they are willing to study the strategy of
           P2E but not expert gamers.
         </div>
-        <div style={{ fontSize: "1.1em" }}>
+        <div className="whyLightContent">
           Competitiveness and no control difficulty resulting in "light
           esports".
         </div>

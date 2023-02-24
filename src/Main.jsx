@@ -16,12 +16,14 @@ import "animate.css";
 const anchors = [
   "Home",
   "WhatIsLightEsports",
+  "WhyLight",
   "Gallery",
+  "FinancingTarget",
+  "Token&Liquidity",
   "Core",
   "Process",
-  "Token&Liquidity",
-  "Target",
   "Team",
+  "Partner",
 ];
 
 const Main = () => {

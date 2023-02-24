@@ -102,7 +102,7 @@ export default function HomePage({ isLoaded }) {
           alt="main"
         />
         <div style={{ zIndex: "2" }}>
-          <h1>Meta Virus</h1>
+          <h1>Light eSports</h1>
           <button style={{ marginRight: "1rem" }}>Try It</button>
           {window.innerWidth > 500 && (
             <>

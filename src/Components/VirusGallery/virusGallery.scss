@@ -55,6 +55,10 @@
   width: 60%;
   p {
     padding-top: 1rem;
+    font-size: 1.2em;
+  }
+  h2 {
+    font-size: 2em;
   }
   z-index: 1;
   background-color: rgba(171, 166, 24, 0.671);
@@ -100,6 +104,12 @@
     // position: absolute;
     // top: 5vh;
     width: 80vw;
+    p {
+      font-size: 1em;
+    }
+    h2 {
+      font-size: 1.5em;
+    }
   }
   .galleryContainer {
     height: 120vh;

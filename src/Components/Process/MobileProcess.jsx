@@ -149,8 +149,7 @@ export default function MobileProcess({ isLoaded }) {
             >
               <li>Cornerstone round</li>
               <li>Seed round</li>
-              <li>Community building</li>
-              <li>Playable DEMO</li>
+              <li>DEMO</li>
             </ul>
           </div>
           <div className="context_2 mobile">
@@ -162,10 +161,10 @@ export default function MobileProcess({ isLoaded }) {
                 textAlign: "left",
               }}
             >
-              <li>Multi-Exchange United IEO</li>
-              <li>Insider testnet</li>
-              <li>Asset pre-sale</li>
-              <li>Closed Beta</li>
+              <li>Playable DEMO</li>
+              <li>Closed Test</li>
+              <li>IDO</li>
+              <li>IGO</li>
             </ul>
           </div>
           <div className="context_3 mobile">
@@ -177,9 +176,10 @@ export default function MobileProcess({ isLoaded }) {
                 textAlign: "left",
               }}
             >
-              <li>Public Beta</li>
-              <li>Exchanges</li>
-              <li>Official Release</li>
+              <li>Internal Test</li>
+              <li>Exchange listing</li>
+              <li>Public Test</li>
+              <li>Official Operating</li>
             </ul>
           </div>
           <div className="context_4 mobile">
@@ -192,22 +192,25 @@ export default function MobileProcess({ isLoaded }) {
               }}
             >
               <li>
-                Open the editor to encourage other game developers to join the
-                MetaVirus game ecosystem.
+                Successive launch of game clusters and diversification of light
+                e-sports platform events.
               </li>
               <li>
-                Launch online and offline interaction, and virtual reality
-                interacts with reality.
+                Open editor and encourage other game developers to integrate
+                into the MetaVirus game ecosystem.
               </li>
               <li>
-                Introduce real-world brands and establish a link between
-                gameplay and advertising that serves as a mechanism to encourage
-                the community to be the main body of brand interaction and
-                cooperation.
+                Online and offline interactions, virtual reality and real-life
+                interactions.
               </li>
               <li>
-                Launch augmented reality (AR) technology that has been
-                strengthened by expected technical advances in the industry.
+                Introduction of real-world brands, game and advertising
+                integration, mechanisms to encourage the community to act as the
+                main body for brand interaction and cooperation.
+              </li>
+              <li>
+                Enhancement of AR technology display, collaboration with device
+                manufacturers or independent launch of AR glasses.
               </li>
             </ul>
           </div>

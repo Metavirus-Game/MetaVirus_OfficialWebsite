@@ -1,20 +1,24 @@
 export function VirusModel({ index }) {
   const models = [
-    "/assets/EarthWorm.gltf",
     "/assets/GrimReaper.gltf",
-    "/assets/PlantChewer.gltf",
     "/assets/Gloom.gltf",
     "/assets/Scorpion.gltf",
+    "/assets/EarthWorm.gltf",
+    "/assets/DragonFire.gltf",
+    "/assets/PlantChewer.gltf",
+    "/assets/Beem.gltf",
     "/assets/GolemEarth.gltf",
     "/assets/GolemFire.gltf",
     "/assets/GolemIce.gltf",
   ];
   const arModels = [
-    "/assets/EarthWorm.usdz",
     "/assets/GrimReaper.usdz",
-    "/assets/PlantChewer.usdz",
     "/assets/Gloom.usdz",
     "/assets/Scorpion.usdz",
+    "/assets/EarthWorm.usdz",
+    "/assets/DragonFire.usdz",
+    "/assets/PlantChewer.usdz",
+    "/assets/Beem.usdz",
     "/assets/GolemEarth.usdz",
     "/assets/GolemFire.usdz",
     "/assets/GolemIce.usdz",
@@ -23,7 +27,7 @@ export function VirusModel({ index }) {
   return (
     <div className="model scrollable-content">
       <model-viewer
-        alt="shiba"
+        alt="model"
         src={process.env.PUBLIC_URL + models[index]}
         ar
         ar-scale="auto"

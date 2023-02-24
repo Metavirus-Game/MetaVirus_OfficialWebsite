@@ -42,7 +42,7 @@ function LiquidityChart() {
     legend: {
       data: [
         "Game Output",
-        "IEO",
+        "IDO",
         "Marketing",
         "Pre-sale",
         "Team&Consultant",
@@ -92,7 +92,7 @@ function LiquidityChart() {
         showSymbol: false,
       },
       {
-        name: "IEO",
+        name: "IDO",
         type: "line",
         stack: "Total",
         areaStyle: {},

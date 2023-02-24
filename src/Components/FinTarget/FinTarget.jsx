@@ -5,23 +5,35 @@ export default function FinTarget() {
     <div className="targetContainer">
       <div className="targetContextContainer">
         <div>
-          <h3>The current funding is in the seed round</h3>
+          <h3>Currently in seed round of financing:</h3>
           <ul>
             <li>
-              The cornerstone round of 300,000 US dollars, accounting for 3% of
-              the total issued tokens, has been completed.
+              Hard cap of $300,000 was reached and 3% of total token supply was
+              sold in the private sale.
             </li>
             <li>
-              The seed round target of 1.4 million US dollars accounts for 7% of
-              the total issued tokens.
+              Targeting a seed round of $2.4 million with 12% of total token
+              supply to be sold.
             </li>
-            <li>At present, USD 1,000,000 has been in place.</li>
-            <li>Minimum investment of $200,000.</li>
+            <li>
+              Quick unlocking of the presale portion for better token value
+              management.
+            </li>
+            <li>$1 million already raised.</li>
+            <li>
+              Free to choose investment methods. For example, if you choose to
+              directly purchase presale shares instead of participating in
+              investment, the trading time allowed will be earlier but the price
+              will be higher.
+            </li>
           </ul>
         </div>
       </div>
       <div className="targetImgContainer">
-        <h2>Finance Target</h2>
+        <div>
+          <h2>Financing Target</h2>
+          <h3>Last call before listing on the exchange</h3>
+        </div>
       </div>
     </div>
   );
