@@ -183,7 +183,7 @@ export default function MobileProcess({ isLoaded }) {
             </ul>
           </div>
           <div className="context_4 mobile">
-            <h3>01/24-01/25</h3>
+            <h3>2024 and beyond</h3>
             <ul
               style={{
                 listStyle: "inside",
