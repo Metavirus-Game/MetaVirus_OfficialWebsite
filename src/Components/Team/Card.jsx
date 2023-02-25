@@ -19,7 +19,7 @@ export default function Card({ name, title, describe, portrait }) {
         }}
       >
         <div className="backInfo">
-          <div>{name}</div>
+          <h2 className="name">{name}</h2>
           <div className="title">{title}</div>
         </div>
       </a.div>
