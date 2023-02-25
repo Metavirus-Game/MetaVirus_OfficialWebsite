@@ -30,14 +30,14 @@
       position: absolute;
       left: 50%;
       transform: translate(-50%);
-      top: 4rem;
+      top: 2rem;
     }
     // nth-child(2) doesn't work
     .title {
       position: absolute;
       left: 50%;
       transform: translate(-50%);
-      bottom: 4rem;
+      bottom: 3rem;
       width: 80%;
     }
   }
@@ -77,7 +77,7 @@
   height: 45vh;
   min-width: 300px;
   max-width: 370px;
-  min-height: 350px;
+  min-height: 400px;
   max-height: 600px;
   // height: 400px;
 }
@@ -180,5 +180,10 @@
 @media screen and (max-width: 500px) {
   .swiper {
     height: 60%;
+  }
+
+  .container {
+    max-height: 275px;
+    min-height: 275px;
   }
 }
