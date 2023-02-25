@@ -34,11 +34,11 @@
   margin-right: auto;
   padding: 1rem;
   h3 {
-    padding-bottom: 1rem;
+    padding-bottom: 0.25rem;
   }
   ul {
     list-style: none;
-    font-size: 1em;
+    // font-size: 0.95em;
   }
   text-align: center;
 }
@@ -61,7 +61,15 @@
   .gameCoreContext {
     width: 100%;
     ul {
-      font-size: 0.9em;
+      font-size: 0.95em;
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .gameCoreContext {
+    ul {
+      font-size: 0.95em;
     }
   }
 }

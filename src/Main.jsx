@@ -103,7 +103,12 @@ const Main = () => {
                 )}
               </div>
               <div className="section">
+                {/* <div className="slide" dataAnchor="slide1"> */}
                 <Team isLoaded={sectionLoaded[8]} />
+                {/* </div> */}
+                {/* <div className="slide" dataAnchor="slide2"> */}
+                {/* <Team isLoaded={sectionLoaded[8]} /> */}
+                {/* </div> */}
               </div>
               <div className="section">
                 <Partner isLoaded={sectionLoaded[9]} />
