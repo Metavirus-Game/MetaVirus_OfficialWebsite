@@ -11,21 +11,8 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
   const [messageApi, contextHolder] = message.useMessage();
   const [socialNameOpen, setSocialNameOpen] = useState(false);
   const refCodeRef = useRef(null);
-  // const { username, phone, referralCode } = location.state.userData;
-  // const [username, setUsername] = useState();
-  // const [referralCode, setReferralCode] = useState();
-
-  // useEffect(() => {
-  //   if (userInfo) {
-  //     setReferralCode(userInfo.referralCode);
-  //     setUsername(userInfo.username);
-  //   }
-  // }, [userInfo]);
 
   function logout() {
-    // localStorage.removeItem("accountId");
-    // localStorage.removeItem("loginKey");
-    // localStorage.removeItem("username");
     localStorage.clear();
     setIsUserInfoOpen(false);
     navigate("/");
@@ -42,9 +29,9 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
   };
 
   const shareToIcons = [
-    process.env.PUBLIC_URL + "/img/telegram.png",
-    process.env.PUBLIC_URL + "/img/discord.png",
     process.env.PUBLIC_URL + "/img/twitter.png",
+    process.env.PUBLIC_URL + "/img/discord.png",
+    process.env.PUBLIC_URL + "/img/telegram.png",
     process.env.PUBLIC_URL + "/img/copy.png",
   ];
 
@@ -97,12 +84,12 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
     {
       img: process.env.PUBLIC_URL + "/img/discord.png",
       content: "Join the MetaVirus Discord Server!",
-      link: "https://twitter.com/metavirus_games?s=21&t=oyqN0Vci0SpsXLEl3HTyOg",
+      link: "https://discord.com/invite/YsYfT2MU4M",
     },
     {
       img: process.env.PUBLIC_URL + "/img/twitter.png",
       content: "Follow us Twitter!",
-      link: "https://discord.com/invite/YsYfT2MU4M",
+      link: "https://twitter.com/metavirus_games?s=21&t=oyqN0Vci0SpsXLEl3HTyOg",
     },
     {
       img: process.env.PUBLIC_URL + "/img/telegram.png",
@@ -130,7 +117,7 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
       >
         <div className="flex w-[100%] h-[100%] max-[600px]:flex-wrap">
           <div className="h-[100%] flex-[1] flex justify-center items-center flex-wrap bg-[url('Components/UserInfo/userInfo_bg.jpg')] bg-cover max-[600px]:h-[30%] basis-[100%]">
-            <div className="p-[2rem] bg-[#D0D8B0] w-[70%] h-[20%] rounded-xl flex justify-center items-center relative max-[600px]: h-[60%] w-[50%]">
+            <div className="p-[2rem] bg-[#D0D8B0] w-[70%] h-[20%] rounded-xl flex justify-center items-center relative max-[600px]:h-[60%] w-[50%]">
               <span
                 ref={refCodeRef}
                 className="absolute top-[5%] text-[#939393] text-[1.2rem] font-bold"
@@ -157,7 +144,7 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
                 </div>
               ))}
             </div>
-            <div className="w-[70%] h-[50%] bg-[#F4F4F4] flex justify-center items-center flex-wrap bg-[#F4F4F4] rounded-xl">
+            <div className="w-[70%] h-[50%] bg-[#F4F4F4] flex justify-center items-center flex-wrap bg-[#F4F4F4] rounded-xl max-[600px]:w-[80%]">
               {redirectToIcons.map((item, index) => (
                 <div
                   key={index}
@@ -169,9 +156,11 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
                   <img
                     src={item.img}
                     alt="icon"
-                    className="w-[5.5%] absolute left-[1rem] top-[1rem]"
+                    className="w-[6.5%] absolute left-[1rem] top-[1.2rem]"
                   />
-                  <p className="w-[80%] ml-[2rem] font-bold">{item.content}</p>
+                  <p className="w-[80%] ml-[2rem] font-medium">
+                    {item.content}
+                  </p>
                 </div>
               ))}
             </div>

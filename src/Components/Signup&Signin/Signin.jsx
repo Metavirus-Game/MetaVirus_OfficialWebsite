@@ -1,5 +1,5 @@
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input, Card, Modal } from "antd";
+import { Button, Form, Input, message, Modal } from "antd";
 import axios from "axios";
 import "./sign.scss";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
   const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
   const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [messageApi, contextHolder] = message.useMessage();
   // const [userData, setUserData] = useState(null);
 
   // useEffect(() => {
@@ -24,7 +25,7 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
   // }, [auth, userData]);
 
   const onFinish = ({ username, password }) => {
-    console.log("Received values of form: ", username, password);
+    setLoading(true);
     axios
       .post("https://acc.metavirus.games/account/loginRequest", {
         username: username,
@@ -36,26 +37,22 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
         console.log("register response:", response);
         const errorCode = response.data.code;
         if (errorCode === 0) {
+          setLoading(false);
           console.log(response.data.retObject);
           const userData = response.data.retObject;
           localStorage.setItem("accountId", userData.accountId);
           localStorage.setItem("loginKey", userData.msg);
           return userData;
         } else {
-          alert(response.data.msg);
-          throw Error(response.data.msg);
-          // <Alert
-          //   message="Error"
-          //   description={response.data["msg"]}
-          //   type="warning"
-          //   showIcon
-          //   closable
-          // />;
+          setLoading(false);
+          messageApi.open({
+            type: "error",
+            content: response.data["msg"],
+          });
         }
       })
       .then((userData) => {
         console.log(userData);
-        setLoading(true);
         axios
           .get("https://acc.metavirus.games/account/getProfile", {
             params: {
@@ -74,7 +71,6 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
             console.log(response);
             const errorCode = response.data.code;
             if (errorCode === 0) {
-              setLoading(false);
               const userData = response.data.retObject;
               // setUserData(userData);
               setIsSigninOpen(false);
@@ -88,8 +84,10 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
               // navigate("/userInfo");
               setIsUserInfoOpen(true);
             } else {
-              alert("Failed to retrieve user information");
-              throw Error("Failed to retrieve user information");
+              messageApi.open({
+                type: "error",
+                content: "Failed to retrieve user information",
+              });
             }
           })
           .catch((error) => {
@@ -102,6 +100,7 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
   };
   return (
     <>
+      {contextHolder}
       <Modal
         open={isSigninOpen}
         footer={null}
@@ -157,30 +156,24 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
           Forgot password
         </a>
       </Form.Item> */}
-          <Form.Item
-            wrapperCol={{
-              offset: 10,
-              span: 14,
-            }}
-            className="mt-[2rem]"
-          >
-            <Button type="primary" htmlType="submit" loading={loading}>
+          <Form.Item className="mt-[2rem]">
+            <Button
+              type="primary"
+              htmlType="submit"
+              loading={loading}
+              className="w-[5rem] mx-auto block"
+            >
               Log in
             </Button>
-            {/* <div className="mt-[.5rem]">
-              or <a onClick={() => setIsSignupOpen(true)}>register now!</a>
-            </div> */}
           </Form.Item>
         </Form>
       </Modal>
-      {/* <Signup isSignupOpen={isSigninOpen} setIsSignupOpen={setIsSignupOpen} /> */}
       <UserInfo
         userInfo={userInfo}
         setIsUserInfoOpen={setIsUserInfoOpen}
         isUserInfoOpen={isUserInfoOpen}
       />
     </>
-    // </div>
   );
 };
 
