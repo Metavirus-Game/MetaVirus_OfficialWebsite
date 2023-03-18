@@ -9,6 +9,8 @@ import axios from "axios";
 export const AuthContext = createContext();
 export default function App() {
   const [auth, setAuth] = useState(false);
+  const [userInfo, setUserInfo] = useState();
+
   useEffect(() => {
     if (localStorage.getItem("accountId") && localStorage.getItem("loginKey")) {
       const accountId = localStorage.getItem("accountId");
@@ -22,7 +24,7 @@ export default function App() {
           },
         })
         .then((response) => {
-          // console.log(response);
+          console.log(response);
           const errorCode = response.data.code;
           if (errorCode === 0) {
             setAuth(true);
@@ -36,16 +38,18 @@ export default function App() {
       setAuth(false);
     }
   }, []);
+
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ auth, setAuth, userInfo, setUserInfo }}>
       {/* BrowserRouter not working when hoisting via github pages */}
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         {/* <HashRouter basename={process.env.PUBLIC_URL}> */}
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
           <Route path="/userInfo" element={<UserInfo />} />
+          {/* <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/userInfo" element={<UserInfo />} /> */}
           {/* <Route path={"*"} element={<ErrorPage />} /> */}
         </Routes>
         {/* </HashRouter> */}

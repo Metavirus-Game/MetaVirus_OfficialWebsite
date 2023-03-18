@@ -1,10 +1,11 @@
-import { Button, Form, Input, Card } from "antd";
+import { Button, Form, Input, Card, Modal } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Signin from "./Signin";
 import "./sign.scss";
-function Signup() {
+function Signup({ isSignupOpen, setIsSignupOpen }) {
   const [resendState, setResendState] = useState(
     sessionStorage.getItem("resendState") === "true"
   );
@@ -13,9 +14,9 @@ function Signup() {
   );
 
   const [userEmail, setUserEmail] = useState(null);
-  // const [userPassword, setUserPassword] = useState(null);
   const [token, setToken] = useState(null);
-  // const [userCode, setUserCode] = useState(null);
+
+  const [isSigninOpen, setisSigninOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -108,9 +109,18 @@ function Signup() {
 
   const onSignupFailed = (values) => {};
   return (
-    <div className="signForm">
-      <HomeOutlined className="homeIcon" onClick={() => navigate("/")} />
-      <Card title="Sign Up" style={{ width: 700 }} className="signupCard">
+    // <div className="signForm">
+    //   <HomeOutlined className="homeIcon" onClick={() => navigate("/")} />
+    <>
+      <Modal
+        open={isSignupOpen}
+        footer={null}
+        onCancel={() => setIsSignupOpen(false)}
+        title="Sign Up"
+        // className="max-w-[50vw] w-[50rem]"
+        centered
+      >
+        {/* <Card title="Sign Up" style={{ width: 700 }} className="signupCard"> */}
         <Form
           name="form1"
           // style={{
@@ -170,7 +180,12 @@ function Signup() {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 8,
+              span: 16,
+            }}
+          >
             <Button type="primary" htmlType="submit" disabled={resendState}>
               Get Verification Code
             </Button>
@@ -196,25 +211,44 @@ function Signup() {
                 message: "Please input your verification code",
               },
             ]}
+            labelCol={{
+              span: 8,
+            }}
+            wrapperCol={{
+              span: 10,
+            }}
           >
             <Input />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 10,
+              span: 14,
+            }}
+          >
             <Button type="primary" htmlType="submit">
               Sign Up
             </Button>
           </Form.Item>
         </Form>
-        <div>
-          <div style={{ color: "black", marginBottom: "0.5rem" }}>
-            Already have an account?
-          </div>
-          <Button type="primary" onClick={() => navigate("/signin")}>
+        <div className="mx-auto w-[10rem]">
+          <div className="mb-[.5rem]">Already have an account?</div>
+          <Button
+            className="ml-[2.5rem] w-[5rem]"
+            type="primary"
+            // onClick={() => navigate("/signin")}
+            onClick={() => {
+              setisSigninOpen(true);
+              setIsSignupOpen(false);
+            }}
+          >
             Sign in
           </Button>
         </div>
-      </Card>
-    </div>
+        {/* </Card> */}
+      </Modal>
+      <Signin isSigninOpen={isSigninOpen} setIsSigninOpen={setisSigninOpen} />
+    </>
   );
 }
 export default Signup;

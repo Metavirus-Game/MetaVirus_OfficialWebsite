@@ -63,3 +63,7 @@ code {
     height: auto !important ;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

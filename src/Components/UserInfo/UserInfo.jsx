@@ -1,44 +1,252 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { HomeFilled } from "@ant-design/icons";
-import { Button } from "antd";
+import { Button, Modal, Form, Input, message } from "antd";
 import "./userInfo.scss";
 import { AuthContext } from "../../App";
-import { useContext } from "react";
-export default function UserInfo() {
-  const location = useLocation();
+import { useContext, useEffect, useState, useRef } from "react";
+import copy from "copy-to-clipboard";
+export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
   const navigate = useNavigate();
-  const { auth, setAuth } = useContext(AuthContext);
-  const { username, phone, referralCode } = location.state.userData;
+  // const location = useLocation();
+  const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
+  const [messageApi, contextHolder] = message.useMessage();
+  const [socialNameOpen, setSocialNameOpen] = useState(false);
+  const refCodeRef = useRef(null);
+  // const { username, phone, referralCode } = location.state.userData;
+  // const [username, setUsername] = useState();
+  // const [referralCode, setReferralCode] = useState();
+
+  // useEffect(() => {
+  //   if (userInfo) {
+  //     setReferralCode(userInfo.referralCode);
+  //     setUsername(userInfo.username);
+  //   }
+  // }, [userInfo]);
+
   function logout() {
-    localStorage.removeItem("accountId");
-    localStorage.removeItem("loginKey");
-    navigate("/signin");
+    // localStorage.removeItem("accountId");
+    // localStorage.removeItem("loginKey");
+    // localStorage.removeItem("username");
+    localStorage.clear();
+    setIsUserInfoOpen(false);
+    navigate("/");
+    // setUserInfo(null);
+    // setIsUserInfoOpen(false);
     setAuth(false);
   }
+
+  const onSave = ({ twitter, discord, telegram }) => {
+    setSocialNameOpen(false);
+    localStorage.setItem("twitter", twitter);
+    localStorage.setItem("discord", discord);
+    localStorage.setItem("telegram", telegram);
+  };
+
+  const shareToIcons = [
+    process.env.PUBLIC_URL + "/img/telegram.png",
+    process.env.PUBLIC_URL + "/img/discord.png",
+    process.env.PUBLIC_URL + "/img/twitter.png",
+    process.env.PUBLIC_URL + "/img/copy.png",
+  ];
+
+  const shareToSocialNet = (index) => {
+    const socialNetwork = ["twitter", "discord", "telegram"];
+    // const referralCode = userInfo && userInfo.referralCode;
+    const referralCode = userInfo.referralCode;
+    const pageUrl = window.location.href; // Replace with the URL of your web page
+    const shareText = `Join this amazing game with my referral code: ${referralCode}!`;
+    const shareUrl = [
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        shareText
+      )}&url=${encodeURIComponent(
+        pageUrl
+      )}&hashtags=referral&via=${localStorage.getItem(socialNetwork[index])}`,
+      `https://discord.com/invite/YsYfT2MU4M`,
+      `https://t.me/share/url?url=${encodeURIComponent(
+        window.location.href
+      )}&text=${encodeURIComponent(shareText)}`,
+    ];
+
+    if (index === 1) {
+      copy(referralCode);
+      messageApi.open({
+        type: "success",
+        content: "You have copied the referral code to clipboard!",
+      });
+      setTimeout(() => {
+        window.open(shareUrl[index], "_blank", "noopener,noreferrer");
+      }, 1500);
+      return;
+    } else if (index === 3) {
+      copy(referralCode);
+      messageApi.open({
+        type: "success",
+        content: "You have copied the referral code to clipboard!",
+      });
+      return;
+    }
+
+    window.open(shareUrl[index], "_blank", "noopener,noreferrer");
+  };
+
+  const redirectToIcons = [
+    {
+      img: process.env.PUBLIC_URL + "/img/telegram.png",
+      content: "Telegram Announcement",
+      link: "https://t.me/MetaVirus_Announcements",
+    },
+    {
+      img: process.env.PUBLIC_URL + "/img/discord.png",
+      content: "Join the MetaVirus Discord Server!",
+      link: "https://twitter.com/metavirus_games?s=21&t=oyqN0Vci0SpsXLEl3HTyOg",
+    },
+    {
+      img: process.env.PUBLIC_URL + "/img/twitter.png",
+      content: "Follow us Twitter!",
+      link: "https://discord.com/invite/YsYfT2MU4M",
+    },
+    {
+      img: process.env.PUBLIC_URL + "/img/telegram.png",
+      content: "Telegram: Contact@MetaVirus_Games",
+      link: "https://t.me/MetaVirus_Games",
+    },
+  ];
+
   return (
-    <div className="userInfo">
-      <HomeFilled
-        style={{ fontSize: "2.5rem", marginTop: "2rem" }}
-        onClick={() => navigate("/")}
-      />
-      {auth ? (
-        <div style={{ marginTop: "2rem" }}>
-          <div>Username: {username}</div>
-          {/* <div>phone: {phone}</div> */}
-          <div>
-            <strong>Referral Code: {referralCode}</strong>
+    <>
+      {contextHolder}
+      <Modal
+        open={isUserInfoOpen}
+        footer={null}
+        onCancel={() => setIsUserInfoOpen(false)}
+        // title="Sign Up"
+        // className="max-w-[50vw] w-[50rem]"
+        centered
+        width={1000}
+        bodyStyle={{
+          height: "80vh",
+          maxHeight: "650px",
+        }}
+        wrapClassName="no-padding-modal"
+      >
+        <div className="flex w-[100%] h-[100%] max-[600px]:flex-wrap">
+          <div className="h-[100%] flex-[1] flex justify-center items-center flex-wrap bg-[url('Components/UserInfo/userInfo_bg.jpg')] bg-cover max-[600px]:h-[30%] basis-[100%]">
+            <div className="p-[2rem] bg-[#D0D8B0] w-[70%] h-[20%] rounded-xl flex justify-center items-center relative max-[600px]: h-[60%] w-[50%]">
+              <span
+                ref={refCodeRef}
+                className="absolute top-[5%] text-[#939393] text-[1.2rem] font-bold"
+              >
+                REFERRAL CODE
+              </span>
+              <span className="text-black text-[2rem] font-bold">
+                {userInfo && userInfo.referralCode}
+              </span>
+            </div>
           </div>
-          <Button
-            style={{ width: "100px", marginTop: "2rem" }}
-            type="primary"
-            onClick={logout}
-          >
-            Log Out
-          </Button>
+          <div className="h-[100%] flex-[2] bg-[#ecf0f1] flex flex-wrap justify-center max-[600px]:h-[70%] flex-[1] basis-[100%]">
+            <div className="basis-[100%] flex justify-center items-center flex-wrap text-black text-[1rem] font-bold text-[#757575]">
+              <span className="text-[#757575] basis-[100%] text-center relative top-[1.5rem]">
+                Share to
+              </span>
+              {shareToIcons.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[45px] h-[45px] bg-white flex justify-center items-center rounded-xl m-[1rem] hover:cursor-pointer shadow-md"
+                  onClick={() => shareToSocialNet(index)}
+                >
+                  <img src={item} alt="icon" className="w-[50%]" />
+                </div>
+              ))}
+            </div>
+            <div className="w-[70%] h-[50%] bg-[#F4F4F4] flex justify-center items-center flex-wrap bg-[#F4F4F4] rounded-xl">
+              {redirectToIcons.map((item, index) => (
+                <div
+                  key={index}
+                  className="basis-[95%] h-[20%] rounded-xl hover:cursor-pointer relative bg-white flex justify-center items-center shadow-md"
+                  onClick={() =>
+                    window.open(item.link, "_blank", "noopener,noreferrer")
+                  }
+                >
+                  <img
+                    src={item.img}
+                    alt="icon"
+                    className="w-[5.5%] absolute left-[1rem] top-[1rem]"
+                  />
+                  <p className="w-[80%] ml-[2rem] font-bold">{item.content}</p>
+                </div>
+              ))}
+            </div>
+            <div className="basis-[100%] flex justify-center">
+              <button
+                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold border-none text-white bg-[#48A1C7] hover:cursor-pointer"
+                onClick={() => setSocialNameOpen(true)}
+              >
+                Bind Your Social Media
+              </button>
+              <button
+                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold ml-[2rem] hover:cursor-pointer"
+                onClick={() => logout()}
+              >
+                Logout
+              </button>
+            </div>
+          </div>
         </div>
-      ) : (
-        <div>You have to sign in at first</div>
-      )}
-    </div>
+      </Modal>
+      <Modal
+        title={"Save your social networks' usernames"}
+        open={socialNameOpen}
+        footer={null}
+        centered
+        onCancel={() => setSocialNameOpen(false)}
+      >
+        <Form
+          onFinish={onSave}
+          labelCol={{
+            span: 4,
+          }}
+          wrapperCol={{
+            span: 20,
+          }}
+        >
+          <Form.Item label="Twitter" name="twitter">
+            <Input
+              placeholder={
+                localStorage.getItem("twitter")
+                  ? localStorage.getItem("twitter")
+                  : "Please Input your Twitter username"
+              }
+            />
+          </Form.Item>
+          <Form.Item label="Discord" name="discord">
+            <Input
+              placeholder={
+                localStorage.getItem("discord")
+                  ? localStorage.getItem("discord")
+                  : "Please Input your Discord username"
+              }
+            />
+          </Form.Item>
+          <Form.Item label="Telegram" name="telegram">
+            <Input
+              placeholder={
+                localStorage.getItem("telegram")
+                  ? localStorage.getItem("telegram")
+                  : "Please Input your Telegram username"
+              }
+            />
+          </Form.Item>
+          <Form.Item
+            wrapperCol={{
+              offset: 10,
+              span: 14,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Save
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
+    </>
   );
 }

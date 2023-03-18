@@ -1,4 +1,13 @@
-.userInfo {
-  color: black;
-  text-align: center;
+// .no-padding-modal .ant-modal-content {
+//   padding: 0;
+// }
+
+.no-padding-modal .ant-modal-content {
+  padding: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .ant-modal-close-x {
+    color: white;
+  }
 }
