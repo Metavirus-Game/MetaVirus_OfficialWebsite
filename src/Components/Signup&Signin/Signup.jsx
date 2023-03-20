@@ -29,15 +29,6 @@ function Signup({
   const navigate = useNavigate();
 
   useEffect(() => {
-    // fullpageApi.setAllowScrolling(false);
-    if (fullpageApi && isSigninOpen === true) {
-      console.log(isSigninOpen);
-      fullpageApi.setAllowScrolling(false);
-    }
-    // fullpageApi && isSigninOpen && fullpageApi.setAllowScrolling(false);
-  }, [fullpageApi, isSigninOpen]);
-
-  useEffect(() => {
     const interval = setInterval(() => {
       if (resendTime > 0) {
         setResendTime((pre) => pre - 1);

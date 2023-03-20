@@ -44,7 +44,7 @@ export default function UserInfo({
     const socialNetwork = ["twitter", "discord", "telegram"];
     // const referralCode = userInfo && userInfo.referralCode;
     const referralCode = userInfo.referralCode;
-    const pageUrl = window.location.href; // Replace with the URL of your web page
+    const pageUrl = window.location.origin; // Replace with the URL of your web page
     const shareText = `Join this amazing game with my referral code: ${referralCode}!`;
     const shareUrl = localStorage.getItem(socialNetwork[index])
       ? [
