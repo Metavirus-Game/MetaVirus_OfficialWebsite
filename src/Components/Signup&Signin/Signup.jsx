@@ -1,10 +1,17 @@
 import { Button, Form, Input, message, Modal } from "antd";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Signin from "./Signin";
 import "./sign.scss";
-function Signup({ isSignupOpen, setIsSignupOpen, referralCode }) {
+function Signup({
+  isSignupOpen,
+  setIsSignupOpen,
+  referralCode,
+  fullpageApi,
+  isSigninOpen,
+  setIsSigninOpen,
+}) {
   const [resendState, setResendState] = useState(
     sessionStorage.getItem("resendState") === "true"
   );
@@ -14,12 +21,21 @@ function Signup({ isSignupOpen, setIsSignupOpen, referralCode }) {
 
   const [userEmail, setUserEmail] = useState(null);
   const [token, setToken] = useState(null);
-  const [isSigninOpen, setisSigninOpen] = useState(false);
+  // const [isSigninOpen, setisSigninOpen] = useState(false);
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // fullpageApi.setAllowScrolling(false);
+    if (fullpageApi && isSigninOpen === true) {
+      console.log(isSigninOpen);
+      fullpageApi.setAllowScrolling(false);
+    }
+    // fullpageApi && isSigninOpen && fullpageApi.setAllowScrolling(false);
+  }, [fullpageApi, isSigninOpen]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -105,7 +121,7 @@ function Signup({ isSignupOpen, setIsSignupOpen, referralCode }) {
           });
           form.resetFields();
           setIsSignupOpen(false);
-          setisSigninOpen(true);
+          setIsSigninOpen(true);
           setLoading(false);
         } else {
           setLoading(false);
@@ -260,14 +276,14 @@ function Signup({ isSignupOpen, setIsSignupOpen, referralCode }) {
           type="primary"
           // onClick={() => navigate("/signin")}
           onClick={() => {
-            setisSigninOpen(true);
+            setIsSigninOpen(true);
             setIsSignupOpen(false);
           }}
         >
           Sign in
         </Button>
       </Modal>
-      <Signin isSigninOpen={isSigninOpen} setIsSigninOpen={setisSigninOpen} />
+      <Signin isSigninOpen={isSigninOpen} setIsSigninOpen={setIsSigninOpen} />
     </>
   );
 }

@@ -4,10 +4,15 @@ import "./userInfo.scss";
 import { AuthContext } from "../../App";
 import { useContext, useEffect, useState, useRef } from "react";
 import copy from "copy-to-clipboard";
-export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
+export default function UserInfo({
+  isUserInfoOpen,
+  setIsUserInfoOpen,
+  fullpageApi,
+}) {
   const navigate = useNavigate();
   // const location = useLocation();
-  const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
+  const { auth, setAuth, userInfo, setUserInfo, setAnyModalOpen } =
+    useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [socialNameOpen, setSocialNameOpen] = useState(false);
   const refCodeRef = useRef(null);
@@ -41,19 +46,31 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
     const referralCode = userInfo.referralCode;
     const pageUrl = window.location.href; // Replace with the URL of your web page
     const shareText = `Join this amazing game with my referral code: ${referralCode}!`;
-    const shareUrl = [
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        shareText
-      )}%0A&url=${encodeURIComponent(
-        pageUrl
-      )}?referral=${referralCode}%0A&via=${localStorage.getItem(
-        socialNetwork[index]
-      )}`,
-      `https://discord.com/invite/YsYfT2MU4M`,
-      `https://t.me/share/url?url=${encodeURIComponent(
-        pageUrl + `?referral=${referralCode}`
-      )}&text=${encodeURIComponent(shareText)}`,
-    ];
+    const shareUrl = localStorage.getItem(socialNetwork[index])
+      ? [
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            shareText
+          )}%0A&url=${encodeURIComponent(
+            pageUrl
+          )}?referralCode=${referralCode}%0A&via=${localStorage.getItem(
+            socialNetwork[index]
+          )}`,
+          `https://discord.com/invite/YsYfT2MU4M`,
+          `https://t.me/share/url?url=${encodeURIComponent(
+            pageUrl + `?referralCode=${referralCode}`
+          )}&text=${encodeURIComponent(shareText)}`,
+        ]
+      : [
+          `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            shareText
+          )}%0A&url=${encodeURIComponent(
+            pageUrl
+          )}?referralCode=${referralCode}`,
+          `https://discord.com/invite/YsYfT2MU4M`,
+          `https://t.me/share/url?url=${encodeURIComponent(
+            pageUrl + `?referralCode=${referralCode}`
+          )}&text=${encodeURIComponent(shareText)}`,
+        ];
 
     if (index === 1) {
       copy(`${pageUrl}?referralCode=${referralCode}`);

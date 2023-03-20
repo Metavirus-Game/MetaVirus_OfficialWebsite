@@ -6,14 +6,27 @@ import UserInfo from "../UserInfo/UserInfo";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-export default function Navigation() {
+export default function Navigation({ fullpageApi }) {
   const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
-  console.log(auth, userInfo);
+  // console.log(auth, userInfo);
   // console.log(auth);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
   const location = useLocation();
   const [referralCode, setReferralCode] = useState();
+  const [isSigninOpen, setIsSigninOpen] = useState(false);
+
+  useEffect(() => {
+    // fullpageApi.setAllowScrolling(false);
+    fullpageApi &&
+      (isSignupOpen || isUserInfoOpen || isSigninOpen) &&
+      fullpageApi.setAllowScrolling(false);
+    fullpageApi &&
+      !isSignupOpen &&
+      !isUserInfoOpen &&
+      !isSigninOpen &&
+      fullpageApi.setAllowScrolling(true);
+  }, [fullpageApi, isSignupOpen, isUserInfoOpen, isSigninOpen]);
 
   useEffect(() => {
     if (
@@ -100,7 +113,10 @@ export default function Navigation() {
       <Signup
         isSignupOpen={isSignupOpen}
         setIsSignupOpen={setIsSignupOpen}
+        isSigninOpen={isSigninOpen}
+        setIsSigninOpen={setIsSigninOpen}
         referralCode={referralCode}
+        fullpageApi={fullpageApi}
       />
       <UserInfo
         // userInfo={userInfo}

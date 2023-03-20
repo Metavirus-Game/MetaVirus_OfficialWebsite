@@ -41,7 +41,7 @@ const Main = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <ReactFullpage
         anchors={anchors}
         navigation
@@ -71,9 +71,10 @@ const Main = () => {
           sectionLoaded[origin.index] = true;
         }}
         render={({ state, fullpageApi }) => {
-          // console.log("render prop change", state, fullpageApi);
+          console.log("render prop change", fullpageApi);
           return (
             <div>
+              <Navigation fullpageApi={fullpageApi} />
               <div className="section">
                 <HomePage isLoaded={sectionLoaded[0]} />
               </div>
@@ -103,12 +104,7 @@ const Main = () => {
                 )}
               </div>
               <div className="section">
-                {/* <div className="slide" dataAnchor="slide1"> */}
                 <Team isLoaded={sectionLoaded[8]} />
-                {/* </div> */}
-                {/* <div className="slide" dataAnchor="slide2"> */}
-                {/* <Team isLoaded={sectionLoaded[8]} /> */}
-                {/* </div> */}
               </div>
               <div className="section">
                 <Partner isLoaded={sectionLoaded[9]} />
