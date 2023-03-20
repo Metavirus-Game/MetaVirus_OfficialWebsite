@@ -44,20 +44,22 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
     const shareUrl = [
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         shareText
-      )}&url=${encodeURIComponent(
+      )}%0A&url=${encodeURIComponent(
         pageUrl
-      )}&hashtags=referral&via=${localStorage.getItem(socialNetwork[index])}`,
+      )}?referral=${referralCode}%0A&via=${localStorage.getItem(
+        socialNetwork[index]
+      )}`,
       `https://discord.com/invite/YsYfT2MU4M`,
       `https://t.me/share/url?url=${encodeURIComponent(
-        window.location.href
+        pageUrl + `?referral=${referralCode}`
       )}&text=${encodeURIComponent(shareText)}`,
     ];
 
     if (index === 1) {
-      copy(referralCode);
+      copy(`${pageUrl}?referralCode=${referralCode}`);
       messageApi.open({
         type: "success",
-        content: "You have copied the referral code to clipboard!",
+        content: "You have copied the referral link to clipboard!",
       });
       setTimeout(() => {
         window.open(shareUrl[index], "_blank", "noopener,noreferrer");
@@ -67,7 +69,7 @@ export default function UserInfo({ isUserInfoOpen, setIsUserInfoOpen }) {
       copy(referralCode);
       messageApi.open({
         type: "success",
-        content: "You have copied the referral code to clipboard!",
+        content: "You have copied the referral link to clipboard!",
       });
       return;
     }

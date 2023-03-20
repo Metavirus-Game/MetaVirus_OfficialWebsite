@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Signin from "./Signin";
 import "./sign.scss";
-function Signup({ isSignupOpen, setIsSignupOpen }) {
+function Signup({ isSignupOpen, setIsSignupOpen, referralCode }) {
   const [resendState, setResendState] = useState(
     sessionStorage.getItem("resendState") === "true"
   );
@@ -196,7 +196,10 @@ function Signup({ isSignupOpen, setIsSignupOpen }) {
             <Input.Password />
           </Form.Item>
           <Form.Item label="Referral Code" name="referralCode" {...formLayout}>
-            <Input placeholder="Please input your referral code" />
+            <Input
+              placeholder="Please input your referral code"
+              defaultValue={referralCode}
+            />
           </Form.Item>
 
           <Form.Item>

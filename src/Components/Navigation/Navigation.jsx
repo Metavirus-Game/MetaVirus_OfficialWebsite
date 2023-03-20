@@ -4,6 +4,7 @@ import { AuthContext } from "../../App";
 import Signup from "../Signup&Signin/Signup";
 import UserInfo from "../UserInfo/UserInfo";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 export default function Navigation() {
   const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
@@ -11,6 +12,8 @@ export default function Navigation() {
   // console.log(auth);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
   const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
+  const location = useLocation();
+  const [referralCode, setReferralCode] = useState();
 
   useEffect(() => {
     if (
@@ -63,6 +66,17 @@ export default function Navigation() {
     }
   }, []);
 
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const referralCode = queryParams.get("referralCode");
+    if (referralCode) {
+      setReferralCode(referralCode);
+      // setVisible(true);
+      console.log(referralCode);
+      setIsSignupOpen(true);
+    }
+  }, [location.search]);
+
   return (
     <>
       <nav id="nav">
@@ -83,7 +97,11 @@ export default function Navigation() {
           </a>
         )}
       </nav>
-      <Signup isSignupOpen={isSignupOpen} setIsSignupOpen={setIsSignupOpen} />
+      <Signup
+        isSignupOpen={isSignupOpen}
+        setIsSignupOpen={setIsSignupOpen}
+        referralCode={referralCode}
+      />
       <UserInfo
         // userInfo={userInfo}
         isUserInfoOpen={isUserInfoOpen}
