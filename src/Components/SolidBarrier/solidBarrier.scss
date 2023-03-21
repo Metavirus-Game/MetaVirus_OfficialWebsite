@@ -1,0 +1,20 @@
+.SBSection {
+  background: linear-gradient(#100b42, #090625);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SBContainer {
+  width: 60%;
+  display: flex;
+}
+
+.SBContextContainer {
+  flex: 1;
+}
+
+.SBListContainer {
+  flex: 1;
+}

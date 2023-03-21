@@ -12,6 +12,9 @@ import Navigation from "./Components/Navigation/Navigation";
 import WhatJs from "./Components/WhatLs/WhatLs";
 import WhyLight from "./Components/WhyLight/WhyLight";
 import Partner from "./Components/Partner/Partner";
+import UFDPlatform from "./Components/UFDPlatform/UFDPlatform";
+import GameFiSup from "./Components/GameFiSup/GameFiSup";
+import SolidBarrier from "./Components/SolidBarrier/SolidBarrier";
 import "animate.css";
 const anchors = [
   "Home",
@@ -28,6 +31,8 @@ const anchors = [
 
 const Main = () => {
   const sectionLoaded = [
+    false,
+    false,
     false,
     false,
     false,
@@ -85,29 +90,38 @@ const Main = () => {
                 <WhyLight isLoaded={sectionLoaded[2]} />
               </div>
               <div className="section">
-                <VirusGallery isLoaded={sectionLoaded[3]} />
+                {/* <WhyLight isLoaded={sectionLoaded[3]} /> */}
+                {/* <OnChainBattles isLoaded={sectionLoaded[3]} /> */}
+                {/* <SolidBarrier isLoaded={sectionLoaded[3]} /> */}
+                <UFDPlatform />
               </div>
               <div className="section">
-                <FinTarget isLoaded={sectionLoaded[4]} />
+                <GameFiSup isLoaded={sectionLoaded[4]} />
               </div>
               <div className="section">
-                <Chart isLoaded={sectionLoaded[5]} />
+                <VirusGallery isLoaded={sectionLoaded[5]} />
               </div>
               <div className="section">
-                <GameCore isLoaded={sectionLoaded[6]} />
+                <FinTarget isLoaded={sectionLoaded[6]} />
+              </div>
+              <div className="section">
+                <Chart isLoaded={sectionLoaded[7]} />
+              </div>
+              <div className="section">
+                <GameCore isLoaded={sectionLoaded[8]} />
               </div>
               <div className="section">
                 {window.innerWidth < 500 ? (
-                  <MobileProcess isLoaded={sectionLoaded[7]} />
+                  <MobileProcess isLoaded={sectionLoaded[9]} />
                 ) : (
-                  <Process isLoaded={sectionLoaded[7]} />
+                  <Process isLoaded={sectionLoaded[9]} />
                 )}
               </div>
               <div className="section">
-                <Team isLoaded={sectionLoaded[8]} />
+                <Team isLoaded={sectionLoaded[10]} />
               </div>
               <div className="section">
-                <Partner isLoaded={sectionLoaded[9]} />
+                <Partner isLoaded={sectionLoaded[11]} />
               </div>
             </div>
           );

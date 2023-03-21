@@ -11,8 +11,7 @@ export default function UserInfo({
 }) {
   const navigate = useNavigate();
   // const location = useLocation();
-  const { auth, setAuth, userInfo, setUserInfo, setAnyModalOpen } =
-    useContext(AuthContext);
+  const { setAuth, userInfo } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [socialNameOpen, setSocialNameOpen] = useState(false);
   const refCodeRef = useRef(null);
