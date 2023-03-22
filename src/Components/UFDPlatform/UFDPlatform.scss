@@ -1,23 +1,121 @@
-.UFDPlatformContainer {
+.UFDPlatformSection {
   height: 100vh;
   background: linear-gradient(#100b42, #090625);
+  h2 {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+.UFDPlatformContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 90%;
+  // background: linear-gradient(#100b42, #090625);
   position: relative;
 }
 
-.UFDSvg {
+%UFDBlock {
+  position: absolute;
+  width: 20vw;
+  height: 25vh;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  div {
+    flex-basis: 80%;
+  }
+}
+
+.UFDBlockchainBlock {
+  @extend %UFDBlock;
+  transform: translate(-15vw, -20vh);
+  background: linear-gradient(120deg, #5ae8fe, #076bfd);
+}
+
+.UFDVideoBlock {
+  @extend %UFDBlock;
+  transform: translate(15vw, -20vh);
+  background: linear-gradient(240deg, #5ae8fe, #076bfd);
+}
+
+.UFDCombatBlock {
+  @extend %UFDBlock;
+  transform: translate(-15vw, 20vh);
+  background: linear-gradient(240deg, #076bfd, #5ae8fe);
+}
+
+.UFDWalletBlock {
+  @extend %UFDBlock;
+  transform: translate(15vw, 20vh);
+  background: linear-gradient(120deg, #076bfd, #5ae8fe);
+}
+
+%UFDArrow {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70%;
 }
 
-// .blockCenterContainer {
-//   width: 20px;
-//   height: 20px;
-//   background-color: white;
-// }
+.horArrow {
+  @extend %UFDArrow;
+  height: 5.5%;
+  width: 60%;
+}
+
+.verArrow {
+  @extend %UFDArrow;
+  height: 75%;
+}
+
+%UFDaxis {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+%UFDArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 500px) {
+  %UFDBlock {
+    font-size: 1rem;
+  }
+  .UFDBlockchainBlock {
+    width: 40vw;
+    transform: translate(-25vw, -20vh);
+  }
+
+  .UFDVideoBlock {
+    width: 40vw;
+    transform: translate(25vw, -20vh);
+  }
+
+  .UFDCombatBlock {
+    width: 40vw;
+    transform: translate(-25vw, 20vh);
+  }
+
+  .UFDWalletBlock {
+    width: 40vw;
+    transform: translate(25vw, 20vh);
+  }
+
+  .horArrow {
+    width: 90%;
+  }
+
+  .verArrow {
+    width: 10%;
+  }
+}

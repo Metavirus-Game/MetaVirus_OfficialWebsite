@@ -134,8 +134,8 @@ export default function UserInfo({
         wrapClassName="no-padding-modal"
       >
         <div className="flex w-[100%] h-[100%] max-[600px]:flex-wrap">
-          <div className="h-[100%] flex-[1] flex justify-center items-center flex-wrap bg-[url('Components/UserInfo/userInfo_bg.jpg')] bg-cover max-[600px]:h-[30%] basis-[100%]">
-            <div className="p-[2rem] bg-[#D0D8B0] w-[70%] h-[20%] rounded-xl flex justify-center items-center relative max-[600px]:h-[60%] w-[50%]">
+          <div className="h-[100%] flex-[1] flex justify-center items-center flex-wrap bg-[url('Components/UserInfo/userInfo_bg.jpg')] bg-cover max-[600px]:h-[30%]">
+            <div className="p-[2rem] bg-[#D0D8B0] w-[70%] h-[20%] rounded-xl flex justify-center items-center relative max-[600px]:h-[60%]">
               <span
                 ref={refCodeRef}
                 className="absolute top-[5%] text-[#939393] text-[1.2rem] font-bold"
@@ -147,7 +147,7 @@ export default function UserInfo({
               </span>
             </div>
           </div>
-          <div className="h-[100%] flex-[2] bg-[#ecf0f1] flex flex-wrap justify-center max-[600px]:h-[70%] flex-[1] basis-[100%]">
+          <div className="h-[100%] flex-[2] bg-[#ecf0f1] flex flex-wrap justify-center max-[600px]:h-[70%]">
             <div className="basis-[100%] flex justify-center items-center flex-wrap text-black text-[1rem] font-bold text-[#757575]">
               <span className="text-[#757575] basis-[100%] text-center relative top-[1.5rem]">
                 Share to

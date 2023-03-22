@@ -1,21 +1,27 @@
-.gameFiContainer {
+.gameFiSection {
   height: 100vh;
-  background: linear-gradient(#100b42, #090625);
-  width: 100vw;
+  background: linear-gradient(#090625, #100b42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameFiContainer {
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  flex-direction: column;
   h2 {
     height: 20vh;
     font-size: 2rem;
+    flex-basis: 100%;
   }
 }
 
 .gameFiSelectedContainer {
-  width: 300px;
-  height: 250px;
+  width: 350px;
+  height: 300px;
   background-color: white;
   border-radius: 10px;
   display: flex;
@@ -30,21 +36,23 @@
     top: -25%;
     transform: translate(-50%);
   }
-  background: linear-gradient(#b391ff, #642efe);
+  background: linear-gradient(135deg, #47c0fd, #cf34fe);
 }
 
 .gameFiGenreContainer {
   display: flex;
   flex-wrap: wrap;
   margin-top: 2rem;
+  flex-basis: 100%;
+  justify-content: center;
 }
 
 .gameFiGenre {
-  background: linear-gradient(#b391ff, #642efe);
+  background: linear-gradient(135deg, #47c0fd, #cf34fe);
   font-weight: bold;
   margin-top: 4rem;
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
   border-radius: 5px;
   margin: 2rem;
   display: flex;
@@ -59,5 +67,11 @@
   &:hover {
     scale: 1.2;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .gameFiSection {
+    height: auto;
   }
 }

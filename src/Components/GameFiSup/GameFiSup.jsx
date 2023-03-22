@@ -40,62 +40,64 @@ export default function GameFiSup() {
   };
 
   return (
-    <div className="gameFiContainer">
-      <h2>GameFi Supporting</h2>
-      <div className="gameFiSelectedContainer">
-        <div>
-          <img src={genre[genreIndex].img} alt="icon" />
+    <div className="gameFiSection">
+      <div className="gameFiContainer">
+        <h2>GameFi Supporting</h2>
+        <div className="gameFiSelectedContainer">
           <div>
-            <div className="font-bold text-[1.2rem]">Access Mode:</div>
-            <div>{genre[genreIndex].accessMode}</div>
-          </div>
-          <div className="mt-[1rem]">{genre[genreIndex].explan}</div>
-        </div>
-      </div>
-      <div className="gameFiGenreContainer">
-        <div className="gameFiGenre" onClick={() => switchGenre(0)}>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/img/genre_rpg.jpg"}
-              alt="rpg"
-            />
-            <span>RPG</span>
+            <img src={genre[genreIndex].img} alt="icon" />
+            <div>
+              <div className="font-bold text-[1.2rem]">Access Mode:</div>
+              <div>{genre[genreIndex].accessMode}</div>
+            </div>
+            <div className="mt-[1rem]">{genre[genreIndex].explan}</div>
           </div>
         </div>
-        <div className="gameFiGenre" onClick={() => switchGenre(1)}>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/img/genre_metaverse.png"}
-              alt="meta"
-            />
-            <span>Metaverse</span>
+        <div className="gameFiGenreContainer">
+          <div className="gameFiGenre" onClick={() => switchGenre(0)}>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/genre_rpg.jpg"}
+                alt="rpg"
+              />
+              <span>RPG</span>
+            </div>
           </div>
-        </div>
-        <div className="gameFiGenre" onClick={() => switchGenre(2)}>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/img/genre_mining.png"}
-              alt="mining"
-            />
-            <span>Mining</span>
+          <div className="gameFiGenre" onClick={() => switchGenre(1)}>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/genre_metaverse.png"}
+                alt="meta"
+              />
+              <span>Metaverse</span>
+            </div>
           </div>
-        </div>
-        <div className="gameFiGenre" onClick={() => switchGenre(3)}>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/img/genre_x2e.png"}
-              alt="x2e"
-            />
-            <span>X2E</span>
+          <div className="gameFiGenre" onClick={() => switchGenre(2)}>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/genre_mining.png"}
+                alt="mining"
+              />
+              <span>Mining</span>
+            </div>
           </div>
-        </div>
-        <div className="gameFiGenre" onClick={() => switchGenre(4)}>
-          <div>
-            <img
-              src={process.env.PUBLIC_URL + "/img/genre_nft.jpg"}
-              alt="nft"
-            />
-            <span>NFTs</span>
+          <div className="gameFiGenre" onClick={() => switchGenre(3)}>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/genre_x2e.png"}
+                alt="x2e"
+              />
+              <span>X2E</span>
+            </div>
+          </div>
+          <div className="gameFiGenre" onClick={() => switchGenre(4)}>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/genre_nft.jpg"}
+                alt="nft"
+              />
+              <span>NFTs</span>
+            </div>
           </div>
         </div>
       </div>
