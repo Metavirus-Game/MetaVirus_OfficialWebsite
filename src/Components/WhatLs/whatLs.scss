@@ -93,3 +93,17 @@
     }
   }
 }
+
+@media screen and (max-height: 700px) {
+  .whatLsContainer {
+    .pointContainer {
+      div {
+        font-size: 1rem;
+      }
+      span {
+        font-size: 0.85em;
+        top: 75%;
+      }
+    }
+  }
+}

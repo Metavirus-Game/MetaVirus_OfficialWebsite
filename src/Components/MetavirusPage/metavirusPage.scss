@@ -1,0 +1,156 @@
+.metavirusContainer {
+  background-image: url("./pureBg.png");
+  // background-image: url("./bg_les.png");
+  // background-color: #1f383c;
+  // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  h1 {
+    font-size: 4rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    // width: 25vw;
+    // min-width: 300px;
+    transform: translate(-50%, -50%);
+  }
+  h3 {
+    font-size: 1.8rem;
+    padding-bottom: 5vh;
+  }
+  button {
+    padding: 0.75rem;
+    border-radius: 25px;
+    width: 10rem;
+    font-weight: bold;
+    font-size: 1.1em;
+    // margin-top: 40vh;
+    // font-family: "Nunito", sans-serif;
+    font-family: "Poppins", sans-serif;
+    // background-color: rgb(85, 73, 163);
+    background-color: transparent;
+    color: white;
+    border: 3px solid white;
+    // border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &:nth-child(1) {
+    padding-top: 55vh;
+  }
+}
+
+.videoPlayer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video {
+  height: 80vh;
+  max-height: 800px;
+}
+
+.closeButton {
+  font-size: 1.5rem;
+  position: absolute;
+}
+
+#bg_tl,
+#bg_tr,
+#bg_bl,
+#bg_br {
+  width: 15vw;
+  max-width: 400px;
+  min-width: 150px;
+}
+
+#bg_tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#bg_tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#bg_br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#bg_bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#bg_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 35vw;
+  max-width: 800px;
+  min-width: 300px;
+  // animation-name: floating;
+  // animation-delay: 2s;
+  // animation-duration: 4s;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: ease-in-out;
+  animation: floating 4s ease-in-out 2s infinite;
+}
+
+@keyframes floating {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 45%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+// @keyframes scaling {
+//   0% {
+//     transform: scale(0);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }
+
+@media screen and (max-width: 450px) {
+  .video {
+    width: 350px;
+  }
+  .metavirusContainer {
+    // height: 100dvh;
+    height: 100svh;
+    // height: 100lvh;
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+}
