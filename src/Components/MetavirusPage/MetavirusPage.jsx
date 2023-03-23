@@ -17,6 +17,7 @@ export default function MetavirusPage({ isLoaded }) {
       ) {
         return;
       }
+
       setIsPlayed(false);
     });
     // gsap.set("#bg_main", { y: "-50%" });
