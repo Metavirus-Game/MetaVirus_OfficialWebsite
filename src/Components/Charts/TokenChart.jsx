@@ -4,7 +4,7 @@ function TokenChart() {
     title: {
       text: "Token Distribution",
       left: "center",
-      top: 60,
+      // top: 60,
       textStyle: {
         color: "#fff",
         fontSize: "1.4rem",

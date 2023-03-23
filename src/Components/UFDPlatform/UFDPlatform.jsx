@@ -27,57 +27,79 @@ export default function UFDPlatform({ isLoaded }) {
         <div className="absolute translate-x-[-37vw] text-[1.5rem] text-[#F7FFA0] font-bold max-[600px]:translate-y-[-2rem] max-[600px]:text-[1rem] max-[600px]:translate-x-[-35vw]">
           Decentralized
         </div>
-        {isLoaded && (
-          <>
-            <div className="UFDBlockchainBlock animate__animated animate__fadeIn">
-              <img
-                src={process.env.PUBLIC_URL + "/img/plat_blockchain.png"}
-                alt="icon"
-                width={"35%"}
-              />
-              <div className="max-sm:basis:100%">
-                Blockchain network battle
-                <br />
-                No battle operation
-              </div>
+        <>
+          <div
+            className={
+              isLoaded
+                ? "UFDBlockchainBlock animate__animated animate__fadeIn"
+                : "UFDBlockchainBlock unloaded"
+            }
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/img/plat_blockchain.png"}
+              alt="icon"
+              width={"35%"}
+            />
+            <div className="max-sm:basis:100%">
+              Blockchain network battle
+              <br />
+              No battle operation
             </div>
-            <div className="UFDVideoBlock animate__animated animate__fadeIn animate__delay-1s">
-              <img
-                src={process.env.PUBLIC_URL + "/img/plat_video.png"}
-                alt="icon"
-                width={"30%"}
-              />
-              <div>
-                Concise battle video
-                <br /> Any time to retrace the battle
-              </div>
+          </div>
+          <div
+            className={
+              isLoaded
+                ? "UFDVideoBlock animate__animated animate__fadeIn animate__delay-1s"
+                : "UFDVideoBlock unloaded"
+            }
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/img/plat_video.png"}
+              alt="icon"
+              width={"30%"}
+            />
+            <div>
+              Concise battle video
+              <br /> Any time to retrace the battle
             </div>
-            <div className="UFDCombatBlock animate__animated animate__fadeIn animate__delay-2s">
-              <img
-                src={process.env.PUBLIC_URL + "/img/plat_combat.png"}
-                alt="icon"
-                width={"35%"}
-              />
-              <div>
-                Asynchronous combat
-                <br />
-                Automatic combat
-              </div>
+          </div>
+          <div
+            className={
+              isLoaded
+                ? "UFDCombatBlock animate__animated animate__fadeIn animate__delay-2s"
+                : "UFDCombatBlock unloaded"
+            }
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/img/plat_combat.png"}
+              alt="icon"
+              width={"35%"}
+            />
+            <div>
+              Asynchronous combat
+              <br />
+              Automatic combat
             </div>
-            <div className="UFDWalletBlock animate__animated animate__fadeIn animate__delay-3s">
-              <img
-                src={process.env.PUBLIC_URL + "/img/plat_wallet.png"}
-                alt="icon"
-                width={"35%"}
-              />
-              <div>
-                Only register if interested
-                <br />
-                Only import wallet if needed
-              </div>
+          </div>
+          <div
+            className={
+              isLoaded
+                ? "UFDWalletBlock animate__animated animate__fadeIn animate__delay-3s"
+                : "UFDWalletBlock unloaded"
+            }
+          >
+            <img
+              src={process.env.PUBLIC_URL + "/img/plat_wallet.png"}
+              alt="icon"
+              width={"35%"}
+            />
+            <div>
+              Only register if interested
+              <br />
+              Only import wallet if needed
             </div>
-          </>
-        )}
+          </div>
+        </>
       </div>
     </div>
   );
