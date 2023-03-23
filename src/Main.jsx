@@ -46,6 +46,7 @@ const Main = () => {
     false,
     false,
     false,
+    false,
   ];
 
   return (
@@ -121,14 +122,14 @@ const Main = () => {
                 {window.innerWidth < 500 ? (
                   <MobileProcess isLoaded={sectionLoaded[10]} />
                 ) : (
-                  <Process isLoaded={sectionLoaded[11]} />
+                  <Process isLoaded={sectionLoaded[10]} />
                 )}
               </div>
               <div className="section">
-                <Team isLoaded={sectionLoaded[12]} />
+                <Team isLoaded={sectionLoaded[11]} />
               </div>
               <div className="section">
-                <Partner isLoaded={sectionLoaded[13]} />
+                <Partner isLoaded={sectionLoaded[12]} />
               </div>
             </div>
           );

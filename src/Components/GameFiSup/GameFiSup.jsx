@@ -50,7 +50,7 @@ export default function GameFiSup() {
               <div className="font-bold text-[1.2rem]">Access Mode:</div>
               <div>{genre[genreIndex].accessMode}</div>
             </div>
-            <div className="mt-[1rem] w-[80%] mx-auto">
+            <div className="mt-[1vh] w-[85%] mx-auto">
               {genre[genreIndex].explan}
             </div>
           </div>

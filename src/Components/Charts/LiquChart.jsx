@@ -163,10 +163,10 @@ function LiquidityChart() {
   return (
     <>
       <div className="liqChart">
-        <h2 style={{ marginBottom: "10rem" }}>Liquidity Distribution</h2>
+        <h2 style={{ marginBottom: "3rem" }}>Liquidity Distribution</h2>
         <ReactECharts
           option={option}
-          style={{ height: "300px" }}
+          style={{ height: "325px" }}
           className="mobileChart"
         />
       </div>

@@ -81,8 +81,8 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .gameFiSection {
-    // height: auto;
+@media screen and (max-height: 800px) {
+  .gameFiSelectedContainer {
+    font-size: 0.9rem;
   }
 }
