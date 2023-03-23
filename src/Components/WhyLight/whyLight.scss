@@ -1,5 +1,6 @@
 .whyLightSection {
   height: 100vh;
+  overflow-y: hidden;
   //   background-color: #090625;
   background: linear-gradient(#090625, #100b42);
   display: flex;
@@ -20,7 +21,7 @@
     margin-bottom: 1.5rem;
   }
   .whyLightContent {
-    font-size: 1.1em;
+    font-size: 1.3rem;
   }
 }
 
@@ -32,7 +33,8 @@
   > div {
     flex-basis: 45%;
     display: flex;
-    font-size: 0.9em;
+    font-size: 1.2rem;
+    --animate-delay: 0.5s;
     img {
       margin-right: 1rem;
       height: 30px;
@@ -40,9 +42,13 @@
   }
 }
 
+.unloaded {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 500px) {
   .whyLightSection {
-    height: auto;
+    // height: auto;
   }
 
   .whyLightContext {

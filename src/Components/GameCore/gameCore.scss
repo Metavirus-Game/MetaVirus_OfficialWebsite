@@ -38,7 +38,7 @@
   }
   ul {
     list-style: none;
-    // font-size: 0.95em;
+    font-size: 0.95rem;
   }
   text-align: center;
 }
@@ -61,7 +61,7 @@
   .gameCoreContext {
     width: 100%;
     ul {
-      font-size: 0.95em;
+      font-size: 0.85rem;
     }
   }
 }
@@ -69,7 +69,7 @@
 @media screen and (max-height: 700px) {
   .gameCoreContext {
     ul {
-      font-size: 0.95em;
+      font-size: 0.85rem;
     }
   }
 }

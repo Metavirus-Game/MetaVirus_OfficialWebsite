@@ -1,6 +1,8 @@
 .UFDPlatformSection {
   height: 100vh;
-  background: linear-gradient(#100b42, #090625);
+  // background: linear-gradient(#090625, #100b42);
+  background: linear-gradient(#2f1f28, #102136);
+  overflow-y: hidden;
   h2 {
     font-size: 2rem;
     padding-top: 2rem;
@@ -19,17 +21,24 @@
 %UFDBlock {
   position: absolute;
   width: 20vw;
-  height: 25vh;
+  min-width: 150px;
+  height: 27vh;
+  min-height: 175px;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   div {
     flex-basis: 80%;
   }
+  img {
+    width: 30%;
+    min-width: 80px;
+  }
+  --animate-delay: 0.5s;
 }
 
 .UFDBlockchainBlock {
@@ -42,6 +51,9 @@
   @extend %UFDBlock;
   transform: translate(15vw, -20vh);
   background: linear-gradient(240deg, #5ae8fe, #076bfd);
+  img {
+    width: 25%;
+  }
 }
 
 .UFDCombatBlock {
@@ -88,8 +100,11 @@
 }
 
 @media screen and (max-width: 500px) {
+  .UFDPlatformSection {
+    height: 110vh;
+  }
   %UFDBlock {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .UFDBlockchainBlock {
     width: 40vw;

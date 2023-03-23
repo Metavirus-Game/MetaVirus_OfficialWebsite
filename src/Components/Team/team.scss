@@ -62,7 +62,7 @@
     top: 50%;
     // font-size: 0.9em;
     // font-size: 20px;
-    font-size: 1vw;
+    // font-size: 1vw;
     padding: 0.5rem;
   }
 }
@@ -185,5 +185,17 @@
   .container {
     max-height: 275px;
     min-height: 275px;
+  }
+
+  .back {
+    > div {
+      .name {
+        position: absolute;
+        top: 1rem;
+      }
+      .title {
+        bottom: 2rem;
+      }
+    }
   }
 }

@@ -29,7 +29,7 @@ export default function GameFiSup() {
       img: process.env.PUBLIC_URL + "/img/genre_nft.jpg",
       accessMode: "NFT invoke",
       explan:
-        "Integrate game modules (e.g. racing, running,RPG battles) and use NFTs as units, reward winners based on outcomes. Increase NFT value.",
+        "Integrate game modules (e.g. racing, running, RPG battles) and use NFTs as units, reward winners based on outcomes. Increase NFT value.",
     },
   ];
 
@@ -50,7 +50,9 @@ export default function GameFiSup() {
               <div className="font-bold text-[1.2rem]">Access Mode:</div>
               <div>{genre[genreIndex].accessMode}</div>
             </div>
-            <div className="mt-[1rem]">{genre[genreIndex].explan}</div>
+            <div className="mt-[1rem] w-[80%] mx-auto">
+              {genre[genreIndex].explan}
+            </div>
           </div>
         </div>
         <div className="gameFiGenreContainer">

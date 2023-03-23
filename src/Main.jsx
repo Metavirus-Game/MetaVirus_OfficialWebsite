@@ -14,7 +14,6 @@ import WhyLight from "./Components/WhyLight/WhyLight";
 import Partner from "./Components/Partner/Partner";
 import UFDPlatform from "./Components/UFDPlatform/UFDPlatform";
 import GameFiSup from "./Components/GameFiSup/GameFiSup";
-import SolidBarrier from "./Components/SolidBarrier/SolidBarrier";
 import "animate.css";
 const anchors = [
   "Home",
@@ -56,20 +55,20 @@ const Main = () => {
         responsiveWidth={450}
         easing="easeInOutCubic"
         sectionsColor={[
-          "#12272a",
-          "#12272a",
-          "#ffffff",
-          "#ffffff",
-          "#ffffff",
-          "#831858",
-          "#831858",
-          "#831858",
+          "#090625",
+          "#090625",
+          "#090625",
+          "#090625",
+          "#090625",
+          "#090625",
+          "#090625",
+          "#090625",
         ]}
         normalScrollElements=".scrollable-content"
         onLeave={(origin, destination, direction) => {
           // console.log("onLeave event", { origin, destination, direction });
           if (window.innerWidth > 500) {
-            sectionLoaded[origin.index] = false;
+            // sectionLoaded[origin.index] = false;
           }
         }}
         afterLoad={(section, origin, destination, direction, trigger) => {
@@ -84,19 +83,16 @@ const Main = () => {
                 <HomePage isLoaded={sectionLoaded[0]} />
               </div>
               <div className="section">
-                <WhatJs isLoaded={sectionLoaded[1]} />
+                <UFDPlatform isLoaded={sectionLoaded[1]} />
               </div>
               <div className="section">
-                <WhyLight isLoaded={sectionLoaded[2]} />
+                <GameFiSup isLoaded={sectionLoaded[2]} />
               </div>
               <div className="section">
-                {/* <WhyLight isLoaded={sectionLoaded[3]} /> */}
-                {/* <OnChainBattles isLoaded={sectionLoaded[3]} /> */}
-                {/* <SolidBarrier isLoaded={sectionLoaded[3]} /> */}
-                <UFDPlatform />
+                <WhatJs isLoaded={sectionLoaded[3]} />
               </div>
               <div className="section">
-                <GameFiSup isLoaded={sectionLoaded[4]} />
+                <WhyLight isLoaded={sectionLoaded[4]} />
               </div>
               <div className="section">
                 <VirusGallery isLoaded={sectionLoaded[5]} />

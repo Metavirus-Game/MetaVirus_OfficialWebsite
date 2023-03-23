@@ -75,7 +75,7 @@ export default function HomePage({ isLoaded }) {
   return (
     <>
       <div className="homeContainer">
-        <img
+        {/* <img
           id="bg_tl"
           src={process.env.PUBLIC_URL + "/img/bg_tl.png"}
           alt="tl"
@@ -100,9 +100,14 @@ export default function HomePage({ isLoaded }) {
           id="bg_main"
           src={process.env.PUBLIC_URL + "/img/bg_main.png"}
           alt="main"
+        /> */}
+        <img
+          id="logo"
+          src={process.env.PUBLIC_URL + "/img/logo_les.png"}
+          alt="main"
         />
         <div style={{ zIndex: "2" }}>
-          <h1>Light eSports</h1>
+          {/* <h1>Light eSports</h1> */}
           <button style={{ marginRight: "1rem" }}>Try It</button>
           {window.innerWidth > 500 && (
             <>
