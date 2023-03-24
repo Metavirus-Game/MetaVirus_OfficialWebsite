@@ -81,7 +81,7 @@ const Main = () => {
           sectionLoaded[origin.index] = true;
         }}
         render={({ state, fullpageApi }) => {
-          console.log("render prop change", fullpageApi);
+          // console.log("render prop change", fullpageApi);
           return (
             <div>
               <Navigation fullpageApi={fullpageApi} />

@@ -64,7 +64,7 @@ export default function Navigation({ fullpageApi }) {
               const errorCode = response.data.code;
               if (errorCode === 0) {
                 const userData = response.data.retObject;
-                console.log(userData);
+                // console.log(userData);
                 setUserInfo(userData);
                 setAuth(true);
               } else {

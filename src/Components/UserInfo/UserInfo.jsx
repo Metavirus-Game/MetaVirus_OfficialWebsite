@@ -4,6 +4,7 @@ import "./userInfo.scss";
 import { AuthContext } from "../../App";
 import { useContext, useEffect, useState, useRef } from "react";
 import copy from "copy-to-clipboard";
+import axios from "axios";
 export default function UserInfo({
   isUserInfoOpen,
   setIsUserInfoOpen,
@@ -11,7 +12,7 @@ export default function UserInfo({
 }) {
   const navigate = useNavigate();
   // const location = useLocation();
-  const { setAuth, userInfo } = useContext(AuthContext);
+  const { setAuth, userInfo, setUserInfo } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [socialNameOpen, setSocialNameOpen] = useState(false);
   const refCodeRef = useRef(null);
@@ -25,11 +26,81 @@ export default function UserInfo({
     setAuth(false);
   }
 
+  // console.log(userInfo);
+
   const onSave = ({ twitter, discord, telegram }) => {
-    setSocialNameOpen(false);
-    localStorage.setItem("twitter", twitter);
-    localStorage.setItem("discord", discord);
-    localStorage.setItem("telegram", telegram);
+    if (!twitter && !discord && !telegram) {
+      messageApi.open({
+        type: "error",
+        content: "You didn't input any social media accounts!",
+      });
+    } else {
+      setSocialNameOpen(false);
+      const accountId = localStorage.getItem("accountId");
+      const loginKey = localStorage.getItem("loginKey");
+      axios
+        .get("https://acc.metavirus.games/account/bindSocialMediaAccount", {
+          params: {
+            twitterAccount: twitter,
+            discordAccount: discord,
+            telegramAccount: telegram,
+          },
+          headers: {
+            accountId: accountId,
+            loginKey: loginKey,
+            serviceId: "",
+          },
+        })
+        .then((res) => {
+          if (res.data.code === 0) {
+            messageApi.open({
+              type: "success",
+              content: "Your social media account is successfully saved!",
+            });
+            axios
+              .get("https://acc.metavirus.games/account/getProfile", {
+                params: {
+                  id: accountId,
+                  token: loginKey,
+                  channel: "OFFICIAL-WEB",
+                  serviceId: "",
+                },
+                headers: {
+                  accountId: accountId,
+                  loginKey: loginKey,
+                  serviceId: "",
+                },
+              })
+              .then((response) => {
+                console.log(response);
+                const errorCode = response.data.code;
+                if (errorCode === 0) {
+                  const userData = response.data.retObject;
+                  setUserInfo(userData);
+                } else {
+                  messageApi.open({
+                    type: "error",
+                    content: "Failed to retrieve user information",
+                  });
+                }
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          } else {
+            messageApi.open({
+              type: "error",
+              content: res.data.msg,
+            });
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    }
+    // localStorage.setItem("twitter", twitter);
+    // localStorage.setItem("discord", discord);
+    // localStorage.setItem("telegram", telegram);
   };
 
   const shareToIcons = [
@@ -214,33 +285,20 @@ export default function UserInfo({
           wrapperCol={{
             span: 20,
           }}
+          initialValues={{
+            twitter: userInfo && userInfo.socialMediaAccounts[0],
+            discord: userInfo && userInfo.socialMediaAccounts[1],
+            telegram: userInfo && userInfo.socialMediaAccounts[2],
+          }}
         >
           <Form.Item label="Twitter" name="twitter">
-            <Input
-              placeholder={
-                localStorage.getItem("twitter")
-                  ? localStorage.getItem("twitter")
-                  : "Please Input your Twitter username"
-              }
-            />
+            <Input placeholder={"Please Input your Twitter username"} />
           </Form.Item>
           <Form.Item label="Discord" name="discord">
-            <Input
-              placeholder={
-                localStorage.getItem("discord")
-                  ? localStorage.getItem("discord")
-                  : "Please Input your Discord username"
-              }
-            />
+            <Input placeholder={"Please Input your Discord username"} />
           </Form.Item>
           <Form.Item label="Telegram" name="telegram">
-            <Input
-              placeholder={
-                localStorage.getItem("telegram")
-                  ? localStorage.getItem("telegram")
-                  : "Please Input your Telegram username"
-              }
-            />
+            <Input placeholder={"Please Input your Telegram username"} />
           </Form.Item>
           <Form.Item
             wrapperCol={{
