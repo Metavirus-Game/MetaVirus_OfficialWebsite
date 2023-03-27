@@ -31,9 +31,8 @@ export default function UFDPlatform({ isLoaded }) {
           <>
             <div className="UFDBlockchainBlock animate__animated animate__fadeIn">
               <img
-                src={process.env.PUBLIC_URL + "/img/plat_blockchain.png"}
+                src={process.env.PUBLIC_URL + "/img/platform_blockchain.png"}
                 alt="icon"
-                width={"35%"}
               />
               <div className="max-sm:basis:100%">
                 Blockchain network battle
@@ -43,9 +42,8 @@ export default function UFDPlatform({ isLoaded }) {
             </div>
             <div className="UFDVideoBlock animate__animated animate__fadeIn animate__delay-1s">
               <img
-                src={process.env.PUBLIC_URL + "/img/plat_video.png"}
+                src={process.env.PUBLIC_URL + "/img/platform_video.png"}
                 alt="icon"
-                width={"30%"}
               />
               <div>
                 Concise battle video
@@ -54,9 +52,8 @@ export default function UFDPlatform({ isLoaded }) {
             </div>
             <div className="UFDCombatBlock animate__animated animate__fadeIn animate__delay-2s">
               <img
-                src={process.env.PUBLIC_URL + "/img/plat_combat.png"}
+                src={process.env.PUBLIC_URL + "/img/platform_combat.png"}
                 alt="icon"
-                width={"35%"}
               />
               <div>
                 Asynchronous combat
@@ -66,9 +63,8 @@ export default function UFDPlatform({ isLoaded }) {
             </div>
             <div className="UFDWalletBlock animate__animated animate__fadeIn animate__delay-3s">
               <img
-                src={process.env.PUBLIC_URL + "/img/plat_wallet.png"}
+                src={process.env.PUBLIC_URL + "/img/platform_wallet.png"}
                 alt="icon"
-                width={"35%"}
               />
               <div>
                 Only register if interested
