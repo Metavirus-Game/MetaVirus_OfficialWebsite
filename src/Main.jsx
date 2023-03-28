@@ -18,11 +18,6 @@ import MetavirusPage from "./Components/MetavirusPage/MetavirusPage";
 import "animate.css";
 const anchors = [
   "Home",
-  "UFDPlatform",
-  "GameFiSupporting",
-  "WeAreTheFuture",
-  "SolidBarrier",
-  "MetaVirus",
   "Gallery",
   "FinanceTarget",
   "Token&Liquidity",
@@ -85,7 +80,7 @@ const Main = () => {
           return (
             <div>
               <Navigation fullpageApi={fullpageApi} />
-              <div className="section">
+              {/* <div className="section">
                 <HomePage
                   isLoaded={sectionLoaded[0]}
                   fullpageApi={fullpageApi}
@@ -102,34 +97,34 @@ const Main = () => {
               </div>
               <div className="section">
                 <WhyLight isLoaded={sectionLoaded[4]} />
+              </div> */}
+              <div className="section">
+                <MetavirusPage isLoaded={sectionLoaded[0]} />
               </div>
               <div className="section">
-                <MetavirusPage isLoaded={sectionLoaded[5]} />
+                <VirusGallery isLoaded={sectionLoaded[1]} />
               </div>
               <div className="section">
-                <VirusGallery isLoaded={sectionLoaded[6]} />
+                <FinTarget isLoaded={sectionLoaded[2]} />
               </div>
               <div className="section">
-                <FinTarget isLoaded={sectionLoaded[7]} />
+                <Chart isLoaded={sectionLoaded[3]} />
               </div>
               <div className="section">
-                <Chart isLoaded={sectionLoaded[8]} />
-              </div>
-              <div className="section">
-                <GameCore isLoaded={sectionLoaded[9]} />
+                <GameCore isLoaded={sectionLoaded[4]} />
               </div>
               <div className="section">
                 {window.innerWidth < 500 ? (
-                  <MobileProcess isLoaded={sectionLoaded[10]} />
+                  <MobileProcess isLoaded={sectionLoaded[5]} />
                 ) : (
-                  <Process isLoaded={sectionLoaded[10]} />
+                  <Process isLoaded={sectionLoaded[5]} />
                 )}
               </div>
               <div className="section">
-                <Team isLoaded={sectionLoaded[11]} />
+                <Team isLoaded={sectionLoaded[6]} />
               </div>
               <div className="section">
-                <Partner isLoaded={sectionLoaded[12]} />
+                <Partner isLoaded={sectionLoaded[7]} />
               </div>
             </div>
           );

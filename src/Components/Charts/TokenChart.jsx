@@ -4,7 +4,7 @@ function TokenChart() {
     title: {
       text: "Token Distribution",
       left: "center",
-      // top: 60,
+      top: 20,
       textStyle: {
         color: "#fff",
         fontSize: "1.4rem",
@@ -72,7 +72,7 @@ function TokenChart() {
     <div className="tokenChart">
       <ReactECharts
         option={option}
-        style={{ height: "600px" }}
+        style={{ height: "550px" }}
         className="mobileChart"
       />
     </div>
