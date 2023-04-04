@@ -51,7 +51,7 @@ function Signup({
     setResendState(true);
     sessionStorage.setItem("resendState", true);
     setResendTime(60);
-    setLoading(true);
+    // setLoading(true);
     axios
       .post("https://acc.metavirus.games/account/registerRequest", {
         username: email,
@@ -66,10 +66,10 @@ function Signup({
         console.log(errorCode);
         if (errorCode === 0) {
           setToken(response.data["msg"]);
-          setLoading(false);
+          // setLoading(false);
           // localStorage.setItem("token", response.data["msg"]);
         } else {
-          setLoading(false);
+          // setLoading(false);
           messageApi.open({
             type: "error",
             content: response.data["msg"],
@@ -219,7 +219,9 @@ function Signup({
             >
               Get Verification Code
             </Button>
-            {resendState && <div>Retry after: {resendTime}</div>}
+            {resendState && (
+              <p className="text-center">Retry after: {resendTime}</p>
+            )}
           </Form.Item>
         </Form>
         <Form

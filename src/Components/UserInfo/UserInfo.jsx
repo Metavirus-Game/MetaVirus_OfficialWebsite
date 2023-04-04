@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button, Modal, Form, Input, message } from "antd";
+import { Button, Modal, Form, Input, message, Checkbox } from "antd";
 import "./userInfo.scss";
 import { AuthContext } from "../../App";
 import { useContext, useEffect, useState, useRef } from "react";
@@ -15,7 +15,12 @@ export default function UserInfo({
   const { setAuth, userInfo, setUserInfo } = useContext(AuthContext);
   const [messageApi, contextHolder] = message.useMessage();
   const [socialNameOpen, setSocialNameOpen] = useState(false);
+  const [hasBound, setHasBound] = useState(false);
+  const [captcha, setCaptcha] = useState("");
+  const [captchaImg, setCaptchaImg] = useState("");
+  const [verifyKey, setVerifyKey] = useState("");
   const refCodeRef = useRef(null);
+  const [form] = Form.useForm();
 
   function logout() {
     localStorage.clear();
@@ -25,6 +30,16 @@ export default function UserInfo({
     // setIsUserInfoOpen(false);
     setAuth(false);
   }
+
+  // console.log(hasBound);
+
+  useEffect(() => {
+    if (userInfo && userInfo.socialMediaAccounts[0] !== "") {
+      setHasBound(true);
+    } else {
+      setHasBound(false);
+    }
+  }, [userInfo]);
 
   // console.log(userInfo);
 
@@ -44,6 +59,8 @@ export default function UserInfo({
             twitterAccount: twitter,
             discordAccount: discord,
             telegramAccount: telegram,
+            verifyKey: verifyKey,
+            verifyCode: captcha,
           },
           headers: {
             accountId: accountId,
@@ -72,7 +89,7 @@ export default function UserInfo({
                 },
               })
               .then((response) => {
-                console.log(response);
+                // console.log(response);
                 const errorCode = response.data.code;
                 if (errorCode === 0) {
                   const userData = response.data.retObject;
@@ -109,6 +126,31 @@ export default function UserInfo({
     process.env.PUBLIC_URL + "/img/telegram.png",
     process.env.PUBLIC_URL + "/img/copy.png",
   ];
+
+  const openSocialNameModal = () => {
+    setSocialNameOpen(true);
+    getCaptcha();
+  };
+
+  const getCaptcha = () => {
+    axios
+      .post("https://acc.metavirus.games/captcha/request", {
+        params: {
+          key: verifyKey,
+        },
+      })
+      .then((res) => {
+        if (res.data.code === 0) {
+          const data = res.data.retObject;
+          setCaptcha(data.text);
+          setCaptchaImg(data.captchaImg);
+          setVerifyKey(data.uuid);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const shareToSocialNet = (index) => {
     const socialNetwork = ["twitter", "discord", "telegram"];
@@ -256,9 +298,13 @@ export default function UserInfo({
             <div className="basis-[100%] flex justify-center">
               <button
                 className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold border-none text-white bg-[#48A1C7] hover:cursor-pointer"
-                onClick={() => setSocialNameOpen(true)}
+                onClick={() => openSocialNameModal()}
               >
-                Bind Your Social Media
+                {/* {userInfo && userInfo.socialMediaAccounts[0] !== ""
+                  ? "Your Social Media"
+                  : "Bind Your Social Media"} */}
+
+                {hasBound ? "Your Social Media" : "Bind Your Social Media"}
               </button>
               <button
                 className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold ml-[2rem] hover:cursor-pointer"
@@ -275,7 +321,10 @@ export default function UserInfo({
         open={socialNameOpen}
         footer={null}
         centered
-        onCancel={() => setSocialNameOpen(false)}
+        onCancel={() => {
+          setSocialNameOpen(false);
+          form.resetFields();
+        }}
       >
         <Form
           onFinish={onSave}
@@ -285,21 +334,124 @@ export default function UserInfo({
           wrapperCol={{
             span: 20,
           }}
+          form={form}
           initialValues={{
             twitter: userInfo && userInfo.socialMediaAccounts[0],
             discord: userInfo && userInfo.socialMediaAccounts[1],
             telegram: userInfo && userInfo.socialMediaAccounts[2],
           }}
+          disabled={hasBound}
         >
-          <Form.Item label="Twitter" name="twitter">
+          <Form.Item
+            label="Twitter"
+            name="twitter"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Twitter's username!",
+              },
+            ]}
+          >
             <Input placeholder={"Please Input your Twitter username"} />
           </Form.Item>
-          <Form.Item label="Discord" name="discord">
+          <Form.Item
+            label="Discord"
+            name="discord"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Discord's username!",
+              },
+            ]}
+          >
             <Input placeholder={"Please Input your Discord username"} />
           </Form.Item>
-          <Form.Item label="Telegram" name="telegram">
+          <Form.Item
+            label="Telegram"
+            name="telegram"
+            rules={[
+              {
+                required: true,
+                message: "Please input your Telegram's username!",
+              },
+            ]}
+          >
             <Input placeholder={"Please Input your Telegram username"} />
           </Form.Item>
+          {!hasBound && (
+            <>
+              <Form.Item
+                label="Captcha"
+                name="Captcha"
+                rules={[
+                  {
+                    required: true,
+                    // message: "Please input Captcha!",
+                    validator: (_, value) => {
+                      if (value === captcha) {
+                        return Promise.resolve();
+                      } else {
+                        return Promise.reject(
+                          new Error("Please input correct captcha!")
+                        );
+                      }
+                    },
+                  },
+                ]}
+              >
+                <div>
+                  <img
+                    src={"data:image/jpg;base64," + captchaImg}
+                    alt="captach"
+                    onClick={() => getCaptcha()}
+                  />
+                  <Input />
+                </div>
+              </Form.Item>
+              <Form.Item
+                name="agreement1"
+                valuePropName="checked"
+                wrapperCol={{
+                  span: 16,
+                  offset: 4,
+                }}
+                rules={[
+                  {
+                    validator: (_, value) =>
+                      value
+                        ? Promise.resolve()
+                        : Promise.reject(new Error("Please accept agreement")),
+                  },
+                ]}
+              >
+                <Checkbox>
+                  I confirm that this is my own acount, I don’t have multiple
+                  accounts or submissions.
+                </Checkbox>
+              </Form.Item>
+              <Form.Item
+                name="agreement2"
+                valuePropName="checked"
+                wrapperCol={{
+                  span: 16,
+                  offset: 4,
+                }}
+                rules={[
+                  {
+                    validator: (_, value) =>
+                      value
+                        ? Promise.resolve()
+                        : Promise.reject(new Error("Please accept agreement")),
+                  },
+                ]}
+              >
+                <Checkbox>
+                  I agree with the T&Cs applied to this campaign
+                </Checkbox>
+              </Form.Item>
+            </>
+          )}
+
           <Form.Item
             wrapperCol={{
               offset: 10,
@@ -307,7 +459,7 @@ export default function UserInfo({
             }}
           >
             <Button type="primary" htmlType="submit">
-              Save
+              Submit
             </Button>
           </Form.Item>
         </Form>
