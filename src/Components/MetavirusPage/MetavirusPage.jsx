@@ -21,92 +21,92 @@ export default function MetavirusPage({ isLoaded }) {
       setIsPlayed(false);
     });
     // gsap.set("#bg_main", { y: "-50%" });
-    if (isLoaded) {
-      gsap.fromTo(
-        "#bg_tl",
-        { y: "-100%", x: "-100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_tr",
-        { y: "-100%", x: "100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_bl",
-        { y: "100%", x: "-100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_br",
-        { y: "100%", x: "100%" },
-        {
-          duration: 2,
-          x: "0%",
-          y: "0%",
-          ease: "power2",
-        }
-      );
-      gsap.fromTo(
-        "#bg_main",
-        { opacity: 0 },
-        {
-          duration: 2,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-    }
+    // if (isLoaded) {
+    gsap.fromTo(
+      "#bg_tl",
+      { y: "-100%", x: "-100%" },
+      {
+        duration: 2,
+        x: "0%",
+        y: "0%",
+        ease: "power2",
+      }
+    );
+    gsap.fromTo(
+      "#bg_tr",
+      { y: "-100%", x: "100%" },
+      {
+        duration: 2,
+        x: "0%",
+        y: "0%",
+        ease: "power2",
+      }
+    );
+    gsap.fromTo(
+      "#bg_bl",
+      { y: "100%", x: "-100%" },
+      {
+        duration: 2,
+        x: "0%",
+        y: "0%",
+        ease: "power2",
+      }
+    );
+    gsap.fromTo(
+      "#bg_br",
+      { y: "100%", x: "100%" },
+      {
+        duration: 2,
+        x: "0%",
+        y: "0%",
+        ease: "power2",
+      }
+    );
+    gsap.fromTo(
+      "#bg_main",
+      { opacity: 0 },
+      {
+        duration: 2,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+    // }
   }, [isLoaded]);
 
   return (
     <>
       <div className="metavirusContainer">
-        {isLoaded && (
-          <>
-            <img
-              id="bg_tl"
-              src={process.env.PUBLIC_URL + "/img/bg_tl.png"}
-              alt="tl"
-            />
-            <img
-              id="bg_tr"
-              src={process.env.PUBLIC_URL + "/img/bg_tr.png"}
-              alt="tr"
-            />
-            <img
-              id="bg_bl"
-              src={process.env.PUBLIC_URL + "/img/bg_bl.png"}
-              alt="bl"
-            />
-            <img
-              id="bg_br"
-              src={process.env.PUBLIC_URL + "/img/bg_br.png"}
-              alt="br"
-            />
+        {/* {isLoaded && ( */}
+        <>
+          <img
+            id="bg_tl"
+            src={process.env.PUBLIC_URL + "/img/bg_tl.png"}
+            alt="tl"
+          />
+          <img
+            id="bg_tr"
+            src={process.env.PUBLIC_URL + "/img/bg_tr.png"}
+            alt="tr"
+          />
+          <img
+            id="bg_bl"
+            src={process.env.PUBLIC_URL + "/img/bg_bl.png"}
+            alt="bl"
+          />
+          <img
+            id="bg_br"
+            src={process.env.PUBLIC_URL + "/img/bg_br.png"}
+            alt="br"
+          />
 
-            <img
-              id="bg_main"
-              src={process.env.PUBLIC_URL + "/img/bg_main.png"}
-              alt="main"
-            />
-          </>
-        )}
+          <img
+            id="bg_main"
+            src={process.env.PUBLIC_URL + "/img/bg_main.png"}
+            alt="main"
+          />
+        </>
+        {/* )} */}
 
         {/* <img
           id="logo"
