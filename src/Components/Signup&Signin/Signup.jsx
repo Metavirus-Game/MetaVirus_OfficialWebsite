@@ -186,7 +186,8 @@ function Signup({
                 message: "Please input your password!",
               },
               {
-                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+                // pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+                pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/,
                 message:
                   "Password must contain at least one uppercase, lowercase, and number",
               },
