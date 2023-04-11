@@ -279,17 +279,13 @@ export default function UserInfo({
               {redirectToIcons.map((item, index) => (
                 <div
                   key={index}
-                  className="basis-[95%] h-[20%] rounded-xl hover:cursor-pointer relative bg-white flex justify-center items-center shadow-md"
+                  className="flex items-center basis-[95%] h-[20%] rounded-xl hover:cursor-pointer relative bg-white flex justify-center items-center shadow-md"
                   onClick={() =>
                     window.open(item.link, "_blank", "noopener,noreferrer")
                   }
                 >
-                  <img
-                    src={item.img}
-                    alt="icon"
-                    className="w-[6.5%] absolute left-[1rem] top-[1.2rem]"
-                  />
-                  <p className="w-[80%] ml-[2rem] font-medium">
+                  <img src={item.img} alt="icon" className="w-[6.5%]" />
+                  <p className="w-[80%] ml-[2vw] font-medium  max-[600px]:text-[0.8rem]">
                     {item.content}
                   </p>
                 </div>
@@ -297,7 +293,7 @@ export default function UserInfo({
             </div>
             <div className="basis-[100%] flex justify-center">
               <button
-                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold border-none text-white bg-[#48A1C7] hover:cursor-pointer"
+                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold border-none text-white bg-[#48A1C7] hover:cursor-pointer shadow-md"
                 onClick={() => openSocialNameModal()}
               >
                 {/* {userInfo && userInfo.socialMediaAccounts[0] !== ""
@@ -307,7 +303,7 @@ export default function UserInfo({
                 {hasBound ? "Your Social Media" : "Bind Your Social Media"}
               </button>
               <button
-                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold ml-[2rem] hover:cursor-pointer"
+                className="px-[1.5rem] py-[0.5rem] h-[2rem] rounded-md font-bold ml-[2rem] hover:cursor-pointer shadow-md"
                 onClick={() => logout()}
               >
                 Logout
@@ -317,7 +313,11 @@ export default function UserInfo({
         </div>
       </Modal>
       <Modal
-        title={"Save your social networks' usernames"}
+        title={
+          !hasBound
+            ? "Save your social networks' usernames"
+            : "Your Social Media Accounts"
+        }
         open={socialNameOpen}
         footer={null}
         centered
@@ -325,144 +325,186 @@ export default function UserInfo({
           setSocialNameOpen(false);
           form.resetFields();
         }}
+        width={400}
       >
-        <Form
-          onFinish={onSave}
-          labelCol={{
-            span: 4,
-          }}
-          wrapperCol={{
-            span: 20,
-          }}
-          form={form}
-          initialValues={{
-            twitter: userInfo && userInfo.socialMediaAccounts[0],
-            discord: userInfo && userInfo.socialMediaAccounts[1],
-            telegram: userInfo && userInfo.socialMediaAccounts[2],
-          }}
-          disabled={hasBound}
-        >
-          <Form.Item
-            label="Twitter"
-            name="twitter"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Twitter's username!",
-              },
-            ]}
-          >
-            <Input placeholder={"Please Input your Twitter username"} />
-          </Form.Item>
-          <Form.Item
-            label="Discord"
-            name="discord"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Discord's username!",
-              },
-            ]}
-          >
-            <Input placeholder={"Please Input your Discord username"} />
-          </Form.Item>
-          <Form.Item
-            label="Telegram"
-            name="telegram"
-            rules={[
-              {
-                required: true,
-                message: "Please input your Telegram's username!",
-              },
-            ]}
-          >
-            <Input placeholder={"Please Input your Telegram username"} />
-          </Form.Item>
-          {hasBound && (
-            <>
-              <Form.Item
-                label="Captcha"
-                name="Captcha"
-                rules={[
-                  {
-                    required: true,
-                    // message: "Please input Captcha!",
-                    validator: (_, value) => {
-                      if (value === captcha) {
-                        return Promise.resolve();
-                      } else {
-                        return Promise.reject(
-                          new Error("Please input correct captcha!")
-                        );
-                      }
-                    },
-                  },
-                ]}
-              >
-                <div>
-                  <img
-                    src={"data:image/jpg;base64," + captchaImg}
-                    alt="captach"
-                    onClick={() => getCaptcha()}
-                  />
-                  <Input />
-                </div>
-              </Form.Item>
-              <Form.Item
-                name="agreement1"
-                valuePropName="checked"
-                // wrapperCol={{
-                //   span: 16,
-                //   offset: 4,
-                // }}
-                rules={[
-                  {
-                    validator: (_, value) =>
-                      value
-                        ? Promise.resolve()
-                        : Promise.reject(new Error("Please accept agreement")),
-                  },
-                ]}
-              >
-                <Checkbox>
-                  I confirm that this is my own acount, I don’t have multiple
-                  accounts or submissions.
-                </Checkbox>
-              </Form.Item>
-              <Form.Item
-                name="agreement2"
-                valuePropName="checked"
-                // wrapperCol={{
-                //   span: 16,
-                //   offset: 4,
-                // }}
-                rules={[
-                  {
-                    validator: (_, value) =>
-                      value
-                        ? Promise.resolve()
-                        : Promise.reject(new Error("Please accept agreement")),
-                  },
-                ]}
-              >
-                <Checkbox>
-                  I agree with the T&Cs applied to this campaign
-                </Checkbox>
-              </Form.Item>
-            </>
-          )}
-
-          <Form.Item
-            wrapperCol={{
-              offset: 10,
-              span: 14,
+        {!hasBound ? (
+          <Form
+            onFinish={onSave}
+            labelCol={{
+              span: 6,
             }}
+            wrapperCol={{
+              span: 16,
+              // offset: 2,
+            }}
+            form={form}
+            initialValues={{
+              twitter: userInfo && userInfo.socialMediaAccounts[0],
+              discord: userInfo && userInfo.socialMediaAccounts[1],
+              telegram: userInfo && userInfo.socialMediaAccounts[2],
+            }}
+            // disabled={hasBound}
           >
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
+            <Form.Item
+              label="Twitter"
+              name="twitter"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Twitter's username!",
+                },
+              ]}
+            >
+              <Input placeholder={"Please Input your Twitter username"} />
+            </Form.Item>
+            <Form.Item
+              label="Discord"
+              name="discord"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Discord's username!",
+                },
+              ]}
+            >
+              <Input placeholder={"Please Input your Discord username"} />
+            </Form.Item>
+            <Form.Item
+              label="Telegram"
+              name="telegram"
+              rules={[
+                {
+                  required: true,
+                  message: "Please input your Telegram's username!",
+                },
+              ]}
+            >
+              <Input placeholder={"Please Input your Telegram username"} />
+            </Form.Item>
+            <Form.Item
+              label="Captcha"
+              name="Captcha"
+              rules={[
+                {
+                  required: true,
+                  // message: "Please input Captcha!",
+                  validator: (_, value) => {
+                    if (value === captcha) {
+                      return Promise.resolve();
+                    } else {
+                      return Promise.reject(
+                        new Error("Please input correct captcha!")
+                      );
+                    }
+                  },
+                },
+              ]}
+            >
+              <div>
+                <img
+                  src={"data:image/jpg;base64," + captchaImg}
+                  alt="captach"
+                  onClick={() => getCaptcha()}
+                />
+                <Input />
+              </div>
+            </Form.Item>
+            <Form.Item
+              name="agreement1"
+              valuePropName="checked"
+              wrapperCol={{
+                span: 24,
+                // offset: 4,
+              }}
+              rules={[
+                {
+                  validator: (_, value) =>
+                    value
+                      ? Promise.resolve()
+                      : Promise.reject(new Error("Please accept agreement")),
+                },
+              ]}
+            >
+              <Checkbox>
+                I confirm that this is my own acount, I don’t have multiple
+                accounts or submissions.
+              </Checkbox>
+            </Form.Item>
+            <Form.Item
+              name="agreement2"
+              valuePropName="checked"
+              wrapperCol={{
+                span: 24,
+                // offset: 4,
+              }}
+              rules={[
+                {
+                  validator: (_, value) =>
+                    value
+                      ? Promise.resolve()
+                      : Promise.reject(new Error("Please accept agreement")),
+                },
+              ]}
+            >
+              <Checkbox>
+                I agree with the T&Cs applied to this campaign
+              </Checkbox>
+            </Form.Item>
+            <Form.Item
+              wrapperCol={{
+                offset: 9,
+                span: 15,
+              }}
+            >
+              <Button type="primary" htmlType="submit">
+                Submit
+              </Button>
+            </Form.Item>
+          </Form>
+        ) : (
+          <div className="w-[100%] h-[250px] flex justify-center items-center">
+            {/* <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/twitter.png"}
+                alt="twitter"
+                className="w-[6.5%]"
+              />
+              <span></span>
+            </div>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/discord.png"}
+                alt="discord"
+                className="w-[6.5%]"
+              />
+              <span></span>
+            </div>
+            <div>
+              <img
+                src={process.env.PUBLIC_URL + "/img/telegram.png"}
+                alt="telegram"
+                className="w-[6.5%]"
+              />
+              <span></span>
+            </div> */}
+            <div className="w-[90%] h-[90%] bg-[#F4F4F4] flex justify-center items-center flex-wrap bg-[#F4F4F4] rounded-xl max-[600px]:w-[80%]">
+              {redirectToIcons.slice(0, 3).map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center basis-[95%] h-[25%] rounded-xl hover:cursor-pointer relative bg-white flex justify-left items-center shadow-md"
+                  onClick={() =>
+                    window.open(item.link, "_blank", "noopener,noreferrer")
+                  }
+                >
+                  <img src={item.img} alt="icon" className="w-[8%] ml-[2vw]" />
+                  <p className="ml-[2vw] font-medium">
+                    Username: {userInfo.socialMediaAccounts[index]}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </Modal>
     </>
   );

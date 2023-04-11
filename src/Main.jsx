@@ -48,7 +48,7 @@ const Main = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <ReactFullpage
         anchors={anchors}
         navigation
@@ -63,9 +63,10 @@ const Main = () => {
           "#090625",
           "#090625",
           "#090625",
-          "#090625",
-          "#090625",
-          "#090625",
+          "#831858",
+          "#831858",
+          "#831858",
+          "#831858",
         ]}
         normalScrollElements=".scrollable-content"
         onLeave={(origin, destination, direction) => {

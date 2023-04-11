@@ -94,20 +94,22 @@ export default function Navigation({ fullpageApi }) {
     <>
       <nav id="nav">
         {auth ? (
-          <a
+          <button
             onClick={() => setIsUserInfoOpen(true)}
-            className="hover:cursor-pointer"
+            className="signupButton"
           >
             {/* {localStorage.getItem("username")} */}
             {userInfo && userInfo.username}
-          </a>
+          </button>
         ) : (
-          <a
-            className="hover:cursor-pointer"
-            onClick={() => setIsSignupOpen(true)}
+          <button
+            className="signupButton"
+            onClick={() => {
+              setIsSignupOpen(true);
+            }}
           >
             Sign Up
-          </a>
+          </button>
         )}
       </nav>
       <Signup

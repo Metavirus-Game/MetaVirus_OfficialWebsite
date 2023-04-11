@@ -3,13 +3,30 @@
   top: 2rem;
   color: white;
   right: 2rem;
-
   z-index: 1;
-  a {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
+  // a {
+  //   color: white;
+  //   font-size: 1.5rem;
+  //   text-decoration: none;
+  //   font-weight: bold;
+  // }
+}
+
+.signupButton {
+  padding: 0.5rem;
+  border-radius: 25px;
+  z-index: 9999;
+  // width: 10rem;
+  font-weight: bold;
+  font-size: 1.1em;
+  // margin-top: 40vh;
+  // font-family: "Nunito", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  color: white;
+  border: 3px solid white;
+  &:hover {
+    cursor: pointer;
   }
 }
 
