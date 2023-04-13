@@ -3,7 +3,7 @@ export default function SocialMedia() {
   return (
     <div className="socialMediaContainer">
       <h2 className="basis-[100%]">Follow Us</h2>
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <span className="pr-[2vw]">LES eSports:</span>
         <a
           href="https://twitter.com/les_web3"
@@ -32,9 +32,9 @@ export default function SocialMedia() {
             alt="discord"
           />
         </a>
-      </div>
+      </div> */}
       <div className="flex items-center">
-        <span className="pr-[2vw]">MetaVirus:</span>
+        {/* <span className="pr-[2vw]">MetaVirus:</span> */}
         <a
           href=" https://twitter.com/metavirus_games?s=21&t=oyqN0Vci0SpsXLEl3HTyOg"
           target="_blank"
