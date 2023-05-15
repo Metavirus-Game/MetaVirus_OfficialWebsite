@@ -128,7 +128,3 @@ export default function Navigation({ fullpageApi }) {
     </>
   );
 }
-{
-  /* <a href={process.env.PUBLIC_URL + "/signup"}>Sign Up</a> */
-  // <a href={process.env.PUBLIC_URL + "/signin"}>My Account</a>
-}

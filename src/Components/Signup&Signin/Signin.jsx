@@ -8,7 +8,7 @@ import { AuthContext } from "../../App";
 import { useState } from "react";
 import Signup from "./Signup";
 import UserInfo from "../UserInfo/UserInfo";
-const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
+const Signin = ({ isSigninOpen, setIsSigninOpen, setIsSignupOpen }) => {
   const navigate = useNavigate();
   const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
   const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
@@ -167,6 +167,18 @@ const Signin = ({ isSigninOpen, setIsSigninOpen }) => {
             </Button>
           </Form.Item>
         </Form>
+        <p className="mb-[.5rem] text-center">No account yet?</p>
+        <Button
+          className="w-[5rem] mx-auto block"
+          type="primary"
+          // onClick={() => navigate("/signin")}
+          onClick={() => {
+            setIsSigninOpen(false);
+            setIsSignupOpen(true);
+          }}
+        >
+          Sign up
+        </Button>
       </Modal>
       <UserInfo
         userInfo={userInfo}

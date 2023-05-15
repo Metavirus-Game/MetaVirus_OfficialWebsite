@@ -66,6 +66,8 @@ function Signup({
         console.log(errorCode);
         if (errorCode === 0) {
           setToken(response.data["msg"]);
+          setIsVerifiOpen(true);
+          setIsSignupOpen(false);
           // setLoading(false);
           // localStorage.setItem("token", response.data["msg"]);
         } else {
@@ -111,7 +113,8 @@ function Signup({
             content: "You have successfully registered!",
           });
           form.resetFields();
-          setIsSignupOpen(false);
+          // setIsSignupOpen(false);
+          setIsVerifiOpen(false);
           setIsSigninOpen(true);
           setLoading(false);
         } else {
@@ -128,6 +131,76 @@ function Signup({
   };
 
   const onSignupFailed = (values) => {};
+
+  const [isVerifiOpen, setIsVerifiOpen] = useState(false);
+
+  const VerificationModal = () => (
+    <Modal
+      centered
+      title="Verification Code"
+      open={isVerifiOpen}
+      onCancel={() => {
+        setIsVerifiOpen(false);
+        form.resetFields();
+      }}
+      footer={null}
+    >
+      <Form
+        name="form2"
+        initialValues={{
+          remember: true,
+        }}
+        onFinish={onSignup}
+        onFinishFailed={onSignupFailed}
+        autoComplete="off"
+      >
+        <Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            disabled={resendState}
+            loading={loading}
+            className="w-[10rem] mx-auto block"
+          >
+            Resend verification code
+          </Button>
+          {resendState && (
+            <p className="text-center">Retry after: {resendTime}</p>
+          )}
+        </Form.Item>
+
+        <Form.Item
+          label="Verification Code"
+          name="code"
+          {...formLayout}
+          rules={[
+            {
+              required: true,
+              message: "Please input your verification code",
+            },
+          ]}
+          labelCol={{
+            span: 8,
+          }}
+          wrapperCol={{
+            span: 10,
+          }}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            loading={loading}
+            className="w-[5rem] mx-auto block"
+          >
+            Sign Up
+          </Button>
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
 
   return (
     <>
@@ -209,58 +282,14 @@ function Signup({
               defaultValue={referralCode}
             />
           </Form.Item>
-
           <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
-              disabled={resendState}
               loading={loading}
               className="w-[10rem] mx-auto block"
             >
-              Get Verification Code
-            </Button>
-            {resendState && (
-              <p className="text-center">Retry after: {resendTime}</p>
-            )}
-          </Form.Item>
-        </Form>
-        <Form
-          name="form2"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onSignup}
-          onFinishFailed={onSignupFailed}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="Verification Code"
-            name="code"
-            {...formLayout}
-            rules={[
-              {
-                required: true,
-                message: "Please input your verification code",
-              },
-            ]}
-            labelCol={{
-              span: 8,
-            }}
-            wrapperCol={{
-              span: 10,
-            }}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item>
-            <Button
-              type="primary"
-              htmlType="submit"
-              loading={loading}
-              className="w-[5rem] mx-auto block"
-            >
-              Sign Up
+              Get verification code
             </Button>
           </Form.Item>
         </Form>
@@ -277,7 +306,12 @@ function Signup({
           Sign in
         </Button>
       </Modal>
-      <Signin isSigninOpen={isSigninOpen} setIsSigninOpen={setIsSigninOpen} />
+      {VerificationModal()}
+      <Signin
+        isSigninOpen={isSigninOpen}
+        setIsSigninOpen={setIsSigninOpen}
+        setIsSignupOpen={setIsSignupOpen}
+      />
     </>
   );
 }
