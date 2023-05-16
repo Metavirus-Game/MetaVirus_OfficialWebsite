@@ -51,7 +51,7 @@ function Signup({
     setResendState(true);
     sessionStorage.setItem("resendState", true);
     setResendTime(60);
-    // setLoading(true);
+    setLoading(true);
     axios
       .post("https://acc.metavirus.games/account/registerRequest", {
         username: email,
@@ -68,10 +68,10 @@ function Signup({
           setToken(response.data["msg"]);
           setIsVerifiOpen(true);
           setIsSignupOpen(false);
-          // setLoading(false);
+          setLoading(false);
           // localStorage.setItem("token", response.data["msg"]);
         } else {
-          // setLoading(false);
+          setLoading(false);
           messageApi.open({
             type: "error",
             content: response.data["msg"],
@@ -84,6 +84,7 @@ function Signup({
   };
 
   const resendVerifiCode = () => {
+    setLoading(true);
     axios
       .post("https://acc.metavirus.games/account/registerRequest", {
         username: userEmail,
@@ -92,10 +93,11 @@ function Signup({
       .then(function (response) {
         const errorCode = response.data["code"];
         if (errorCode === 0) {
+          setLoading(false);
           setResendTime(60);
           setResendState(true);
         } else {
-          // setLoading(false);
+          setLoading(false);
           messageApi.open({
             type: "error",
             content: response.data["msg"],
@@ -205,7 +207,7 @@ function Signup({
               type="primary"
               onClick={resendVerifiCode}
               disabled={resendState}
-              loading={loading}
+              // loading={loading}
             >
               {resendState ? `Retry after: ${resendTime}` : `Resend code`}
             </Button>
@@ -314,7 +316,7 @@ function Signup({
               htmlType="submit"
               disabled={resendState}
               loading={loading}
-              className="w-[10rem] mx-auto block"
+              className="mx-auto block"
             >
               Get verification code
             </Button>
