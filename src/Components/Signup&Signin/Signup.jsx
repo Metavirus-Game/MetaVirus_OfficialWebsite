@@ -48,9 +48,7 @@ function Signup({
   const sendVeriCode = ({ email, password, referralCode }) => {
     setUserEmail(email);
     // setUserPassword(password);
-    setResendState(true);
     sessionStorage.setItem("resendState", true);
-    setResendTime(60);
     setLoading(true);
     axios
       .post("https://acc.metavirus.games/account/registerRequest", {
@@ -69,6 +67,8 @@ function Signup({
           setIsVerifiOpen(true);
           setIsSignupOpen(false);
           setLoading(false);
+          setResendState(true);
+          setResendTime(60);
           // localStorage.setItem("token", response.data["msg"]);
         } else {
           setLoading(false);
