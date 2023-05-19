@@ -184,6 +184,9 @@ function Signup({
         onFinishFailed={onSignupFailed}
         autoComplete="off"
       >
+        <div className="mb-[1rem]">
+          A verification code has been sent to your email address.
+        </div>
         <Form.Item
           label="Verification Code"
           name="code"
@@ -204,8 +207,6 @@ function Signup({
           <div className="flex">
             {/* <div className="w-[10rem] mr-[1rem]"> */}
             <Input className="w-[8rem] mr-[1rem]" />
-            {/* </div> */}
-
             <Button
               type="primary"
               onClick={resendVerifiCode}
