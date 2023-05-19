@@ -86,11 +86,14 @@ function Signup({
   const resendVerifiCode = () => {
     setLoading(true);
     axios
-      .post("https://acc.metavirus.games/account/registerRequest", {
-        username: userEmail,
-        token: token,
+      .get("https://acc.metavirus.games/account/resendCode", {
+        params: {
+          username: userEmail,
+          token: token,
+        },
       })
       .then(function (response) {
+        console.log(response);
         const errorCode = response.data["code"];
         if (errorCode === 0) {
           setLoading(false);
@@ -217,7 +220,7 @@ function Signup({
           <Button
             type="primary"
             htmlType="submit"
-            loading={loading}
+            // loading={loading}
             className="w-[5rem] mx-auto block"
           >
             Sign Up
@@ -264,7 +267,6 @@ function Signup({
                 type: "email",
                 message: "The input is not valid E-mail!",
               },
-
               {
                 required: true,
                 message: "Please input your E-mail!",
