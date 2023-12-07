@@ -104,8 +104,11 @@ export default function Navigation({ fullpageApi }) {
         ) : (
           <button
             className="signupButton"
+            // onClick={() => {
+            //   setIsSignupOpen(true);
+            // }}
             onClick={() => {
-              setIsSignupOpen(true);
+              window.open("https://www.nexgami.com");
             }}
           >
             Sign Up
