@@ -108,10 +108,10 @@ export default function Navigation({ fullpageApi }) {
             //   setIsSignupOpen(true);
             // }}
             onClick={() => {
-              window.open("https://www.nexgami.com");
+              window.open("https://www.nexgami.com", "_self");
             }}
           >
-            Sign Up
+            Join Us
           </button>
         )}
       </nav>
