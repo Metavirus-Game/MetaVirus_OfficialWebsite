@@ -10,10 +10,10 @@ export default function GameCore({ isLoaded }) {
           style={{
             backgroundImage: `url(${process.env.PUBLIC_URL + "/img/3.jpg"})`,
           }}
-        ></div>
+        />
         <div className="gameCoreContext">
           <h3>GameFi Thinking</h3>
-          <ul>
+          <ul className="text-left">
             <li>F2P (Free to Play) free game forever.</li>
             <li>P2E (Play to Earn) Earn money while playing.</li>
             <li>
@@ -37,10 +37,12 @@ export default function GameCore({ isLoaded }) {
         ></div>
         <div className="gameCoreContext">
           <h3>Income Distribution</h3>
-          <ul>
-            <li>Players acquire currency through game playing.</li>
+          <ul className="text-left">
             <li>
-              Developers and investors get game tax dividends by holding
+              Players acquire resources and currency through in-game labor.
+            </li>
+            <li>
+              Game teams and investors get game tax dividends by holding
               governance tokens.
             </li>
             <li>
@@ -65,10 +67,13 @@ export default function GameCore({ isLoaded }) {
         ></div>
         <div className="gameCoreContext">
           <h3>Crypto Circulation</h3>
-          <ul>
+          <ul className="text-left">
             <li>Players will never be able to recharge in game.</li>
-            <li>All ingame currency only comes from game world.</li>
-            <li>Play to earn game currency and NFT (scarce resource).</li>
+            <li>
+              All demand currency comes from game output or exchange
+              purchasePlay to earn game currency and NFT (scarce resource
+              non-fungible token)
+            </li>
           </ul>
         </div>
       </div>

@@ -7,7 +7,7 @@ function Chart({ isLoaded }) {
       {isLoaded && (
         <>
           <TokenChart />
-          <LiquidityChart />
+          {/* <LiquidityChart /> */}
         </>
       )}
     </div>

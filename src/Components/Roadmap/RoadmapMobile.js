@@ -1,0 +1,72 @@
+import { Box, Typography, Stack } from "@mui/material";
+import Timeline from "@mui/lab/Timeline";
+import TimelineItem from "@mui/lab/TimelineItem";
+import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
+import TimelineDot from "@mui/lab/TimelineDot";
+import TimelineOppositeContent, {
+  timelineOppositeContentClasses,
+} from "@mui/lab/TimelineOppositeContent";
+
+const roadMapData = [
+  {
+    time: "2023-03",
+    header: "DEMO",
+    desc: "Cornerstone Round",
+  },
+
+  { time: "2023-06", header: "Playable DEMO" },
+  { time: "2023-09", header: "Closed Test" },
+  { time: "2024-03", header: "Seed Round" },
+  { time: "2024-06", header: "IDO" },
+  {
+    time: "2024-09",
+    header: "Public Test",
+    desc: "IGO",
+  },
+  {
+    time: "2024-12",
+    header: "Official operation",
+  },
+];
+
+const MobileTimelineLayout = ({ item }) => (
+  <TimelineItem>
+    <TimelineOppositeContent>
+      <h4>{item.time}</h4>
+    </TimelineOppositeContent>
+    <TimelineSeparator>
+      <TimelineDot sx={{ backgroundColor: "white" }} />
+      <TimelineConnector sx={{ backgroundColor: "white" }} />
+    </TimelineSeparator>
+    <TimelineContent>
+      <h4>{item.header}</h4>
+      <h4>{item.desc}</h4>
+      {item.optional}
+      {/* {item.desc} */}
+    </TimelineContent>
+  </TimelineItem>
+);
+
+export default function RoadmapMobile() {
+  return (
+    <Box sx={{ overflow: "hidden", height: "auto", py: "10%", color: "white" }}>
+      {/* <Typography variant="h4" className="">
+        RoadMap
+      </Typography> */}
+      <h1 className="">RoadMap</h1>
+      <Timeline
+        sx={{
+          [`& .${timelineOppositeContentClasses.root}`]: {
+            flex: 0.4,
+          },
+        }}
+      >
+        {roadMapData.map((item, index) => (
+          <MobileTimelineLayout key={index} item={item} />
+        ))}
+      </Timeline>
+    </Box>
+  );
+}
