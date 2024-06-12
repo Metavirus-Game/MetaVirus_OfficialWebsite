@@ -67,6 +67,28 @@ export default function RoadmapMobile() {
           <MobileTimelineLayout key={index} item={item} />
         ))}
       </Timeline>
+      <Box className="">
+        <Typography variant="h6" fontWeight={"bold"}>
+          Achievements & expectations:
+        </Typography>
+        <ol>
+          <li>
+            Beta test in December 2023, attracting over 350,000 user
+            registrations.
+          </li>
+          <li>
+            With 71,308 participants in the XP event, minting Genesis pet NFTs.{" "}
+          </li>
+          <li>
+            The community has already achieved the IDO target of several million
+            subscriptions.
+          </li>
+          <li>
+            Have established connections with many CEXs listing: KuCoin, Gate,
+            HTX, Bitget, MEXC, XT, BTSE, BingX, Coinstore{" "}
+          </li>
+        </ol>
+      </Box>
     </Box>
   );
 }

@@ -85,7 +85,7 @@ export default function Roadmap() {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
-    <Box className="bg-gradient-to-b from-[#ff6854] to-[#831858] relative overflow-hidden">
+    <Box className="bg-[#831858] relative overflow-hidden">
       {isMobile ? (
         <RoadmapMobile />
       ) : (
