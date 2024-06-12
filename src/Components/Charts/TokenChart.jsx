@@ -1,75 +1,85 @@
 import ReactECharts from "echarts-for-react";
 function TokenChart() {
   const option = {
-    title: {
-      text: "Token Distribution",
-      left: "center",
-      top: 20,
-      textStyle: {
-        color: "#fff",
-        fontSize: "1.4rem",
-        // lineHeight: "20",
-      },
-    },
+    // title: {
+    //   text: "Token Distribution",
+    //   left: "center",
+    //   top: -20,
+    //   textStyle: {
+    //     color: "#fff",
+    //     fontSize: 30,
+    //   },
+    // },
     tooltip: {
       trigger: "item",
-      formatter: "{a} <br/>{b}: {c} ({d}%)",
     },
-    visualMap: {
-      show: false,
-      min: 0,
-      max: 50000000,
-      inRange: {
-        colorLightness: [0, 1],
+    legend: {
+      top: "0%",
+      left: "center",
+      textStyle: {
+        color: "#fff",
       },
     },
     series: [
       {
-        name: "Token Distribution",
+        top: "10%",
+        name: "Access From",
         type: "pie",
-        radius: "55%",
-        center: ["50%", "50%"],
-        data: [
-          { value: 3000000, name: "Private Sale (Completed)" },
-          { value: 12000000, name: "Seed Round (In Progress)" },
-          { value: 4000000, name: "First Presale" },
-          { value: 6000000, name: "Second Presale" },
-          { value: 10000000, name: "IDO" },
-          { value: 18000000, name: "Founders & Team" },
-          { value: 6000000, name: "Advisors" },
-          { value: 30000000, name: "Game Output" },
-          { value: 6000000, name: "Marketing Partnership" },
-          { value: 3000000, name: "Community Airdrop" },
-          { value: 7000000, name: "User Creation Reward" },
-          { value: 10000000, name: "Company Reserve" },
-        ].sort(function (a, b) {
-          return a.value - b.value;
-        }),
-        roseType: "radius",
+        radius: ["40%", "60%"],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 5,
+          borderColor: "#fff",
+          borderWidth: 2,
+        },
         label: {
-          color: "rgba(255, 255, 255, 0.7)",
+          show: false,
+          position: "center",
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: 40,
+            fontWeight: "bold",
+          },
         },
         labelLine: {
-          lineStyle: {
-            color: "rgba(255, 255, 255, 0.7)",
-          },
-          smooth: 0.2,
-          length: 10,
-          length2: 20,
+          show: false,
         },
-        itemStyle: {
-          color: "#5ab7bb",
-        },
-        animationType: "scale",
-        animationEasing: "elasticOut",
-        animationDelay: function (idx) {
-          return Math.random() * 600;
-        },
+
+        // visualMap: {
+        //   show: false,
+        //   // min: 1000000,
+        //   // max: 1000000000,
+        //   inRange: {
+        //     colorLightness: [0, 1],
+        //   },
+        // },
+        data: [
+          { value: 20000000, name: "Cornerstone Round" },
+          { value: 30000000, name: "Seed Round" },
+          { value: 200000000, name: "IDO" },
+          { value: 150000000, name: "Team" },
+          { value: 18000000, name: "Founders & Team" },
+          { value: 500000000, name: "Game Mining" },
+          { value: 30000000, name: "Air drop" },
+          { value: 40000000, name: "Marketing" },
+          { value: 30000000, name: "Liquidity" },
+        ],
+        // .sort(function (a, b) {
+        //   return a.value - b.value;
+        // }),
       },
     ],
+    // itemStyle: {
+    //   color: "#c23531",
+    //   shadowBlur: 200,
+    //   shadowColor: "rgba(0, 0, 0, 0.5)",
+    // },
   };
   return (
     <div className="tokenChart">
+      <h1>Token Distribution</h1>
       <ReactECharts
         option={option}
         style={{ height: "550px" }}
