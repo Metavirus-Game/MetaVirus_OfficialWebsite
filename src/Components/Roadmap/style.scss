@@ -1,0 +1,49 @@
+.roadMapSwiper {
+  // .swiper-slide:nth-child(5) {
+  //   width: 30% !important;
+  // }
+
+  .swiper-slide {
+    width: 25% !important;
+  }
+
+  // .swiper-slide:nth-child(9) {
+  //   width: 30% !important;
+  // }
+}
+
+@media screen and (max-width: 1200px) {
+  .roadMapSwiper {
+    .swiper-slide:nth-child(5) {
+      width: 50% !important;
+    }
+
+    .swiper-slide:nth-child(9) {
+      width: 50% !important;
+    }
+
+    .swiper-slide {
+      width: 30% !important;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .roadMapSwiper {
+    .swiper-slide:nth-child(5) {
+      width: 100% !important;
+    }
+
+    .swiper-slide:nth-child(9) {
+      width: 90% !important;
+    }
+
+    .swiper-slide {
+      width: 60% !important;
+    }
+
+    .swiper-pagination {
+      visibility: hidden;
+    }
+  }
+}

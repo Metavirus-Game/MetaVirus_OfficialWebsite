@@ -58,7 +58,7 @@
     font-size: 1.2em;
   }
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   z-index: 1;
   background-color: rgba(171, 166, 24, 0.671);
@@ -78,6 +78,7 @@
   height: 100vh;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .model {
@@ -96,7 +97,7 @@
 @media screen and (max-width: 600px) {
   #galleryContextContainer {
     width: 100%;
-    height: 50vh;
+    height: 40%;
     position: absolute;
     top: 0;
   }
@@ -105,24 +106,24 @@
     // top: 5vh;
     width: 80vw;
     p {
-      font-size: 1em;
+      font-size: 0.95em;
     }
     h2 {
-      font-size: 1.5em;
+      font-size: 1.3em;
     }
   }
   .galleryContainer {
-    height: 120vh;
+    height: 1000px;
   }
   .model {
     // top: 30vh;
-    top: 50vh;
+    top: 40%;
   }
   .deck {
-    // bottom: 10vh;
-    top: 85vh;
+    bottom: 50px;
+    // top: 85vh;
   }
   .deck > div {
-    height: 25vh;
+    height: 250px;
   }
 }

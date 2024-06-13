@@ -17,6 +17,9 @@ import GameFiSup from "./Components/GameFiSup/GameFiSup";
 import MetavirusPage from "./Components/MetavirusPage/MetavirusPage";
 import SocialMedia from "./Components/SocialMedia/SocialMedia";
 import "animate.css";
+import Roadmap from "./Components/Roadmap/Roadmap";
+import EconomicSystem from "./Components/EconomicSystem/Economic";
+
 const anchors = [
   "Home",
   "Gallery",
@@ -55,7 +58,7 @@ const Main = () => {
         navigationTooltips={anchors}
         navigat
         scrollingSpeed="1200"
-        responsiveWidth={450}
+        responsiveWidth={900}
         easing="easeInOutCubic"
         sectionsColor={[
           "#090625",
@@ -114,15 +117,20 @@ const Main = () => {
                 <Chart isLoaded={sectionLoaded[3]} />
               </div>
               <div className="section">
-                <GameCore isLoaded={sectionLoaded[4]} />
+                {/* <GameCore isLoaded={sectionLoaded[4]} /> */}
+                <EconomicSystem isLoaded={sectionLoaded[4]} />
               </div>
-              <div className="section">
+              {/* <div className="section">
                 {window.innerWidth < 500 ? (
                   <MobileProcess isLoaded={sectionLoaded[5]} />
                 ) : (
                   <Process isLoaded={sectionLoaded[5]} />
                 )}
+              </div> */}
+              <div className="section">
+                <Roadmap isLoaded={sectionLoaded[5]} />
               </div>
+
               <div className="section">
                 <Team isLoaded={sectionLoaded[6]} />
               </div>

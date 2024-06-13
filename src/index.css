@@ -40,6 +40,12 @@ code {
   overflow: hidden;
 }
 
+.fp-overflow {
+  height: 100%;
+  max-height: revert !important;
+  overflow-x: hidden;
+}
+
 .fp-section {
   text-align: center;
 }
@@ -61,12 +67,19 @@ code {
   margin-right: 2.5rem;
 }
 
+.fp-scrollable .fp-section:not(.fp-auto-height):not([data-percentage]),
+.fp-scrollable .fp-slide:not(.fp-auto-height):not([data-percentage]),
+.fp-scrollable.fp-responsive
+  .fp-is-overflow.fp-section:not(.fp-auto-height):not([data-percentage]) {
+  min-height: revert !important;
+}
+
 @media screen and (min-width: 450px) {
   /* .section {
     height: -webkit-fill-available !important;
   } */
   .section {
-    height: auto !important ;
+    /* height: auto !important ; */
   }
 }
 

@@ -16,7 +16,7 @@
 }
 
 .tokenChart {
-  flex: 0.3;
+  flex: 0.5;
   min-width: 400px;
   // margin-top: 6rem;
 }
@@ -34,19 +34,19 @@
 
 @media screen and (max-width: 800px) {
   .chart {
-    height: 100vh;
+    height: 700px;
     // background-image: url("https://awv3node-homepage.surge.sh/build/assets/stars.svg");
   }
-  .mobileChart {
-    height: 35vh !important;
-  }
-  .tokenChart {
-    margin-top: 5vh;
-  }
-  .liqChart {
-    margin-bottom: 5vh;
-    h2 {
-      margin-bottom: 0rem !important;
-    }
-  }
+  // .mobileChart {
+  //   height: 35vh !important;
+  // }
+  // .tokenChart {
+  //   margin-top: 5vh;
+  // }
+  // .liqChart {
+  //   margin-bottom: 5vh;
+  //   h2 {
+  //     margin-bottom: 0rem !important;
+  //   }
+  // }
 }

@@ -38,6 +38,14 @@ export default function Team() {
         </SwiperSlide>
         <SwiperSlide>
           <Card
+            name="Qilin"
+            title="CFO"
+            describe="A driven Fintech professional and serial entrepreneur with a  demonstrated ability to complete tasks with accuracy."
+            portrait="/img/portrait_belal.png"
+          />
+        </SwiperSlide>
+        {/* <SwiperSlide>
+          <Card
             name="Belal Abdullah"
             title="CMO"
             describe="Has led marketing plans for several DeFi products, and NFT projects. Over 7 years of experience in crypto financial services."
@@ -67,11 +75,11 @@ export default function Team() {
             describe="20 years of game industry experience. Worked at Valve and participated in the 'Counter-Strike' series. A number of works reached millions of people online, with a monthly income of over $10 million."
             portrait="/img/portrait_Zeyu.png"
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
         <SwiperSlide>
           <Card
             name="Chris Horwood"
-            title="Content Planner"
+            title="Graphics Director"
             describe="College teacher and basketball coach, produced long-form documentaries and several short films."
             portrait="/img/portrait_chris.png"
           />
