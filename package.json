@@ -6,7 +6,7 @@
     "@ant-design/icons": "^5.0.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@fullpage/react-fullpage": "^0.1.31",
+    "@fullpage/react-fullpage": "^0.1.42",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "@lottiefiles/react-lottie-player": "^3.5.0",
