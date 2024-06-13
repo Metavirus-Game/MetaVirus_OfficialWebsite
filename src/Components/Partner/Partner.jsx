@@ -87,7 +87,11 @@ export default function Partner() {
   const PartnerLogo = ({ name, icon, link, style }) => {
     return (
       <div className="flex justify-center">
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={process.env.PUBLIC_URL + link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={icon}
             alt="logo"
