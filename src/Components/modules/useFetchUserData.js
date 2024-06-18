@@ -34,7 +34,7 @@ export default function useFetchUserData() {
             if (userData.reason == "expired access token") {
               try {
                 const { access_token, refresh_token } = await fetchRefreshToken(
-                  refreshToken
+                  decryptedRefreshToken
                 );
                 const encryptedAccessToken =
                   Buffer.from(access_token).toString("base64");
