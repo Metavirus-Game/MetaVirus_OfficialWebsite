@@ -108,7 +108,7 @@ export default function Partner() {
     let i = 0;
     while (i < partnershipList.length) {
       slides.push(
-        <SwiperSlide>
+        <SwiperSlide key={i}>
           <Grid container justifyContent={"center"} alignItems={"center"}>
             {partnershipList.slice(i, i + 5).map((item, index) => (
               <Grid item lg={4} key={index}>
