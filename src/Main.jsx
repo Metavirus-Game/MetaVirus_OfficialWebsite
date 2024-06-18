@@ -19,6 +19,7 @@ import SocialMedia from "./Components/SocialMedia/SocialMedia";
 import "animate.css";
 import Roadmap from "./Components/Roadmap/Roadmap";
 import EconomicSystem from "./Components/EconomicSystem/Economic";
+import NavigationV2 from "./Components/NavigationV2/NavigationV2";
 
 const anchors = [
   "Home",
@@ -52,11 +53,11 @@ const Main = () => {
   return (
     <>
       {/* <Navigation /> */}
+      <NavigationV2 />
       <ReactFullpage
         anchors={anchors}
         navigation
         navigationTooltips={anchors}
-        navigat
         scrollingSpeed="1200"
         responsiveWidth={900}
         easing="easeInOutCubic"
@@ -85,7 +86,7 @@ const Main = () => {
           // console.log("render prop change", fullpageApi);
           return (
             <div>
-              <Navigation fullpageApi={fullpageApi} />
+              {/* <Navigation fullpageApi={fullpageApi} /> */}
               {/* <div className="section">
                 <HomePage
                   isLoaded={sectionLoaded[0]}

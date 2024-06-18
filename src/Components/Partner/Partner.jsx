@@ -87,7 +87,11 @@ export default function Partner() {
   const PartnerLogo = ({ name, icon, link, style }) => {
     return (
       <div className="flex justify-center">
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={process.env.PUBLIC_URL + link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={icon}
             alt="logo"
@@ -104,7 +108,7 @@ export default function Partner() {
     let i = 0;
     while (i < partnershipList.length) {
       slides.push(
-        <SwiperSlide>
+        <SwiperSlide key={i}>
           <Grid container justifyContent={"center"} alignItems={"center"}>
             {partnershipList.slice(i, i + 5).map((item, index) => (
               <Grid item lg={4} key={index}>

@@ -6,6 +6,8 @@ import UserInfo from "./Components/UserInfo/UserInfo";
 import Main from "./Main";
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
+import OauthCallback from "./Components/auth/OauthCallback";
+
 export const AuthContext = createContext();
 export default function App() {
   const [auth, setAuth] = useState(false);
@@ -47,6 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/userInfo" element={<UserInfo />} />
+          <Route path="/oauth/callback" element={<OauthCallback />} />
           {/* <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/userInfo" element={<UserInfo />} /> */}

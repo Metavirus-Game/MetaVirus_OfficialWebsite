@@ -6,6 +6,7 @@ import UserInfo from "../UserInfo/UserInfo";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import { requestAuthorization } from "../auth/handler";
 export default function Navigation({ fullpageApi }) {
   const { auth, setAuth, userInfo, setUserInfo } = useContext(AuthContext);
   // console.log(auth, userInfo);
@@ -98,17 +99,13 @@ export default function Navigation({ fullpageApi }) {
             onClick={() => setIsUserInfoOpen(true)}
             className="signupButton"
           >
-            {/* {localStorage.getItem("username")} */}
             {userInfo && userInfo.username}
           </button>
         ) : (
           <button
             className="signupButton"
-            // onClick={() => {
-            //   setIsSignupOpen(true);
-            // }}
             onClick={() => {
-              window.open("https://www.nexgami.com", "_self");
+              requestAuthorization();
             }}
           >
             Join Us
