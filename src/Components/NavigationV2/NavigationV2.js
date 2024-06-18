@@ -77,7 +77,7 @@ export default function NavigationV2() {
             </div>
           </Popover>
           <button onClick={handleClick} className="signupButton">
-            {shortenString(userData.username, 6, 0, true)}
+            {shortenString(userData.email, 15, 0, true)}
           </button>
         </>
       ) : (
