@@ -115,7 +115,7 @@ export default function MetavirusPage({ isLoaded }) {
         /> */}
         <div style={{ zIndex: "2" }}>
           <h1>METAVIRUS</h1>
-          <h3>Our first web3 game based on <a href="https://www.nexgami.com" target="_blank">NexGami</a> platform</h3>
+          <h3>Our first web3 game based on NexGami platform</h3>
           {/* <button style={{ marginRight: "1rem" }}>Try It</button> */}
           {window.innerWidth > 500 && (
             <>
