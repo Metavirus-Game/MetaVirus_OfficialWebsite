@@ -1,6 +1,6 @@
 import useFetchUserData from "../modules/useFetchUserData";
 import { requestAuthorization } from "../auth/handler";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Buffer } from "buffer";
 import { Button, Popover } from "@mui/material";
 import { shortenString } from "../utils/utils";
@@ -28,30 +28,33 @@ export default function NavigationV2() {
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-
   useEffect(() => {
     const bc = new BroadcastChannel("c_social_auth");
-    bc.onmessage = (event) => {
-      const { access_token, refresh_token, userInfo, error } = event.data;
-      console.log("access_token:", access_token, event);
-      if (error) {
-        console.error("OAuth error:", error);
-      } else {
-        // localStorage.setItem("auth_token", combinedToken);
-        const encryptedAccessToken =
-          Buffer.from(access_token).toString("base64");
-        const encryptedRefreshToken =
-          Buffer.from(refresh_token).toString("base64");
-        localStorage.setItem("nexgAccessToken", encryptedAccessToken);
-        localStorage.setItem("nexgRefreshToken", encryptedRefreshToken);
-        setUserData(userInfo);
-      }
+    let isMessageHandled = false; // flag to prevent handling the same message multiple times
 
-      setloadingUser(false);
+    bc.onmessage = (event) => {
+      if (!isMessageHandled) {
+        const { access_token, refresh_token, userInfo, error } = event.data;
+        console.log("access_token:", access_token, event);
+        if (error) {
+          console.error("OAuth error:", error);
+        } else {
+          const encryptedAccessToken =
+            Buffer.from(access_token).toString("base64");
+          const encryptedRefreshToken =
+            Buffer.from(refresh_token).toString("base64");
+          localStorage.setItem("nexgAccessToken", encryptedAccessToken);
+          localStorage.setItem("nexgRefreshToken", encryptedRefreshToken);
+          setUserData(userInfo);
+        }
+        setloadingUser(false);
+        isMessageHandled = true; // set flag to true after handling
+      }
     };
 
     return () => {
       bc.close();
+      isMessageHandled = false; // reset flag on cleanup
     };
   }, []);
 

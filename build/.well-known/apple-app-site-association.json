@@ -1,0 +1,11 @@
+{
+	"applinks": {
+		"apps": [],
+		"details": [
+			{
+				"appID": "SQTAG5B5B8.com.nexgami.game.metavirus",
+				"paths": ["/app/*"]
+			}
+		]
+	}
+}
