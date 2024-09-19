@@ -22,31 +22,49 @@ export default function Partner() {
       "/img/partner/nexgami.png",
       "https://www.nexgami.com/"
     ),
-    new PartnerData(
-      "Kucoin",
-      "/img/partner/kucoin.png",
-      "https://www.kucoin.com/"
-    ),
-    new PartnerData(
-      "GateIO",
-      "/img/partner/gateio.png",
-      "https://www.gate.io/"
-    ),
-    new PartnerData(
-      "bitgit",
-      "/img/partner/bitgit.png",
-      "https://www.bitget.com/"
-    ),
+    // new PartnerData(
+    //   "Kucoin",
+    //   "/img/partner/kucoin.png",
+    //   "https://www.kucoin.com/"
+    // ),
+    // new PartnerData(
+    //   "GateIO",
+    //   "/img/partner/gateio.png",
+    //   "https://www.gate.io/"
+    // ),
+    // new PartnerData(
+    //   "bitgit",
+    //   "/img/partner/bitgit.png",
+    //   "https://www.bitget.com/"
+    // ),
     new PartnerData("htx", "/img/partner/htx.png", "https://www.htx.com/", 100),
-    new PartnerData("xtcom", "/img/partner/xtcom.png", "https://www.xt.com/"),
 
-    new PartnerData("Bingx", "/img/partner/bingx.png", "https://bingx.com/en/"),
     new PartnerData(
-      "BTSE",
-      "/img/partner/btse.png",
-      "https://www.btse.com/en/home",
-      130
+      "Mexc",
+      "/img/partner/mexc.png",
+      "https://www.mexc.com/"
     ),
+
+    new PartnerData(
+      "Probit",
+      "/img/partner/probit.jpg",
+      "https://www.probit.com/"
+    ),
+
+    new PartnerData(
+      "Coinstore",
+      "/img/partner/coinstore.png",
+      "https://www.coinstore.com/home?ts=1718223161232"
+    ),
+    // new PartnerData("xtcom", "/img/partner/xtcom.png", "https://www.xt.com/"),
+
+    // new PartnerData("Bingx", "/img/partner/bingx.png", "https://bingx.com/en/"),
+    // new PartnerData(
+    //   "BTSE",
+    //   "/img/partner/btse.png",
+    //   "https://www.btse.com/en/home",
+    //   130
+    // ),
     new PartnerData(
       "Skyland Ventures",
       "/img/partner/skylandVentures.png",
@@ -64,8 +82,22 @@ export default function Partner() {
       "https://www.htx.com/ventures",
       200
     ),
+    
     new PartnerData("DMail", "/img/partner/dmail.png", "https://dmail.ai/"),
     new PartnerData("KEKKAI", "/img/partner/kekkai.png", "https://kekkai.io/"),
+
+    new PartnerData(
+      "Metalpha",
+      "/img/partner/metalpha.png",
+      "https://www.metalpha.net/"
+    ),
+
+    new PartnerData(
+      "DWF Labs",
+      "/img/partner/dwflabs.png",
+      "https://www.dwf-labs.com/"
+    ),
+
     new PartnerData(
       "IBC",
       "/img/partner/ibc.png",
@@ -73,14 +105,37 @@ export default function Partner() {
       120
     ),
     new PartnerData(
-      "Coinstore",
-      "/img/partner/coinstore.png",
-      "https://www.coinstore.com/home?ts=1718223161232"
-    ),
-    new PartnerData(
       "Tide",
       "/img/partner/tide.png",
       "https://www.tidegroups.com/"
+    ),
+
+    new PartnerData(
+      "AScoin",
+      "/img/partner/ascoin-wallet.png",
+      "https://www.ascoin.pro/ "
+    ),
+
+    new PartnerData(
+      "Nabox",
+      "/img/partner/nabox.svg",
+      "https://nabox.io"
+    ),
+    new PartnerData(
+      "Glaxe",
+      "/img/partner/galxe.png",
+      "https://www.galxe.com/"
+    ),
+    new PartnerData(
+      "TaskOn",
+      "/img/partner/taskon.png",
+      "https://taskon.xyz/ "
+    ),
+    new PartnerData(
+      "PoolzBoost",
+      "/img/partner/poolz.png",
+      "https://www.poolz.finance/",
+      200
     ),
   ];
 

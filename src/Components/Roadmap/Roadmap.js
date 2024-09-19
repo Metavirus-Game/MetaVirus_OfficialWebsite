@@ -32,6 +32,10 @@ const roadMapData = [
     desc: "IGO",
   },
   {
+    time: "2024-10",
+    header:"TGE"
+  },
+  {
     time: "2024-12",
     header: "Official operation",
   },
@@ -131,9 +135,12 @@ export default function Roadmap() {
                     The community has already achieved the IDO target of several
                     million subscriptions.
                   </li>
-                  <li>
+                  {/* <li>
                     Have established connections with many CEXs listing: KuCoin,
                     Gate, HTX, Bitget, MEXC, XT, BTSE, BingX, Coinstore{" "}
+                  </li> */}
+                   <li>
+                    Have established connections with many CEXs listing: HTX, Mexc, Prrobit, Coinstore{" "}
                   </li>
                 </ol>
               </Box>
