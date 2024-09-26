@@ -140,7 +140,7 @@ export default function Roadmap() {
                     Gate, HTX, Bitget, MEXC, XT, BTSE, BingX, Coinstore{" "}
                   </li> */}
                    <li>
-                    Have established connections with many CEXs listing: HTX, Mexc, Prrobit, Coinstore{" "}
+                    Have established connections with many CEXs listing: HTX, Mexc, ProBit Global, Coinstore{" "}
                   </li>
                 </ol>
               </Box>

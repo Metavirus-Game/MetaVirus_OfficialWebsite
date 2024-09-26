@@ -46,7 +46,7 @@ export default function Partner() {
     ),
 
     new PartnerData(
-      "Probit",
+      "ProBit Global",
       "/img/partner/probit.jpg",
       "https://www.probit.com/"
     ),
